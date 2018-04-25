@@ -1,6 +1,6 @@
 ﻿namespace Impresso_Expresso
 {
-    partial class Form1
+    partial class FrmPrijava
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // FrmPrijava
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "Form1";
+            this.ClientSize = new System.Drawing.Size(334, 461);
+            this.Name = "FrmPrijava";
+            this.Text = "FrmPrijava";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
     }
 }
-
