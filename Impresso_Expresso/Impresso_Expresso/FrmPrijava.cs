@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Impresso_Expresso
 {
-    public partial class Form1 : Form
+    public partial class FrmPrijava : Form
     {
-        public Form1()
+        public FrmPrijava()
         {
             InitializeComponent();
         }
