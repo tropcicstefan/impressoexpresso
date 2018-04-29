@@ -30,56 +30,83 @@
         {
             this.txtKorIme = new System.Windows.Forms.TextBox();
             this.txtLozinka = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lblLozinka = new System.Windows.Forms.Label();
+            this.lblKorime = new System.Windows.Forms.Label();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.gbPrijava = new System.Windows.Forms.GroupBox();
+            this.btnPrijava = new System.Windows.Forms.Button();
+            this.gbPrijava.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtKorIme
             // 
-            this.txtKorIme.Location = new System.Drawing.Point(336, 145);
+            this.txtKorIme.Location = new System.Drawing.Point(198, 42);
             this.txtKorIme.Name = "txtKorIme";
             this.txtKorIme.Size = new System.Drawing.Size(160, 22);
             this.txtKorIme.TabIndex = 0;
             // 
             // txtLozinka
             // 
-            this.txtLozinka.Location = new System.Drawing.Point(336, 197);
+            this.txtLozinka.Location = new System.Drawing.Point(198, 94);
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(160, 22);
             this.txtLozinka.TabIndex = 0;
             // 
-            // label1
+            // lblLozinka
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(203, 197);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Lozinka:";
+            this.lblLozinka.AutoSize = true;
+            this.lblLozinka.Location = new System.Drawing.Point(65, 94);
+            this.lblLozinka.Name = "lblLozinka";
+            this.lblLozinka.Size = new System.Drawing.Size(61, 17);
+            this.lblLozinka.TabIndex = 1;
+            this.lblLozinka.Text = "Lozinka:";
             // 
-            // label2
+            // lblKorime
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(193, 145);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Korisničko ime:";
+            this.lblKorime.AutoSize = true;
+            this.lblKorime.Location = new System.Drawing.Point(55, 42);
+            this.lblKorime.Name = "lblKorime";
+            this.lblKorime.Size = new System.Drawing.Size(103, 17);
+            this.lblKorime.TabIndex = 2;
+            this.lblKorime.Text = "Korisničko ime:";
+            // 
+            // gbPrijava
+            // 
+            this.gbPrijava.Controls.Add(this.btnPrijava);
+            this.gbPrijava.Controls.Add(this.txtKorIme);
+            this.gbPrijava.Controls.Add(this.lblKorime);
+            this.gbPrijava.Controls.Add(this.txtLozinka);
+            this.gbPrijava.Controls.Add(this.lblLozinka);
+            this.gbPrijava.ForeColor = System.Drawing.Color.White;
+            this.gbPrijava.Location = new System.Drawing.Point(196, 189);
+            this.gbPrijava.Name = "gbPrijava";
+            this.gbPrijava.Size = new System.Drawing.Size(405, 215);
+            this.gbPrijava.TabIndex = 3;
+            this.gbPrijava.TabStop = false;
+            this.gbPrijava.Text = "Prijava";
+            // 
+            // btnPrijava
+            // 
+            this.btnPrijava.ForeColor = System.Drawing.Color.Black;
+            this.btnPrijava.Location = new System.Drawing.Point(58, 140);
+            this.btnPrijava.Name = "btnPrijava";
+            this.btnPrijava.Size = new System.Drawing.Size(299, 33);
+            this.btnPrijava.TabIndex = 3;
+            this.btnPrijava.Text = "Prijavi se";
+            this.btnPrijava.UseVisualStyleBackColor = true;
             // 
             // FrmPrijava
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtLozinka);
-            this.Controls.Add(this.txtKorIme);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
+            this.ClientSize = new System.Drawing.Size(782, 553);
+            this.Controls.Add(this.gbPrijava);
             this.Name = "FrmPrijava";
             this.Text = "FrmPrijava";
+            this.gbPrijava.ResumeLayout(false);
+            this.gbPrijava.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -87,7 +114,10 @@
 
         private System.Windows.Forms.TextBox txtKorIme;
         private System.Windows.Forms.TextBox txtLozinka;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lblLozinka;
+        private System.Windows.Forms.Label lblKorime;
+        private System.ComponentModel.BackgroundWorker backgroundWorker1;
+        private System.Windows.Forms.GroupBox gbPrijava;
+        private System.Windows.Forms.Button btnPrijava;
     }
 }
