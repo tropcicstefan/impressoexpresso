@@ -50,16 +50,25 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmRegistracija.cs">
+    <Compile Include="FrmUnosArtikla.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmRegistracija.Designer.cs">
-      <DependentUpon>FrmRegistracija.cs</DependentUpon>
+    <Compile Include="FrmUnosArtikla.Designer.cs">
+      <DependentUpon>FrmUnosArtikla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmUpravljanjeArtiklom.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmUpravljanjeArtiklom.Designer.cs">
+      <DependentUpon>FrmUpravljanjeArtiklom.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FrmRegistracija.resx">
-      <DependentUpon>FrmRegistracija.cs</DependentUpon>
+    <EmbeddedResource Include="FrmUnosArtikla.resx">
+      <DependentUpon>FrmUnosArtikla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmUpravljanjeArtiklom.resx">
+      <DependentUpon>FrmUpravljanjeArtiklom.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
