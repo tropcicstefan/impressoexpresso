@@ -63,9 +63,29 @@ namespace Impresso_Expresso.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap if_Bin_2202256 {
+        internal static System.Drawing.Bitmap FrmIzbornik_background {
             get {
-                object obj = ResourceManager.GetObject("if_Bin_2202256", resourceCulture);
+                object obj = ResourceManager.GetObject("FrmIzbornik-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap green_circle {
+            get {
+                object obj = ResourceManager.GetObject("green circle", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap if_Settings_2202240 {
+            get {
+                object obj = ResourceManager.GetObject("if_Settings_2202240", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -76,6 +96,16 @@ namespace Impresso_Expresso.Properties {
         internal static System.Drawing.Bitmap logo_banner {
             get {
                 object obj = ResourceManager.GetObject("logo-banner", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Profil {
+            get {
+                object obj = ResourceManager.GetObject("Profil", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
