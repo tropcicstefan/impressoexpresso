@@ -63,6 +63,16 @@ namespace Impresso_Expresso.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap if_Bin_2202256 {
+            get {
+                object obj = ResourceManager.GetObject("if_Bin_2202256", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo_banner {
             get {
                 object obj = ResourceManager.GetObject("logo-banner", resourceCulture);
