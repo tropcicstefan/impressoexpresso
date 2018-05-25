@@ -78,7 +78,7 @@
             // 
             // pbUkloni
             // 
-            this.pbUkloni.Image = global::Impresso_Expresso.Properties.Resources.if_Bin_2202256;
+            //this.pbUkloni.Image = global::Impresso_Expresso.Properties.Resources.if_Bin_2202256;
             this.pbUkloni.Location = new System.Drawing.Point(32, 66);
             this.pbUkloni.Name = "pbUkloni";
             this.pbUkloni.Size = new System.Drawing.Size(82, 78);
