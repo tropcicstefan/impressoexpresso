@@ -117,6 +117,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSkladiste.resx">
       <DependentUpon>FrmSkladiste.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDodajNarudžbu.resx">
       <DependentUpon>FrmDodajNarudžbu.cs</DependentUpon>
     </EmbeddedResource>
