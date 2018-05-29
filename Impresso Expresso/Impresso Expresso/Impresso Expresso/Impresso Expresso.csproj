@@ -50,6 +50,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRacun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRacun.Designer.cs">
+      <DependentUpon>FrmRacun.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmDodajNarudžbu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmDodajNarudžbu.resx">
       <DependentUpon>FrmDodajNarudžbu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRacun.resx">
+      <DependentUpon>FrmRacun.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmIzbornik.resx">
       <DependentUpon>FrmIzbornik.cs</DependentUpon>
