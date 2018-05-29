@@ -39,6 +39,7 @@
             this.lblDobavljac = new System.Windows.Forms.Label();
             this.lblArtikl = new System.Windows.Forms.Label();
             this.lblKolicina = new System.Windows.Forms.Label();
+            this.btnPohrani = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkePrimke)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,11 +134,21 @@
             this.lblKolicina.TabIndex = 10;
             this.lblKolicina.Text = "Kolicina";
             // 
+            // btnPohrani
+            // 
+            this.btnPohrani.Location = new System.Drawing.Point(647, 420);
+            this.btnPohrani.Name = "btnPohrani";
+            this.btnPohrani.Size = new System.Drawing.Size(107, 19);
+            this.btnPohrani.TabIndex = 11;
+            this.btnPohrani.Text = "Pohrani";
+            this.btnPohrani.UseVisualStyleBackColor = true;
+            // 
             // FrmPrimka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnPohrani);
             this.Controls.Add(this.lblKolicina);
             this.Controls.Add(this.lblArtikl);
             this.Controls.Add(this.lblDobavljac);
@@ -170,5 +181,6 @@
         private System.Windows.Forms.Label lblDobavljac;
         private System.Windows.Forms.Label lblArtikl;
         private System.Windows.Forms.Label lblKolicina;
+        private System.Windows.Forms.Button btnPohrani;
     }
 }
