@@ -28,34 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblStanje = new System.Windows.Forms.Label();
             this.dgvStanjeSkladišta = new System.Windows.Forms.DataGridView();
             this.btnUnosArtikla = new System.Windows.Forms.Button();
             this.btnPrimka = new System.Windows.Forms.Button();
             this.cbFilter = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gbstanjeNaSkladistu = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStanjeSkladišta)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gbstanjeNaSkladistu.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblStanje
-            // 
-            this.lblStanje.AutoSize = true;
-            this.lblStanje.Location = new System.Drawing.Point(62, 142);
-            this.lblStanje.Name = "lblStanje";
-            this.lblStanje.Size = new System.Drawing.Size(99, 13);
-            this.lblStanje.TabIndex = 0;
-            this.lblStanje.Text = "Stanje na skladištu:";
             // 
             // dgvStanjeSkladišta
             // 
             this.dgvStanjeSkladišta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStanjeSkladišta.Location = new System.Drawing.Point(55, 175);
+            this.dgvStanjeSkladišta.Location = new System.Drawing.Point(22, 103);
             this.dgvStanjeSkladišta.Name = "dgvStanjeSkladišta";
             this.dgvStanjeSkladišta.Size = new System.Drawing.Size(708, 254);
             this.dgvStanjeSkladišta.TabIndex = 1;
             // 
             // btnUnosArtikla
             // 
-            this.btnUnosArtikla.Location = new System.Drawing.Point(109, 53);
+            this.btnUnosArtikla.ForeColor = System.Drawing.Color.Black;
+            this.btnUnosArtikla.Location = new System.Drawing.Point(32, 52);
             this.btnUnosArtikla.Name = "btnUnosArtikla";
             this.btnUnosArtikla.Size = new System.Drawing.Size(75, 23);
             this.btnUnosArtikla.TabIndex = 2;
@@ -64,7 +59,8 @@
             // 
             // btnPrimka
             // 
-            this.btnPrimka.Location = new System.Drawing.Point(219, 53);
+            this.btnPrimka.ForeColor = System.Drawing.Color.Black;
+            this.btnPrimka.Location = new System.Drawing.Point(167, 52);
             this.btnPrimka.Name = "btnPrimka";
             this.btnPrimka.Size = new System.Drawing.Size(75, 23);
             this.btnPrimka.TabIndex = 3;
@@ -74,35 +70,58 @@
             // cbFilter
             // 
             this.cbFilter.FormattingEnabled = true;
-            this.cbFilter.Location = new System.Drawing.Point(642, 142);
+            this.cbFilter.Location = new System.Drawing.Point(609, 52);
             this.cbFilter.Name = "cbFilter";
             this.cbFilter.Size = new System.Drawing.Size(121, 21);
             this.cbFilter.TabIndex = 4;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Impresso_Expresso.Properties.Resources.logo_banner;
+            this.pictureBox1.Location = new System.Drawing.Point(364, 24);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(349, 74);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
+            // gbstanjeNaSkladistu
+            // 
+            this.gbstanjeNaSkladistu.Controls.Add(this.cbFilter);
+            this.gbstanjeNaSkladistu.Controls.Add(this.btnPrimka);
+            this.gbstanjeNaSkladistu.Controls.Add(this.btnUnosArtikla);
+            this.gbstanjeNaSkladistu.Controls.Add(this.dgvStanjeSkladišta);
+            this.gbstanjeNaSkladistu.ForeColor = System.Drawing.Color.White;
+            this.gbstanjeNaSkladistu.Location = new System.Drawing.Point(33, 151);
+            this.gbstanjeNaSkladistu.Name = "gbstanjeNaSkladistu";
+            this.gbstanjeNaSkladistu.Size = new System.Drawing.Size(758, 376);
+            this.gbstanjeNaSkladistu.TabIndex = 6;
+            this.gbstanjeNaSkladistu.TabStop = false;
+            this.gbstanjeNaSkladistu.Text = "Stanje na skladištu";
             // 
             // FrmSkladiste
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.cbFilter);
-            this.Controls.Add(this.btnPrimka);
-            this.Controls.Add(this.btnUnosArtikla);
-            this.Controls.Add(this.dgvStanjeSkladišta);
-            this.Controls.Add(this.lblStanje);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
+            this.ClientSize = new System.Drawing.Size(823, 550);
+            this.Controls.Add(this.gbstanjeNaSkladistu);
+            this.Controls.Add(this.pictureBox1);
             this.Name = "FrmSkladiste";
             this.Text = "FrmSkladiste";
             ((System.ComponentModel.ISupportInitialize)(this.dgvStanjeSkladišta)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.gbstanjeNaSkladistu.ResumeLayout(false);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblStanje;
         private System.Windows.Forms.DataGridView dgvStanjeSkladišta;
         private System.Windows.Forms.Button btnUnosArtikla;
         private System.Windows.Forms.Button btnPrimka;
         private System.Windows.Forms.ComboBox cbFilter;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.GroupBox gbstanjeNaSkladistu;
     }
 }
