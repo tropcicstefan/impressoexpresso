@@ -104,8 +104,26 @@
     <Compile Include="FrmUpravljanjeArtiklom.Designer.cs">
       <DependentUpon>FrmUpravljanjeArtiklom.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPrimka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrimka.Designer.cs">
+      <DependentUpon>FrmPrimka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSkladiste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSkladiste.Designer.cs">
+      <DependentUpon>FrmSkladiste.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmPrimka.resx">
+      <DependentUpon>FrmPrimka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSkladiste.resx">
+      <DependentUpon>FrmSkladiste.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmDodajNarudžbu.resx">
       <DependentUpon>FrmDodajNarudžbu.cs</DependentUpon>
     </EmbeddedResource>
