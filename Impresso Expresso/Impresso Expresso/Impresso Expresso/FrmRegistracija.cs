@@ -16,5 +16,10 @@ namespace Impresso_Expresso
         {
             InitializeComponent();
         }
+
+        private void btnSpremi_Click(object sender, EventArgs e)
+        {
+            this.Close(); //privremeno
+        }
     }
 }

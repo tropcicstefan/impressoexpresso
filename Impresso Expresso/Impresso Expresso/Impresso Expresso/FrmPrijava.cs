@@ -17,6 +17,14 @@ namespace Impresso_Expresso
             InitializeComponent();
         }
 
-       
+        private void FrmPrijava_Load(object sender, EventArgs e)
+        {
+            this.ControlBox = false; //makne minimize, enlarge i close gumbe
+        }
+
+        private void btnPrijava_Click(object sender, EventArgs e)
+        {
+            this.Close(); //samo za sad dok se ne postave uvijeti i rješi prijava
+        }
     }
 }

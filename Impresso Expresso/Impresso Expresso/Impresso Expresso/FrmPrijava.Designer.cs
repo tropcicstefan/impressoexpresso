@@ -94,6 +94,7 @@
             this.btnPrijava.TabIndex = 3;
             this.btnPrijava.Text = "Prijavi se";
             this.btnPrijava.UseVisualStyleBackColor = true;
+            this.btnPrijava.Click += new System.EventHandler(this.btnPrijava_Click);
             // 
             // FrmPrijava
             // 
@@ -104,6 +105,7 @@
             this.Controls.Add(this.gbPrijava);
             this.Name = "FrmPrijava";
             this.Text = "FrmPrijava";
+            this.Load += new System.EventHandler(this.FrmPrijava_Load);
             this.gbPrijava.ResumeLayout(false);
             this.gbPrijava.PerformLayout();
             this.ResumeLayout(false);

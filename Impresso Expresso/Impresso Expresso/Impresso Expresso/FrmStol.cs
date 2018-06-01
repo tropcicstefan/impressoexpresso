@@ -16,5 +16,11 @@ namespace Impresso_Expresso
         {
             InitializeComponent();
         }
+
+        private void btnMeni_Click(object sender, EventArgs e)
+        {
+            FrmDodajNarudžbu formaDodajNarudžbu = new FrmDodajNarudžbu();
+            formaDodajNarudžbu.ShowDialog();
+        }
     }
 }

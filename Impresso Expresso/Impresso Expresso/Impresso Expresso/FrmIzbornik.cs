@@ -16,5 +16,37 @@ namespace Impresso_Expresso
         {
             InitializeComponent();
         }
+
+        /// <summary>
+        /// Metoda koja hendla event kad se klikne na stol
+        /// Poziva se unutar Button_Click metode
+        /// </summary>
+        public void EventZaStol()
+        {
+            FrmStol formaStol = new FrmStol();
+            formaStol.ShowDialog();
+        }
+
+        private void FrmIzbornik_Load(object sender, EventArgs e)
+        {
+            FrmPrijava formaPrijava = new FrmPrijava();
+            formaPrijava.ShowDialog();
+        }
+
+        private void btnRegistracija_Click(object sender, EventArgs e)
+        {
+            FrmRegistracija formaRegistracija = new FrmRegistracija();
+            formaRegistracija.ShowDialog();
+        }
+
+        private void pbStol1_Click(object sender, EventArgs e)
+        {
+            EventZaStol();
+        }
+
+        private void pbStol2_Click(object sender, EventArgs e)
+        {
+            EventZaStol();
+        }
     }
 }
