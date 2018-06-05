@@ -44,21 +44,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-&lt&lt&lt&lt&lt&lt&lt HEAD
-=======
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmRacun.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmRacun.Designer.cs">
-      <DependentUpon>FrmRacun.cs</DependentUpon>
-    </Compile>
-&gt&gt&gt&gt&gt&gt&gt 27ae81c7716748e4989d9ada3a03a22466deb4fa
+
     <Compile Include="FrmDodajNarudžbu.cs">
       <SubType>Form</SubType>
     </Compile>
