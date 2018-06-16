@@ -4,9 +4,9 @@ using System.Windows.Forms;
 
 namespace Impresso_Expresso
 {
-    public partial class FrmPrimka : Form
+    public partial class FrmPopisPrimki : Form
     {
-        public FrmPrimka()
+        public FrmPopisPrimki()
         {
             InitializeComponent();
         }
@@ -58,6 +58,26 @@ namespace Impresso_Expresso
             {
                 PrikaziStavkePrimki(selektiranaPrimka);
             }
+        }
+
+        /// <summary>
+        /// otvara formu za upis nove primke
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnNovaPrimka_Click(object sender, System.EventArgs e)
+        {
+            FrmNovaPrimka novaPrimka = new FrmNovaPrimka();
+            novaPrimka.ShowDialog();
+            PrikaziPrimke();
+        }
+
+        private void btnDodajStavku_Click(object sender, System.EventArgs e)
+        {
+            FrmDodajStavku novaStavka = new FrmDodajStavku(primkeBindingSource.Current as Primke);
+            novaStavka.ShowDialog();
+            PrikaziPrimke();
+            PrikaziStavkePrimki(primkeBindingSource.Current as Primke);
         }
     }
 }

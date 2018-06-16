@@ -15,7 +15,7 @@ namespace Impresso_Expresso
         
         private void btnPrimka_Click(object sender, EventArgs e)
         {
-            FrmPrimka formaPrimka = new FrmPrimka();
+            FrmPopisPrimki formaPrimka = new FrmPopisPrimki();
             formaPrimka.ShowDialog();
         }
     }

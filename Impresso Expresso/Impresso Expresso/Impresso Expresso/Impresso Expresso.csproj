@@ -63,6 +63,18 @@
     <Compile Include="FrmDodajNarudžbu.Designer.cs">
       <DependentUpon>FrmDodajNarudžbu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmDodajStavku.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDodajStavku.Designer.cs">
+      <DependentUpon>FrmDodajStavku.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmNovaPrimka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmNovaPrimka.Designer.cs">
+      <DependentUpon>FrmNovaPrimka.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmIzbornik.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,11 +117,11 @@
     <Compile Include="FrmUpravljanjeArtiklom.Designer.cs">
       <DependentUpon>FrmUpravljanjeArtiklom.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmPrimka.cs">
+    <Compile Include="FrmPopisPrimki.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmPrimka.Designer.cs">
-      <DependentUpon>FrmPrimka.cs</DependentUpon>
+    <Compile Include="FrmPopisPrimki.Designer.cs">
+      <DependentUpon>FrmPopisPrimki.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmRacun.cs">
       <SubType>Form</SubType>
@@ -191,8 +203,14 @@
     <Compile Include="Uloge.cs">
       <DependentUpon>KaficModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmPrimka.resx">
-      <DependentUpon>FrmPrimka.cs</DependentUpon>
+    <EmbeddedResource Include="FrmDodajStavku.resx">
+      <DependentUpon>FrmDodajStavku.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmNovaPrimka.resx">
+      <DependentUpon>FrmNovaPrimka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPopisPrimki.resx">
+      <DependentUpon>FrmPopisPrimki.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSkladiste.resx">
       <DependentUpon>FrmSkladiste.cs</DependentUpon>
@@ -242,6 +260,8 @@
       <DependentUpon>KaficModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Dobavljaci.datasource" />
+    <None Include="Properties\DataSources\Korisnici.datasource" />
     <None Include="Properties\DataSources\Primke.datasource" />
     <None Include="Properties\DataSources\StavkePrimke.datasource" />
     <None Include="Properties\Settings.settings">
