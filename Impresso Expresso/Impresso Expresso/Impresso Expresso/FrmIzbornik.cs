@@ -48,5 +48,14 @@ namespace Impresso_Expresso
         {
             EventZaStol();
         }
+        /// <summary>
+        /// Metoda koja instancira i poziva novu formu frmSkladište
+        /// </summary>
+       
+        private void btnSkladiste_Click(object sender, EventArgs e)
+        {
+            FrmSkladiste formaSkladište = new FrmSkladiste();
+            formaSkladište.ShowDialog();
+        }
     }
 }

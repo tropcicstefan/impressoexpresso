@@ -31,8 +31,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=5.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,7 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-
+    <Compile Include="Artikli.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Dobavljaci.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="FrmDodajNarudžbu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,14 +111,86 @@
     <Compile Include="FrmPrimka.Designer.cs">
       <DependentUpon>FrmPrimka.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRacun.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRacun.Designer.cs">
+      <DependentUpon>FrmRacun.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSkladiste.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmSkladiste.Designer.cs">
       <DependentUpon>FrmSkladiste.cs</DependentUpon>
     </Compile>
+    <Compile Include="Izvjestaji.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KaficModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KaficModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KaficModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="KaficModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KaficModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Kase.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kategorije.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Korisnici.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Narudzbe.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Placanja.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Primke.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Racuni.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagramdefinition_Result.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_helpdiagrams_Result.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StavkeNarudzbe.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="StavkePrimke.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Stolovi.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tipovi.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Transakcije.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Uloge.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmPrimka.resx">
       <DependentUpon>FrmPrimka.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,6 +234,16 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EntityDeploy Include="KaficModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>KaficModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="KaficModel.edmx.diagram">
+      <DependentUpon>KaficModel.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\Primke.datasource" />
+    <None Include="Properties\DataSources\StavkePrimke.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -177,6 +271,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\green circle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="KaficModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>KaficModel.Context.cs</LastGenOutput>
+      <DependentUpon>KaficModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="KaficModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>KaficModel.edmx</DependentUpon>
+      <LastGenOutput>KaficModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

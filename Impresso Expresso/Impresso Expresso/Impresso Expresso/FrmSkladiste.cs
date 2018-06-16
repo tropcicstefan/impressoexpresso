@@ -9,6 +9,14 @@ namespace Impresso_Expresso
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// Metoda instancira i poziva formu FrmPrimka
+        /// </summary>
+        
+        private void btnPrimka_Click(object sender, EventArgs e)
+        {
+            FrmPrimka formaPrimka = new FrmPrimka();
+            formaPrimka.ShowDialog();
+        }
     }
 }

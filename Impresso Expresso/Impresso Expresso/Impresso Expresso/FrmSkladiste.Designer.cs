@@ -66,6 +66,7 @@
             this.btnPrimka.TabIndex = 3;
             this.btnPrimka.Text = "Primka";
             this.btnPrimka.UseVisualStyleBackColor = true;
+            this.btnPrimka.Click += new System.EventHandler(this.btnPrimka_Click);
             // 
             // cbFilter
             // 
