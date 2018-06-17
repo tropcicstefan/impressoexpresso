@@ -13,11 +13,18 @@ namespace Impresso_Expresso
     public partial class FrmNovaPrimka : Form
     {
         private bool nova = true;
-        private Primke primka = new Primke();
+        private Primke primka;
 
         public FrmNovaPrimka()
         {
             InitializeComponent();
+        }
+        public FrmNovaPrimka(Primke poslanaPrimka)
+        {
+            InitializeComponent();
+            primka = poslanaPrimka;
+            nova = false;
+            PrikaziStavkePrimki();
         }
         /// <summary>
         /// priprema podatke za formu
@@ -29,6 +36,8 @@ namespace Impresso_Expresso
             PrikaziDobavljace();
             PrikaziKorisnike();
             PrikaziArtikle();
+            PrikaziKolicinu();
+            PrikaziDatum();
         }
 
         #region Prikazi
@@ -45,6 +54,12 @@ namespace Impresso_Expresso
             cbDobavljac.DataSource = listaDobavljaca;
             cbDobavljac.DisplayMember = "Naziv";
             cbDobavljac.ValueMember = "ID";
+            cbDobavljac.SelectedIndex = -1;
+            if (!nova)
+            {
+                cbDobavljac.SelectedValue = primka.DobavljacID;
+                
+            }
         }
         /// <summary>
         /// dohvaća popis korisnika za combobox
@@ -59,6 +74,11 @@ namespace Impresso_Expresso
             cbKorisnik.DataSource = listaKorisnika;
             cbKorisnik.DisplayMember = "KorisnickoIme";
             cbKorisnik.ValueMember = "ID";
+            cbKorisnik.SelectedIndex = -1;
+            if (!nova)
+            {
+                cbKorisnik.SelectedValue = primka.KorisnikID;
+            }
         }
 
         /// <summary>
@@ -74,6 +94,16 @@ namespace Impresso_Expresso
             cbArtikl.DataSource = listaArtikla;
             cbArtikl.DisplayMember = "Naziv";
             cbArtikl.ValueMember = "ID";
+            cbArtikl.SelectedIndex = -1;
+            if (!nova)
+            {
+                StavkePrimke privremenaStavkaPrimke = stavkePrimkeBindingSource.Current as StavkePrimke;
+                if(privremenaStavkaPrimke != null)
+                {
+                    cbArtikl.SelectedValue = privremenaStavkaPrimke.ArtiklID;
+                }
+                
+            }
         }
         /// <summary>
         /// Dohvaća listu stavki primke proslijeđene primke i prikazuje u dgv
@@ -87,6 +117,24 @@ namespace Impresso_Expresso
                 listaStavkiPrimke = new BindingList<StavkePrimke>(primka.StavkePrimkes.ToList());
             }
             stavkePrimkeBindingSource.DataSource = listaStavkiPrimke;
+        }
+        private void PrikaziKolicinu()
+        {
+            if (!nova)
+            {
+                StavkePrimke privremenaStavkaPrimke = stavkePrimkeBindingSource.Current as StavkePrimke;
+                if (privremenaStavkaPrimke != null)
+                {
+                    txtKolicina.Text = privremenaStavkaPrimke.Kolicina.ToString();
+                }
+            }            
+        }
+        private void PrikaziDatum()
+        {
+            if (!nova)
+            {
+                dtpPrimke.Value = primka.DatumIVrijeme;
+            }            
         }
         #endregion
 

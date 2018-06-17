@@ -29,15 +29,16 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvPrimke = new System.Windows.Forms.DataGridView();
-            this.btnObrisiArtikl = new System.Windows.Forms.Button();
+            this.btnObrisiPrimku = new System.Windows.Forms.Button();
             this.gbPrimka = new System.Windows.Forms.GroupBox();
             this.btnNovaPrimka = new System.Windows.Forms.Button();
             this.pDgv = new System.Windows.Forms.Panel();
             this.dgvStavkePrimke = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnObrisiStavkuPrimke = new System.Windows.Forms.Button();
             this.primkaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artiklIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +53,7 @@
             this.korisniciDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkePrimkesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.primkeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.btnUrediPrimku = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrimke)).BeginInit();
             this.gbPrimka.SuspendLayout();
             this.pDgv.SuspendLayout();
@@ -74,14 +76,14 @@
             this.korisniciDataGridViewTextBoxColumn,
             this.stavkePrimkesDataGridViewTextBoxColumn});
             this.dgvPrimke.DataSource = this.primkeBindingSource;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPrimke.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPrimke.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgvPrimke.GridColor = System.Drawing.SystemColors.ControlDarkDark;
             this.dgvPrimke.Location = new System.Drawing.Point(3, 0);
             this.dgvPrimke.Name = "dgvPrimke";
@@ -89,25 +91,28 @@
             this.dgvPrimke.TabIndex = 2;
             this.dgvPrimke.SelectionChanged += new System.EventHandler(this.dgvPrimke_SelectionChanged);
             // 
-            // btnObrisiArtikl
+            // btnObrisiPrimku
             // 
-            this.btnObrisiArtikl.ForeColor = System.Drawing.Color.Black;
-            this.btnObrisiArtikl.Location = new System.Drawing.Point(244, 202);
-            this.btnObrisiArtikl.Name = "btnObrisiArtikl";
-            this.btnObrisiArtikl.Size = new System.Drawing.Size(74, 24);
-            this.btnObrisiArtikl.TabIndex = 7;
-            this.btnObrisiArtikl.Text = "Obrisi";
-            this.btnObrisiArtikl.UseVisualStyleBackColor = true;
+            this.btnObrisiPrimku.ForeColor = System.Drawing.Color.Black;
+            this.btnObrisiPrimku.Location = new System.Drawing.Point(30, 137);
+            this.btnObrisiPrimku.Name = "btnObrisiPrimku";
+            this.btnObrisiPrimku.Size = new System.Drawing.Size(74, 24);
+            this.btnObrisiPrimku.TabIndex = 7;
+            this.btnObrisiPrimku.Text = "Obriši";
+            this.btnObrisiPrimku.UseVisualStyleBackColor = true;
+            this.btnObrisiPrimku.Click += new System.EventHandler(this.btnObrisiPrimku_Click);
             // 
             // gbPrimka
             // 
+            this.gbPrimka.Controls.Add(this.btnUrediPrimku);
+            this.gbPrimka.Controls.Add(this.btnObrisiStavkuPrimke);
             this.gbPrimka.Controls.Add(this.btnNovaPrimka);
             this.gbPrimka.Controls.Add(this.pDgv);
-            this.gbPrimka.Controls.Add(this.btnObrisiArtikl);
+            this.gbPrimka.Controls.Add(this.btnObrisiPrimku);
             this.gbPrimka.ForeColor = System.Drawing.Color.White;
-            this.gbPrimka.Location = new System.Drawing.Point(12, 113);
+            this.gbPrimka.Location = new System.Drawing.Point(12, 127);
             this.gbPrimka.Name = "gbPrimka";
-            this.gbPrimka.Size = new System.Drawing.Size(942, 418);
+            this.gbPrimka.Size = new System.Drawing.Size(696, 418);
             this.gbPrimka.TabIndex = 13;
             this.gbPrimka.TabStop = false;
             this.gbPrimka.Text = "Primka";
@@ -115,11 +120,11 @@
             // btnNovaPrimka
             // 
             this.btnNovaPrimka.ForeColor = System.Drawing.Color.Black;
-            this.btnNovaPrimka.Location = new System.Drawing.Point(244, 86);
+            this.btnNovaPrimka.Location = new System.Drawing.Point(30, 58);
             this.btnNovaPrimka.Name = "btnNovaPrimka";
             this.btnNovaPrimka.Size = new System.Drawing.Size(97, 24);
             this.btnNovaPrimka.TabIndex = 14;
-            this.btnNovaPrimka.Text = "Nova Primka";
+            this.btnNovaPrimka.Text = "Nova primka";
             this.btnNovaPrimka.UseVisualStyleBackColor = true;
             this.btnNovaPrimka.Click += new System.EventHandler(this.btnNovaPrimka_Click);
             // 
@@ -128,7 +133,7 @@
             this.pDgv.Controls.Add(this.dgvStavkePrimke);
             this.pDgv.Controls.Add(this.dgvPrimke);
             this.pDgv.ForeColor = System.Drawing.Color.Black;
-            this.pDgv.Location = new System.Drawing.Point(443, 19);
+            this.pDgv.Location = new System.Drawing.Point(190, 19);
             this.pDgv.Name = "pDgv";
             this.pDgv.Size = new System.Drawing.Size(476, 379);
             this.pDgv.TabIndex = 13;
@@ -144,14 +149,14 @@
             this.artikliDataGridViewTextBoxColumn,
             this.primkeDataGridViewTextBoxColumn});
             this.dgvStavkePrimke.DataSource = this.stavkePrimkeBindingSource;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvStavkePrimke.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStavkePrimke.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvStavkePrimke.Location = new System.Drawing.Point(3, 226);
             this.dgvStavkePrimke.Name = "dgvStavkePrimke";
             this.dgvStavkePrimke.Size = new System.Drawing.Size(344, 150);
@@ -160,12 +165,24 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Impresso_Expresso.Properties.Resources.logo_banner;
-            this.pictureBox1.Location = new System.Drawing.Point(377, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(164, 26);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(376, 95);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
+            // 
+            // btnObrisiStavkuPrimke
+            // 
+            this.btnObrisiStavkuPrimke.ForeColor = System.Drawing.Color.Black;
+            this.btnObrisiStavkuPrimke.ImageAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.btnObrisiStavkuPrimke.Location = new System.Drawing.Point(30, 258);
+            this.btnObrisiStavkuPrimke.Name = "btnObrisiStavkuPrimke";
+            this.btnObrisiStavkuPrimke.Size = new System.Drawing.Size(96, 24);
+            this.btnObrisiStavkuPrimke.TabIndex = 15;
+            this.btnObrisiStavkuPrimke.Text = "Obriši stavku";
+            this.btnObrisiStavkuPrimke.UseVisualStyleBackColor = true;
+            this.btnObrisiStavkuPrimke.Click += new System.EventHandler(this.btnObrisiStavkuPrimke_Click);
             // 
             // primkaIDDataGridViewTextBoxColumn
             // 
@@ -252,12 +269,23 @@
             // 
             this.primkeBindingSource.DataSource = typeof(Impresso_Expresso.Primke);
             // 
+            // btnUrediPrimku
+            // 
+            this.btnUrediPrimku.ForeColor = System.Drawing.Color.Black;
+            this.btnUrediPrimku.Location = new System.Drawing.Point(30, 98);
+            this.btnUrediPrimku.Name = "btnUrediPrimku";
+            this.btnUrediPrimku.Size = new System.Drawing.Size(75, 23);
+            this.btnUrediPrimku.TabIndex = 16;
+            this.btnUrediPrimku.Text = "Uredi primku";
+            this.btnUrediPrimku.UseVisualStyleBackColor = true;
+            this.btnUrediPrimku.Click += new System.EventHandler(this.btnUrediPrimku_Click);
+            // 
             // FrmPopisPrimki
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(992, 557);
+            this.ClientSize = new System.Drawing.Size(724, 557);
             this.Controls.Add(this.gbPrimka);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmPopisPrimki";
@@ -276,7 +304,7 @@
 
         #endregion
         private System.Windows.Forms.DataGridView dgvPrimke;
-        private System.Windows.Forms.Button btnObrisiArtikl;
+        private System.Windows.Forms.Button btnObrisiPrimku;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox gbPrimka;
         private System.Windows.Forms.BindingSource primkeBindingSource;
@@ -296,5 +324,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn primkeDataGridViewTextBoxColumn;
         private System.Windows.Forms.Panel pDgv;
         private System.Windows.Forms.Button btnNovaPrimka;
+        private System.Windows.Forms.Button btnObrisiStavkuPrimke;
+        private System.Windows.Forms.Button btnUrediPrimku;
     }
 }

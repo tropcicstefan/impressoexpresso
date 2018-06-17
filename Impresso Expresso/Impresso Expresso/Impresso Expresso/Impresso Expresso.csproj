@@ -251,6 +251,7 @@
       <DependentUpon>KaficModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Artikli.datasource" />
     <None Include="Properties\DataSources\Dobavljaci.datasource" />
     <None Include="Properties\DataSources\Korisnici.datasource" />
     <None Include="Properties\DataSources\Primke.datasource" />
