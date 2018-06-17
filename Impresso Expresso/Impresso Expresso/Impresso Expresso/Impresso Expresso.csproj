@@ -63,12 +63,6 @@
     <Compile Include="FrmDodajNarudžbu.Designer.cs">
       <DependentUpon>FrmDodajNarudžbu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmDodajStavku.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmDodajStavku.Designer.cs">
-      <DependentUpon>FrmDodajStavku.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmNovaPrimka.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,9 +197,6 @@
     <Compile Include="Uloge.cs">
       <DependentUpon>KaficModel.tt</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FrmDodajStavku.resx">
-      <DependentUpon>FrmDodajStavku.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmNovaPrimka.resx">
       <DependentUpon>FrmNovaPrimka.cs</DependentUpon>
     </EmbeddedResource>

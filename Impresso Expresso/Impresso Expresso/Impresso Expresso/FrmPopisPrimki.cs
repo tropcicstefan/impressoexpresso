@@ -72,12 +72,6 @@ namespace Impresso_Expresso
             PrikaziPrimke();
         }
 
-        private void btnDodajStavku_Click(object sender, System.EventArgs e)
-        {
-            FrmDodajStavku novaStavka = new FrmDodajStavku(primkeBindingSource.Current as Primke);
-            novaStavka.ShowDialog();
-            PrikaziPrimke();
-            PrikaziStavkePrimki(primkeBindingSource.Current as Primke);
-        }
+        
     }
 }
