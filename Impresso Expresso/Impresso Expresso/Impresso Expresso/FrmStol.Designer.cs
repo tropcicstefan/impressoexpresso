@@ -43,50 +43,45 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(59, 171);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(44, 139);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(699, 466);
+            this.dataGridView1.Size = new System.Drawing.Size(524, 379);
             this.dataGridView1.TabIndex = 1;
             // 
             // btnRacun
             // 
-            this.btnRacun.Location = new System.Drawing.Point(792, 171);
-            this.btnRacun.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRacun.Location = new System.Drawing.Point(594, 139);
             this.btnRacun.Name = "btnRacun";
-            this.btnRacun.Size = new System.Drawing.Size(143, 43);
+            this.btnRacun.Size = new System.Drawing.Size(107, 35);
             this.btnRacun.TabIndex = 2;
             this.btnRacun.Text = "Ispisi racun";
             this.btnRacun.UseVisualStyleBackColor = true;
+            this.btnRacun.Click += new System.EventHandler(this.btnRacun_Click);
             // 
             // gbIzbor
             // 
             this.gbIzbor.Controls.Add(this.pbUkloni);
             this.gbIzbor.Controls.Add(this.btnMeni);
-            this.gbIzbor.Location = new System.Drawing.Point(765, 439);
-            this.gbIzbor.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbIzbor.Location = new System.Drawing.Point(574, 357);
             this.gbIzbor.Name = "gbIzbor";
-            this.gbIzbor.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.gbIzbor.Size = new System.Drawing.Size(197, 198);
+            this.gbIzbor.Size = new System.Drawing.Size(148, 161);
             this.gbIzbor.TabIndex = 3;
             this.gbIzbor.TabStop = false;
             // 
             // pbUkloni
             // 
-            this.pbUkloni.Location = new System.Drawing.Point(43, 81);
-            this.pbUkloni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbUkloni.Location = new System.Drawing.Point(32, 66);
             this.pbUkloni.Name = "pbUkloni";
-            this.pbUkloni.Size = new System.Drawing.Size(109, 96);
+            this.pbUkloni.Size = new System.Drawing.Size(82, 78);
             this.pbUkloni.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbUkloni.TabIndex = 1;
             this.pbUkloni.TabStop = false;
             // 
             // btnMeni
             // 
-            this.btnMeni.Location = new System.Drawing.Point(27, 23);
-            this.btnMeni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMeni.Location = new System.Drawing.Point(20, 19);
             this.btnMeni.Name = "btnMeni";
-            this.btnMeni.Size = new System.Drawing.Size(143, 46);
+            this.btnMeni.Size = new System.Drawing.Size(107, 37);
             this.btnMeni.TabIndex = 0;
             this.btnMeni.Text = "Meni";
             this.btnMeni.UseVisualStyleBackColor = true;
@@ -95,25 +90,23 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Impresso_Expresso.Properties.Resources.logo_banner;
-            this.pictureBox1.Location = new System.Drawing.Point(207, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(155, 0);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(640, 123);
+            this.pictureBox1.Size = new System.Drawing.Size(480, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // FrmStol
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(1045, 690);
+            this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.gbIzbor);
             this.Controls.Add(this.btnRacun);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.pictureBox1);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmStol";
             this.Text = "FrmStol";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

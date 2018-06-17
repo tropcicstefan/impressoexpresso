@@ -22,5 +22,11 @@ namespace Impresso_Expresso
             FrmDodajNarudžbu formaDodajNarudžbu = new FrmDodajNarudžbu();
             formaDodajNarudžbu.ShowDialog();
         }
+
+        private void btnRacun_Click(object sender, EventArgs e)
+        {
+            FrmRacun Racun = new FrmRacun();
+            Racun.ShowDialog();
+        }
     }
 }
