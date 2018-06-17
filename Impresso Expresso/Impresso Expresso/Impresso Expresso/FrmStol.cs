@@ -25,7 +25,19 @@ namespace Impresso_Expresso
 
         private void btnRacun_Click(object sender, EventArgs e)
         {
-            FrmRacun Racun = new FrmRacun();
+            Narudzbe novaNarudzba = null;
+            using (var db = new Entities())
+            {
+                novaNarudzba = new Narudzbe
+                {
+                    StolID = 3,
+                    KorisnikID = 6,
+                    Datum = DateTime.Today
+                };
+                db.Narudzbes.Add(novaNarudzba);
+                db.SaveChanges();
+            }
+            FrmRacun Racun = new FrmRacun(novaNarudzba);
             Racun.ShowDialog();
         }
     }

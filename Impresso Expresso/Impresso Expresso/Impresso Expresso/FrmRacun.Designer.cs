@@ -28,15 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btnIspis = new System.Windows.Forms.Button();
             this.lblIznos = new System.Windows.Forms.Label();
             this.lblNacinPlacanja = new System.Windows.Forms.Label();
             this.cbNacinPlacanja = new System.Windows.Forms.ComboBox();
+            this.placanjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtUkupniIznos = new System.Windows.Forms.TextBox();
             this.lblPrimljeniIznos = new System.Windows.Forms.Label();
             this.txtPrimljeniIznos = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbRacun = new System.Windows.Forms.GroupBox();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            ((System.ComponentModel.ISupportInitialize)(this.placanjaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbRacun.SuspendLayout();
             this.SuspendLayout();
@@ -76,6 +80,10 @@
             this.cbNacinPlacanja.Name = "cbNacinPlacanja";
             this.cbNacinPlacanja.Size = new System.Drawing.Size(121, 21);
             this.cbNacinPlacanja.TabIndex = 3;
+            // 
+            // placanjaBindingSource
+            // 
+            this.placanjaBindingSource.DataSource = typeof(Impresso_Expresso.Placanja);
             // 
             // txtUkupniIznos
             // 
@@ -127,16 +135,27 @@
             this.gbRacun.TabStop = false;
             this.gbRacun.Text = "Račun";
             // 
+            // reportViewer1
+            // 
+            this.reportViewer1.Location = new System.Drawing.Point(589, 171);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(396, 246);
+            this.reportViewer1.TabIndex = 9;
+            // 
             // FrmRacun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(639, 432);
+            this.ClientSize = new System.Drawing.Size(997, 560);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.gbRacun);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmRacun";
             this.Text = "FrmRacun";
+            this.Load += new System.EventHandler(this.FrmRacun_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.placanjaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbRacun.ResumeLayout(false);
             this.gbRacun.PerformLayout();
@@ -155,5 +174,7 @@
         private System.Windows.Forms.TextBox txtPrimljeniIznos;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox gbRacun;
+        private System.Windows.Forms.BindingSource placanjaBindingSource;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
     }
 }
