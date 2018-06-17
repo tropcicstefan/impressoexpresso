@@ -30,13 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gbNovaPrimka = new System.Windows.Forms.GroupBox();
+            this.lblDatum = new System.Windows.Forms.Label();
             this.dtpPrimke = new System.Windows.Forms.DateTimePicker();
             this.lblKorisnik = new System.Windows.Forms.Label();
             this.lblDobavljač = new System.Windows.Forms.Label();
             this.cbKorisnik = new System.Windows.Forms.ComboBox();
             this.cbDobavljac = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnDodajStavku = new System.Windows.Forms.Button();
+            this.btnPohrani = new System.Windows.Forms.Button();
             this.txtKolicina = new System.Windows.Forms.TextBox();
             this.lblKolicina = new System.Windows.Forms.Label();
             this.lblArtikl = new System.Windows.Forms.Label();
@@ -52,7 +53,6 @@
             this.korisniciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dobavljaciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pDgv = new System.Windows.Forms.Panel();
-            this.lblDatum = new System.Windows.Forms.Label();
             this.gbNovaPrimka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkePrimki)).BeginInit();
@@ -78,6 +78,15 @@
             this.gbNovaPrimka.TabIndex = 1;
             this.gbNovaPrimka.TabStop = false;
             this.gbNovaPrimka.Text = "Nova primka";
+            // 
+            // lblDatum
+            // 
+            this.lblDatum.AutoSize = true;
+            this.lblDatum.Location = new System.Drawing.Point(465, 24);
+            this.lblDatum.Name = "lblDatum";
+            this.lblDatum.Size = new System.Drawing.Size(38, 13);
+            this.lblDatum.TabIndex = 5;
+            this.lblDatum.Text = "Datum";
             // 
             // dtpPrimke
             // 
@@ -130,16 +139,16 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // btnDodajStavku
+            // btnPohrani
             // 
-            this.btnDodajStavku.ForeColor = System.Drawing.Color.Black;
-            this.btnDodajStavku.Location = new System.Drawing.Point(139, 121);
-            this.btnDodajStavku.Name = "btnDodajStavku";
-            this.btnDodajStavku.Size = new System.Drawing.Size(120, 23);
-            this.btnDodajStavku.TabIndex = 4;
-            this.btnDodajStavku.Text = "Dodaj stavku";
-            this.btnDodajStavku.UseVisualStyleBackColor = true;
-            this.btnDodajStavku.Click += new System.EventHandler(this.btnDodajStavku_Click);
+            this.btnPohrani.ForeColor = System.Drawing.Color.Black;
+            this.btnPohrani.Location = new System.Drawing.Point(139, 121);
+            this.btnPohrani.Name = "btnPohrani";
+            this.btnPohrani.Size = new System.Drawing.Size(120, 23);
+            this.btnPohrani.TabIndex = 4;
+            this.btnPohrani.Text = "Pohrani";
+            this.btnPohrani.UseVisualStyleBackColor = true;
+            this.btnPohrani.Click += new System.EventHandler(this.btnPohrani_Click);
             // 
             // txtKolicina
             // 
@@ -234,7 +243,7 @@
             this.gbStavke.Controls.Add(this.lblKolicina);
             this.gbStavke.Controls.Add(this.cbArtikl);
             this.gbStavke.Controls.Add(this.lblArtikl);
-            this.gbStavke.Controls.Add(this.btnDodajStavku);
+            this.gbStavke.Controls.Add(this.btnPohrani);
             this.gbStavke.Controls.Add(this.txtKolicina);
             this.gbStavke.ForeColor = System.Drawing.Color.White;
             this.gbStavke.Location = new System.Drawing.Point(43, 288);
@@ -260,15 +269,6 @@
             this.pDgv.Name = "pDgv";
             this.pDgv.Size = new System.Drawing.Size(345, 158);
             this.pDgv.TabIndex = 11;
-            // 
-            // lblDatum
-            // 
-            this.lblDatum.AutoSize = true;
-            this.lblDatum.Location = new System.Drawing.Point(465, 24);
-            this.lblDatum.Name = "lblDatum";
-            this.lblDatum.Size = new System.Drawing.Size(38, 13);
-            this.lblDatum.TabIndex = 5;
-            this.lblDatum.Text = "Datum";
             // 
             // FrmNovaPrimka
             // 
@@ -309,7 +309,7 @@
         private System.Windows.Forms.BindingSource korisniciBindingSource;
         private System.Windows.Forms.ComboBox cbDobavljac;
         private System.Windows.Forms.BindingSource dobavljaciBindingSource;
-        private System.Windows.Forms.Button btnDodajStavku;
+        private System.Windows.Forms.Button btnPohrani;
         private System.Windows.Forms.TextBox txtKolicina;
         private System.Windows.Forms.Label lblKolicina;
         private System.Windows.Forms.Label lblArtikl;

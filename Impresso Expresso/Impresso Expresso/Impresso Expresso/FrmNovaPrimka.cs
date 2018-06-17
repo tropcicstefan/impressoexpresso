@@ -118,6 +118,9 @@ namespace Impresso_Expresso
             }
             stavkePrimkeBindingSource.DataSource = listaStavkiPrimke;
         }
+        /// <summary>
+        /// hendla prikazivanje kolicine ovisno jel promjena ili novo
+        /// </summary>
         private void PrikaziKolicinu()
         {
             if (!nova)
@@ -129,6 +132,9 @@ namespace Impresso_Expresso
                 }
             }            
         }
+        /// <summary>
+        /// hendla prikazivanje datuma ovisno jel promjena ili novo
+        /// </summary>
         private void PrikaziDatum()
         {
             if (!nova)
@@ -159,25 +165,73 @@ namespace Impresso_Expresso
             }
         }
         /// <summary>
-        /// ef za spremanje stavkeprimke, primke na kojoj se radi
+        /// hendla mijenjanje osnovnih podataka primke
+        /// </summary>
+        private void PohraniPromjenuPrimke()
+        {
+            using (var db = new Entities())
+            {
+                db.Primkes.Attach(primka);
+                primka.DobavljacID = int.Parse(cbDobavljac.SelectedValue.ToString());
+                primka.KorisnikID = int.Parse(cbKorisnik.SelectedValue.ToString());
+                primka.DatumIVrijeme = dtpPrimke.Value;              
+                
+                db.SaveChanges();
+            }
+        }
+        /// <summary>
+        /// hendla pohranjivanje ili updateanje stavke primke
         /// </summary>
         private void PohraniStavkuPrimke()
         {
             using (var db = new Entities())
             {
-                db.Primkes.Attach(primka);
-                StavkePrimke stavka = new StavkePrimke
+                StavkePrimke privremenaStavkaPrimke = stavkePrimkeBindingSource.Current as StavkePrimke;
+                if (privremenaStavkaPrimke != null)
                 {
-                    ArtiklID = int.Parse(cbArtikl.SelectedValue.ToString()),
-                    Kolicina = int.Parse(txtKolicina.Text),
-                    Primke = primka
+                    if(privremenaStavkaPrimke.ArtiklID == int.Parse(cbArtikl.SelectedValue.ToString()))
+                    {
+                        db.Primkes.Attach(primka);
+                        privremenaStavkaPrimke.Kolicina = int.Parse(txtKolicina.Text);
+                        db.SaveChanges();
+                    }
+                    else
+                    {
+                        db.Primkes.Attach(primka);
+                        StavkePrimke stavka = new StavkePrimke
+                        {
+                            ArtiklID = int.Parse(cbArtikl.SelectedValue.ToString()),
+                            Kolicina = int.Parse(txtKolicina.Text),
+                            Primke = primka
 
-                };
-                db.StavkePrimkes.Add(stavka);
-                db.SaveChanges();
+                        };
+                        db.StavkePrimkes.Add(stavka);
+                        db.SaveChanges();
+                    }
+                    
+                }
+                else
+                {
+                    db.Primkes.Attach(primka);
+                    StavkePrimke stavka = new StavkePrimke
+                    {
+                        ArtiklID = int.Parse(cbArtikl.SelectedValue.ToString()),
+                        Kolicina = int.Parse(txtKolicina.Text),
+                        Primke = primka
+
+                    };
+                    db.StavkePrimkes.Add(stavka);
+                    db.SaveChanges();
+                }
+                
             }
         }
+        
         #endregion
+
+        /// <summary>
+        /// sprjecava promjene na osnovnim podacima forme
+        /// </summary>
         private void BlokirajPromjene()
         {
             cbDobavljac.Enabled = false;
@@ -185,12 +239,16 @@ namespace Impresso_Expresso
             dtpPrimke.Enabled = false;
         }
 
-        private void btnDodajStavku_Click(object sender, EventArgs e)
+        private void btnPohrani_Click(object sender, EventArgs e)
         {
             if (nova)
             {
                 PohraniPrimku();
                 nova = false;
+            }
+            else
+            {
+                PohraniPromjenuPrimke();
             }
             PohraniStavkuPrimke();
             PrikaziStavkePrimki();

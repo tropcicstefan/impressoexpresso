@@ -23,6 +23,7 @@ namespace Impresso_Expresso
         {
             FrmPopisPrimki formaPrimka = new FrmPopisPrimki();
             formaPrimka.ShowDialog();
+            PrikaziArtikle();
         }
 
         /// <summary>
