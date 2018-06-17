@@ -201,6 +201,7 @@
             this.dgvStavkePrimki.Name = "dgvStavkePrimki";
             this.dgvStavkePrimki.Size = new System.Drawing.Size(345, 158);
             this.dgvStavkePrimki.TabIndex = 9;
+            this.dgvStavkePrimki.SelectionChanged += new System.EventHandler(this.dgvStavkePrimki_SelectionChanged);
             // 
             // primkaIDDataGridViewTextBoxColumn
             // 

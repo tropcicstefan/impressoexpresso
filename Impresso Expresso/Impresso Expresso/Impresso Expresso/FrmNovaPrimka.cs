@@ -255,6 +255,10 @@ namespace Impresso_Expresso
             BlokirajPromjene();
         }
 
-        
+        private void dgvStavkePrimki_SelectionChanged(object sender, EventArgs e)
+        {
+            PrikaziArtikle();
+            PrikaziKolicinu();
+        }
     }
 }
