@@ -54,7 +54,6 @@ namespace Impresso_Expresso
             cbDobavljac.DataSource = listaDobavljaca;
             cbDobavljac.DisplayMember = "Naziv";
             cbDobavljac.ValueMember = "ID";
-            cbDobavljac.SelectedIndex = -1;
             if (!nova)
             {
                 cbDobavljac.SelectedValue = primka.DobavljacID;
@@ -74,7 +73,6 @@ namespace Impresso_Expresso
             cbKorisnik.DataSource = listaKorisnika;
             cbKorisnik.DisplayMember = "KorisnickoIme";
             cbKorisnik.ValueMember = "ID";
-            cbKorisnik.SelectedIndex = -1;
             if (!nova)
             {
                 cbKorisnik.SelectedValue = primka.KorisnikID;
@@ -94,7 +92,6 @@ namespace Impresso_Expresso
             cbArtikl.DataSource = listaArtikla;
             cbArtikl.DisplayMember = "Naziv";
             cbArtikl.ValueMember = "ID";
-            cbArtikl.SelectedIndex = -1;
             if (!nova)
             {
                 StavkePrimke privremenaStavkaPrimke = stavkePrimkeBindingSource.Current as StavkePrimke;
@@ -130,6 +127,10 @@ namespace Impresso_Expresso
                 {
                     txtKolicina.Text = privremenaStavkaPrimke.Kolicina.ToString();
                 }
+            }
+            else
+            {
+                txtKolicina.Text = "0";
             }            
         }
         /// <summary>
