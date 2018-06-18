@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,6 +33,7 @@ namespace Impresso_Expresso
         /// <param name="e"></param>
         private void FrmRacun_Load(object sender, EventArgs e)
         {
+            
             using (var db = new Entities())
             {
                 dgvStavkeRacuna.DataSource = db.spStavkeRacuna(noviRacun.ID);
@@ -39,7 +41,8 @@ namespace Impresso_Expresso
             PrikaziIznos();
             PrikaziNacinePlacanja();
         }
-       
+        
+
         #region Pohrani
         /// <summary>
         /// sprema narudzbu u bazu s id specificnog racuna
@@ -92,6 +95,33 @@ namespace Impresso_Expresso
 
 
         #region Prikazi
+        private void PrikaziReport()
+        {
+            int nacinPlacanja = cbNacinPlacanja.SelectedIndex;
+            string ime = "";
+            using (var db = new Entities())
+            {
+                spStavkeRacuna_ResultBindingSource.DataSource = db.spStavkeRacuna(noviRacun.ID);
+                var artikl = db.Placanjas.Single(x => x.ID == nacinPlacanja+1);
+                ime = artikl.Naziv.ToString();
+            }
+            
+            ReportParameter[] listaParametara = new ReportParameter[]
+            {
+                new ReportParameter("kasa",noviRacun.KasaID.ToString()),
+                new ReportParameter("korisnik", noviRacun.KorisnikID.ToString()),
+                new ReportParameter("brojRacuna", noviRacun.ID.ToString()),
+                new ReportParameter("datum", noviRacun.Datum.ToString()),
+                new ReportParameter("nacinPlacanja", ime)
+
+            };
+
+            this.reportViewer1.LocalReport.SetParameters(listaParametara);
+            this.reportViewer1.RefreshReport();
+        }
+
+
+
         /// <summary>
         /// hendla izracun sume racuna i pdva
         /// </summary>
@@ -101,33 +131,32 @@ namespace Impresso_Expresso
             
             foreach (DataGridViewRow row in dgvStavkeRacuna.Rows)
             {
-                iznos += (Double)row.Cells["ukupno"].Value;
+                iznos += (Double)row.Cells["Ukupno"].Value;
             }
             pdv = iznos - (iznos / 1.25);
 
-            txtPDV.Text = pdv.ToString("#.##");
-            txtUkupniIznos.Text = iznos.ToString("#.##");
+            txtPDV.Text = pdv.ToString("0.00");
+            txtUkupniIznos.Text = iznos.ToString("0.00");
         }
         /// <summary>
         /// dohvaća popis Nacina plaćanja za combobox
         /// </summary>
         private void PrikaziNacinePlacanja()
         {
-            BindingList<Placanja> listaNacinaPlacanja = null;
+            
             using (var db = new Entities())
             {
-                listaNacinaPlacanja = new BindingList<Placanja>(db.Placanjas.ToList());
+                placanjaBindingSource.DataSource = db.Placanjas.ToList();
             }
-            cbNacinPlacanja.DataSource = listaNacinaPlacanja;
-            cbNacinPlacanja.DisplayMember = "Naziv";
-            cbNacinPlacanja.ValueMember = "ID";
+           
+            
         }
         #endregion
 
         private void btnIspis_Click(object sender, EventArgs e)
         {
             PromijeniRacun();
-            Close();
+            PrikaziReport();
         }
     }
 }

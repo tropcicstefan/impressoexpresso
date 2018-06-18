@@ -29,24 +29,34 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.spStavkeRacuna_ResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnIspis = new System.Windows.Forms.Button();
             this.lblIznos = new System.Windows.Forms.Label();
             this.lblNacinPlacanja = new System.Windows.Forms.Label();
             this.cbNacinPlacanja = new System.Windows.Forms.ComboBox();
+            this.placanjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtUkupniIznos = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbRacun = new System.Windows.Forms.GroupBox();
+            this.txtPDV = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvStavkeRacuna = new System.Windows.Forms.DataGridView();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtPDV = new System.Windows.Forms.TextBox();
-            this.placanjaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.spStavkeRacunaResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.spStavkeRacuna_ResultBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.placanjaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbRacun.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeRacuna)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.placanjaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spStavkeRacunaResultBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // spStavkeRacuna_ResultBindingSource
+            // 
+            this.spStavkeRacuna_ResultBindingSource.DataSource = typeof(Impresso_Expresso.spStavkeRacuna_Result);
             // 
             // btnIspis
             // 
@@ -79,11 +89,18 @@
             // 
             // cbNacinPlacanja
             // 
+            this.cbNacinPlacanja.DataSource = this.placanjaBindingSource;
+            this.cbNacinPlacanja.DisplayMember = "Naziv";
             this.cbNacinPlacanja.FormattingEnabled = true;
             this.cbNacinPlacanja.Location = new System.Drawing.Point(153, 245);
             this.cbNacinPlacanja.Name = "cbNacinPlacanja";
             this.cbNacinPlacanja.Size = new System.Drawing.Size(121, 21);
             this.cbNacinPlacanja.TabIndex = 3;
+            this.cbNacinPlacanja.ValueMember = "ID";
+            // 
+            // placanjaBindingSource
+            // 
+            this.placanjaBindingSource.DataSource = typeof(Impresso_Expresso.Placanja);
             // 
             // txtUkupniIznos
             // 
@@ -122,6 +139,23 @@
             this.gbRacun.TabStop = false;
             this.gbRacun.Text = "Račun";
             // 
+            // txtPDV
+            // 
+            this.txtPDV.Location = new System.Drawing.Point(389, 205);
+            this.txtPDV.Name = "txtPDV";
+            this.txtPDV.ReadOnly = true;
+            this.txtPDV.Size = new System.Drawing.Size(100, 20);
+            this.txtPDV.TabIndex = 12;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(330, 205);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(52, 13);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "PDV 25%";
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.dgvStavkeRacuna);
@@ -139,44 +173,42 @@
             this.dgvStavkeRacuna.Size = new System.Drawing.Size(439, 150);
             this.dgvStavkeRacuna.TabIndex = 9;
             // 
-            // label1
+            // reportViewer1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(330, 205);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "PDV 25%";
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.spStavkeRacuna_ResultBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Impresso_Expresso.Report1.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(28, 480);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(686, 310);
+            this.reportViewer1.TabIndex = 9;
             // 
-            // txtPDV
+            // spStavkeRacunaResultBindingSource
             // 
-            this.txtPDV.Location = new System.Drawing.Point(389, 205);
-            this.txtPDV.Name = "txtPDV";
-            this.txtPDV.ReadOnly = true;
-            this.txtPDV.Size = new System.Drawing.Size(100, 20);
-            this.txtPDV.TabIndex = 12;
-            // 
-            // placanjaBindingSource
-            // 
-            this.placanjaBindingSource.DataSource = typeof(Impresso_Expresso.Placanja);
+            this.spStavkeRacunaResultBindingSource.DataSource = typeof(Impresso_Expresso.spStavkeRacuna_Result);
             // 
             // FrmRacun
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(593, 489);
+            this.ClientSize = new System.Drawing.Size(743, 817);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.gbRacun);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmRacun";
             this.Text = "FrmRacun";
             this.Load += new System.EventHandler(this.FrmRacun_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.spStavkeRacuna_ResultBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.placanjaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbRacun.ResumeLayout(false);
             this.gbRacun.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkeRacuna)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.placanjaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.spStavkeRacunaResultBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -195,5 +227,8 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtPDV;
         private System.Windows.Forms.Label label1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource spStavkeRacuna_ResultBindingSource;
+        private System.Windows.Forms.BindingSource spStavkeRacunaResultBindingSource;
     }
 }

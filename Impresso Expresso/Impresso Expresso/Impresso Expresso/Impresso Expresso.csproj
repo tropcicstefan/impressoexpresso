@@ -267,6 +267,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Report1.rdlc" />
     <EntityDeploy Include="KaficModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>KaficModel.Designer.cs</LastGenOutput>
@@ -280,6 +281,7 @@
     <None Include="Properties\DataSources\Korisnici.datasource" />
     <None Include="Properties\DataSources\Placanja.datasource" />
     <None Include="Properties\DataSources\Primke.datasource" />
+    <None Include="Properties\DataSources\spStavkeRacuna_Result.datasource" />
     <None Include="Properties\DataSources\StavkePrimke.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
