@@ -148,5 +148,14 @@ namespace Impresso_Expresso
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("sp_upgraddiagrams");
         }
+    
+        public virtual ObjectResult<spStavkeRacuna_Result> spStavkeRacuna(Nullable<int> racunID)
+        {
+            var racunIDParameter = racunID.HasValue ?
+                new ObjectParameter("racunID", racunID) :
+                new ObjectParameter("racunID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spStavkeRacuna_Result>("spStavkeRacuna", racunIDParameter);
+        }
     }
 }
