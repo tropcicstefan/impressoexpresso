@@ -251,7 +251,16 @@ namespace Impresso_Expresso
             {
                 PohraniPromjenuPrimke();
             }
-            PohraniStavkuPrimke();
+
+            try
+            {
+                PohraniStavkuPrimke();
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Polje količina prima samo cijele brojeve");
+            }
+            
             PrikaziStavkePrimki();
             BlokirajPromjene();
         }
