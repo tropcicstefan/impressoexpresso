@@ -99,7 +99,7 @@
             this.btnSpremi.Location = new System.Drawing.Point(179, 365);
             this.btnSpremi.Name = "btnSpremi";
             this.btnSpremi.Size = new System.Drawing.Size(191, 31);
-            this.btnSpremi.TabIndex = 3;
+            this.btnSpremi.TabIndex = 9;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = true;
             this.btnSpremi.Click += new System.EventHandler(this.btnSpremi_Click);
@@ -112,7 +112,7 @@
             this.cbUloga.Location = new System.Drawing.Point(179, 322);
             this.cbUloga.Name = "cbUloga";
             this.cbUloga.Size = new System.Drawing.Size(191, 24);
-            this.cbUloga.TabIndex = 2;
+            this.cbUloga.TabIndex = 8;
             this.cbUloga.ValueMember = "ID";
             // 
             // ulogeBindingSource
@@ -124,42 +124,42 @@
             this.txtTelefon.Location = new System.Drawing.Point(179, 282);
             this.txtTelefon.Name = "txtTelefon";
             this.txtTelefon.Size = new System.Drawing.Size(191, 22);
-            this.txtTelefon.TabIndex = 1;
+            this.txtTelefon.TabIndex = 7;
             // 
             // txtAdresa
             // 
             this.txtAdresa.Location = new System.Drawing.Point(179, 194);
             this.txtAdresa.Name = "txtAdresa";
             this.txtAdresa.Size = new System.Drawing.Size(191, 22);
-            this.txtAdresa.TabIndex = 1;
+            this.txtAdresa.TabIndex = 5;
             // 
             // txtPosta
             // 
             this.txtPosta.Location = new System.Drawing.Point(179, 240);
             this.txtPosta.Name = "txtPosta";
             this.txtPosta.Size = new System.Drawing.Size(191, 22);
-            this.txtPosta.TabIndex = 1;
+            this.txtPosta.TabIndex = 6;
             // 
             // txtKorime
             // 
             this.txtKorime.Location = new System.Drawing.Point(179, 112);
             this.txtKorime.Name = "txtKorime";
             this.txtKorime.Size = new System.Drawing.Size(191, 22);
-            this.txtKorime.TabIndex = 1;
+            this.txtKorime.TabIndex = 3;
             // 
             // txtLozinka
             // 
             this.txtLozinka.Location = new System.Drawing.Point(179, 152);
             this.txtLozinka.Name = "txtLozinka";
             this.txtLozinka.Size = new System.Drawing.Size(191, 22);
-            this.txtLozinka.TabIndex = 1;
+            this.txtLozinka.TabIndex = 4;
             // 
             // txtPrezime
             // 
             this.txtPrezime.Location = new System.Drawing.Point(179, 70);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(191, 22);
-            this.txtPrezime.TabIndex = 1;
+            this.txtPrezime.TabIndex = 2;
             // 
             // lblUloga
             // 
