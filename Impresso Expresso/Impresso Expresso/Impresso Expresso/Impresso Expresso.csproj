@@ -278,6 +278,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Artikli.datasource" />
     <None Include="Properties\DataSources\Dobavljaci.datasource" />
+    <None Include="Properties\DataSources\Kategorije.datasource" />
     <None Include="Properties\DataSources\Korisnici.datasource" />
     <None Include="Properties\DataSources\Placanja.datasource" />
     <None Include="Properties\DataSources\Primke.datasource" />

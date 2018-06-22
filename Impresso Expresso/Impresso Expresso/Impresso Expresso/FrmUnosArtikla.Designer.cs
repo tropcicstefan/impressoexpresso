@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbUnosArtikla = new System.Windows.Forms.GroupBox();
             this.btnSpremiArtikl = new System.Windows.Forms.Button();
@@ -37,8 +38,10 @@
             this.lblCijenaArtikla = new System.Windows.Forms.Label();
             this.txtNazivArtikla = new System.Windows.Forms.TextBox();
             this.lblNazivArtikla = new System.Windows.Forms.Label();
+            this.kategorijeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbUnosArtikla.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kategorijeBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -77,14 +80,18 @@
             this.btnSpremiArtikl.TabIndex = 3;
             this.btnSpremiArtikl.Text = "Spremi";
             this.btnSpremiArtikl.UseVisualStyleBackColor = true;
+            this.btnSpremiArtikl.Click += new System.EventHandler(this.btnSpremiArtikl_Click);
             // 
             // cbKategorijaArtikla
             // 
+            this.cbKategorijaArtikla.DataSource = this.kategorijeBindingSource;
+            this.cbKategorijaArtikla.DisplayMember = "Naziv";
             this.cbKategorijaArtikla.FormattingEnabled = true;
             this.cbKategorijaArtikla.Location = new System.Drawing.Point(183, 136);
             this.cbKategorijaArtikla.Name = "cbKategorijaArtikla";
             this.cbKategorijaArtikla.Size = new System.Drawing.Size(162, 24);
             this.cbKategorijaArtikla.TabIndex = 2;
+            this.cbKategorijaArtikla.ValueMember = "ID";
             // 
             // label3
             // 
@@ -125,7 +132,11 @@
             this.lblNazivArtikla.Name = "lblNazivArtikla";
             this.lblNazivArtikla.Size = new System.Drawing.Size(47, 17);
             this.lblNazivArtikla.TabIndex = 0;
-            this.lblNazivArtikla.Text = "Naziv;";
+            this.lblNazivArtikla.Text = "Naziv:";
+            // 
+            // kategorijeBindingSource
+            // 
+            this.kategorijeBindingSource.DataSource = typeof(Impresso_Expresso.Kategorije);
             // 
             // FrmUnosArtikla
             // 
@@ -141,6 +152,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbUnosArtikla.ResumeLayout(false);
             this.gbUnosArtikla.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.kategorijeBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -156,5 +168,6 @@
         private System.Windows.Forms.Label lblCijenaArtikla;
         private System.Windows.Forms.TextBox txtNazivArtikla;
         private System.Windows.Forms.Label lblNazivArtikla;
+        private System.Windows.Forms.BindingSource kategorijeBindingSource;
     }
 }

@@ -28,18 +28,31 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbUpravljanjeArtiklima = new System.Windows.Forms.GroupBox();
-            this.dgvPopisArtikala = new System.Windows.Forms.DataGridView();
+            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.lblPopisArtikala = new System.Windows.Forms.Label();
             this.lblPopisKategorija = new System.Windows.Forms.Label();
             this.lbPopisKategorija = new System.Windows.Forms.ListBox();
+            this.kategorijeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnObrišiArtikl = new System.Windows.Forms.Button();
             this.btnUrediArtikl = new System.Windows.Forms.Button();
             this.btnDodajArtikl = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dgvPopisArtikala = new System.Windows.Forms.DataGridView();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kategorijaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cijenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stanjeNaSkladistuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kategorijeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stavkeNarudzbesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stavkePrimkesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbUpravljanjeArtiklima.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPopisArtikala)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kategorijeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPopisArtikala)).BeginInit();
             this.SuspendLayout();
             // 
             // gbUpravljanjeArtiklima
@@ -59,14 +72,9 @@
             this.gbUpravljanjeArtiklima.TabStop = false;
             this.gbUpravljanjeArtiklima.Text = "Upravljanje artiklima";
             // 
-            // dgvPopisArtikala
+            // artikliBindingSource
             // 
-            this.dgvPopisArtikala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPopisArtikala.Location = new System.Drawing.Point(301, 133);
-            this.dgvPopisArtikala.Name = "dgvPopisArtikala";
-            this.dgvPopisArtikala.RowTemplate.Height = 24;
-            this.dgvPopisArtikala.Size = new System.Drawing.Size(432, 291);
-            this.dgvPopisArtikala.TabIndex = 3;
+            this.artikliBindingSource.DataSource = typeof(Impresso_Expresso.Artikli);
             // 
             // lblPopisArtikala
             // 
@@ -88,12 +96,20 @@
             // 
             // lbPopisKategorija
             // 
+            this.lbPopisKategorija.DataSource = this.kategorijeBindingSource;
+            this.lbPopisKategorija.DisplayMember = "Naziv";
             this.lbPopisKategorija.FormattingEnabled = true;
             this.lbPopisKategorija.ItemHeight = 16;
             this.lbPopisKategorija.Location = new System.Drawing.Point(51, 133);
             this.lbPopisKategorija.Name = "lbPopisKategorija";
             this.lbPopisKategorija.Size = new System.Drawing.Size(183, 292);
             this.lbPopisKategorija.TabIndex = 1;
+            this.lbPopisKategorija.ValueMember = "ID";
+            this.lbPopisKategorija.SelectedIndexChanged += new System.EventHandler(this.lbPopisKategorija_SelectedIndexChanged);
+            // 
+            // kategorijeBindingSource
+            // 
+            this.kategorijeBindingSource.DataSource = typeof(Impresso_Expresso.Kategorije);
             // 
             // btnObrišiArtikl
             // 
@@ -114,6 +130,7 @@
             this.btnUrediArtikl.TabIndex = 0;
             this.btnUrediArtikl.Text = "Uredi artikl";
             this.btnUrediArtikl.UseVisualStyleBackColor = true;
+            this.btnUrediArtikl.Click += new System.EventHandler(this.btnUrediArtikl_Click);
             // 
             // btnDodajArtikl
             // 
@@ -136,6 +153,81 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
+            // dgvPopisArtikala
+            // 
+            this.dgvPopisArtikala.AutoGenerateColumns = false;
+            this.dgvPopisArtikala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPopisArtikala.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.iDDataGridViewTextBoxColumn,
+            this.kategorijaIDDataGridViewTextBoxColumn,
+            this.nazivDataGridViewTextBoxColumn,
+            this.cijenaDataGridViewTextBoxColumn,
+            this.stanjeNaSkladistuDataGridViewTextBoxColumn,
+            this.kategorijeDataGridViewTextBoxColumn,
+            this.stavkeNarudzbesDataGridViewTextBoxColumn,
+            this.stavkePrimkesDataGridViewTextBoxColumn});
+            this.dgvPopisArtikala.DataSource = this.artikliBindingSource;
+            this.dgvPopisArtikala.Location = new System.Drawing.Point(301, 133);
+            this.dgvPopisArtikala.MultiSelect = false;
+            this.dgvPopisArtikala.Name = "dgvPopisArtikala";
+            this.dgvPopisArtikala.RowTemplate.Height = 24;
+            this.dgvPopisArtikala.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPopisArtikala.Size = new System.Drawing.Size(433, 292);
+            this.dgvPopisArtikala.TabIndex = 3;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // kategorijaIDDataGridViewTextBoxColumn
+            // 
+            this.kategorijaIDDataGridViewTextBoxColumn.DataPropertyName = "KategorijaID";
+            this.kategorijaIDDataGridViewTextBoxColumn.HeaderText = "KategorijaID";
+            this.kategorijaIDDataGridViewTextBoxColumn.Name = "kategorijaIDDataGridViewTextBoxColumn";
+            this.kategorijaIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // nazivDataGridViewTextBoxColumn
+            // 
+            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
+            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
+            // 
+            // cijenaDataGridViewTextBoxColumn
+            // 
+            this.cijenaDataGridViewTextBoxColumn.DataPropertyName = "Cijena";
+            this.cijenaDataGridViewTextBoxColumn.HeaderText = "Cijena";
+            this.cijenaDataGridViewTextBoxColumn.Name = "cijenaDataGridViewTextBoxColumn";
+            // 
+            // stanjeNaSkladistuDataGridViewTextBoxColumn
+            // 
+            this.stanjeNaSkladistuDataGridViewTextBoxColumn.DataPropertyName = "StanjeNaSkladistu";
+            this.stanjeNaSkladistuDataGridViewTextBoxColumn.HeaderText = "StanjeNaSkladistu";
+            this.stanjeNaSkladistuDataGridViewTextBoxColumn.Name = "stanjeNaSkladistuDataGridViewTextBoxColumn";
+            this.stanjeNaSkladistuDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // kategorijeDataGridViewTextBoxColumn
+            // 
+            this.kategorijeDataGridViewTextBoxColumn.DataPropertyName = "Kategorije";
+            this.kategorijeDataGridViewTextBoxColumn.HeaderText = "Kategorije";
+            this.kategorijeDataGridViewTextBoxColumn.Name = "kategorijeDataGridViewTextBoxColumn";
+            this.kategorijeDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // stavkeNarudzbesDataGridViewTextBoxColumn
+            // 
+            this.stavkeNarudzbesDataGridViewTextBoxColumn.DataPropertyName = "StavkeNarudzbes";
+            this.stavkeNarudzbesDataGridViewTextBoxColumn.HeaderText = "StavkeNarudzbes";
+            this.stavkeNarudzbesDataGridViewTextBoxColumn.Name = "stavkeNarudzbesDataGridViewTextBoxColumn";
+            this.stavkeNarudzbesDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // stavkePrimkesDataGridViewTextBoxColumn
+            // 
+            this.stavkePrimkesDataGridViewTextBoxColumn.DataPropertyName = "StavkePrimkes";
+            this.stavkePrimkesDataGridViewTextBoxColumn.HeaderText = "StavkePrimkes";
+            this.stavkePrimkesDataGridViewTextBoxColumn.Name = "stavkePrimkesDataGridViewTextBoxColumn";
+            this.stavkePrimkesDataGridViewTextBoxColumn.Visible = false;
+            // 
             // FrmUpravljanjeArtiklom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -149,8 +241,10 @@
             this.Text = "FrmUpravljanjeArtiklom";
             this.gbUpravljanjeArtiklima.ResumeLayout(false);
             this.gbUpravljanjeArtiklima.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPopisArtikala)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kategorijeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPopisArtikala)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -164,7 +258,17 @@
         private System.Windows.Forms.Button btnObrišiArtikl;
         private System.Windows.Forms.Button btnUrediArtikl;
         private System.Windows.Forms.Button btnDodajArtikl;
-        private System.Windows.Forms.DataGridView dgvPopisArtikala;
         private System.Windows.Forms.ListBox lbPopisKategorija;
+        private System.Windows.Forms.BindingSource kategorijeBindingSource;
+        private System.Windows.Forms.BindingSource artikliBindingSource;
+        private System.Windows.Forms.DataGridView dgvPopisArtikala;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kategorijaIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nazivDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cijenaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stanjeNaSkladistuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn kategorijeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stavkeNarudzbesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stavkePrimkesDataGridViewTextBoxColumn;
     }
 }

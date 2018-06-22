@@ -32,21 +32,21 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lblDatum = new System.Windows.Forms.Label();
             this.gbDnevniIzvještaj = new System.Windows.Forms.GroupBox();
-            this.txtDatum = new System.Windows.Forms.TextBox();
-            this.lblPrometBlagajne = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblPolog = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lblGotovinaUBlagajni = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.gbNacinPlacanja = new System.Windows.Forms.GroupBox();
-            this.lblNovcanica = new System.Windows.Forms.Label();
-            this.txtNovcanica = new System.Windows.Forms.TextBox();
-            this.lblKartica = new System.Windows.Forms.Label();
-            this.txtKartica = new System.Windows.Forms.TextBox();
             this.lblIznos = new System.Windows.Forms.Label();
-            this.lblKonobar = new System.Windows.Forms.Label();
+            this.txtKartica = new System.Windows.Forms.TextBox();
+            this.lblKartica = new System.Windows.Forms.Label();
+            this.txtNovcanica = new System.Windows.Forms.TextBox();
+            this.lblNovcanica = new System.Windows.Forms.Label();
             this.txtKonobar = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.lblKonobar = new System.Windows.Forms.Label();
+            this.lblGotovinaUBlagajni = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.lblPolog = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.lblPrometBlagajne = new System.Windows.Forms.Label();
+            this.txtDatum = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbDnevniIzvještaj.SuspendLayout();
             this.gbNacinPlacanja.SuspendLayout();
@@ -100,64 +100,6 @@
             this.gbDnevniIzvještaj.TabStop = false;
             this.gbDnevniIzvještaj.Text = "Dnevni izvještaj";
             // 
-            // txtDatum
-            // 
-            this.txtDatum.Location = new System.Drawing.Point(191, 43);
-            this.txtDatum.Name = "txtDatum";
-            this.txtDatum.Size = new System.Drawing.Size(194, 22);
-            this.txtDatum.TabIndex = 3;
-            // 
-            // lblPrometBlagajne
-            // 
-            this.lblPrometBlagajne.AutoSize = true;
-            this.lblPrometBlagajne.ForeColor = System.Drawing.Color.White;
-            this.lblPrometBlagajne.Location = new System.Drawing.Point(59, 87);
-            this.lblPrometBlagajne.Name = "lblPrometBlagajne";
-            this.lblPrometBlagajne.Size = new System.Drawing.Size(115, 17);
-            this.lblPrometBlagajne.TabIndex = 2;
-            this.lblPrometBlagajne.Text = "Promet blagajne:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(191, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 22);
-            this.textBox1.TabIndex = 3;
-            // 
-            // lblPolog
-            // 
-            this.lblPolog.AutoSize = true;
-            this.lblPolog.ForeColor = System.Drawing.Color.White;
-            this.lblPolog.Location = new System.Drawing.Point(59, 127);
-            this.lblPolog.Name = "lblPolog";
-            this.lblPolog.Size = new System.Drawing.Size(118, 17);
-            this.lblPolog.TabIndex = 2;
-            this.lblPolog.Text = "Polog u blagajnu:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(191, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(194, 22);
-            this.textBox2.TabIndex = 3;
-            // 
-            // lblGotovinaUBlagajni
-            // 
-            this.lblGotovinaUBlagajni.AutoSize = true;
-            this.lblGotovinaUBlagajni.ForeColor = System.Drawing.Color.White;
-            this.lblGotovinaUBlagajni.Location = new System.Drawing.Point(59, 172);
-            this.lblGotovinaUBlagajni.Name = "lblGotovinaUBlagajni";
-            this.lblGotovinaUBlagajni.Size = new System.Drawing.Size(134, 17);
-            this.lblGotovinaUBlagajni.TabIndex = 2;
-            this.lblGotovinaUBlagajni.Text = "Gotovina u blagajni:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(191, 172);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(194, 22);
-            this.textBox3.TabIndex = 3;
-            // 
             // gbNacinPlacanja
             // 
             this.gbNacinPlacanja.Controls.Add(this.lblIznos);
@@ -173,22 +115,21 @@
             this.gbNacinPlacanja.TabStop = false;
             this.gbNacinPlacanja.Text = "Način plačanja";
             // 
-            // lblNovcanica
+            // lblIznos
             // 
-            this.lblNovcanica.AutoSize = true;
-            this.lblNovcanica.ForeColor = System.Drawing.Color.White;
-            this.lblNovcanica.Location = new System.Drawing.Point(8, 36);
-            this.lblNovcanica.Name = "lblNovcanica";
-            this.lblNovcanica.Size = new System.Drawing.Size(78, 17);
-            this.lblNovcanica.TabIndex = 2;
-            this.lblNovcanica.Text = "Novčanica:";
+            this.lblIznos.AutoSize = true;
+            this.lblIznos.Location = new System.Drawing.Point(214, 16);
+            this.lblIznos.Name = "lblIznos";
+            this.lblIznos.Size = new System.Drawing.Size(41, 17);
+            this.lblIznos.TabIndex = 4;
+            this.lblIznos.Text = "Iznos";
             // 
-            // txtNovcanica
+            // txtKartica
             // 
-            this.txtNovcanica.Location = new System.Drawing.Point(140, 36);
-            this.txtNovcanica.Name = "txtNovcanica";
-            this.txtNovcanica.Size = new System.Drawing.Size(194, 22);
-            this.txtNovcanica.TabIndex = 3;
+            this.txtKartica.Location = new System.Drawing.Point(140, 79);
+            this.txtKartica.Name = "txtKartica";
+            this.txtKartica.Size = new System.Drawing.Size(194, 22);
+            this.txtKartica.TabIndex = 3;
             // 
             // lblKartica
             // 
@@ -200,21 +141,36 @@
             this.lblKartica.TabIndex = 2;
             this.lblKartica.Text = "Kartica:";
             // 
-            // txtKartica
+            // txtNovcanica
             // 
-            this.txtKartica.Location = new System.Drawing.Point(140, 79);
-            this.txtKartica.Name = "txtKartica";
-            this.txtKartica.Size = new System.Drawing.Size(194, 22);
-            this.txtKartica.TabIndex = 3;
+            this.txtNovcanica.Location = new System.Drawing.Point(140, 36);
+            this.txtNovcanica.Name = "txtNovcanica";
+            this.txtNovcanica.Size = new System.Drawing.Size(194, 22);
+            this.txtNovcanica.TabIndex = 3;
             // 
-            // lblIznos
+            // lblNovcanica
             // 
-            this.lblIznos.AutoSize = true;
-            this.lblIznos.Location = new System.Drawing.Point(214, 16);
-            this.lblIznos.Name = "lblIznos";
-            this.lblIznos.Size = new System.Drawing.Size(41, 17);
-            this.lblIznos.TabIndex = 4;
-            this.lblIznos.Text = "Iznos";
+            this.lblNovcanica.AutoSize = true;
+            this.lblNovcanica.ForeColor = System.Drawing.Color.White;
+            this.lblNovcanica.Location = new System.Drawing.Point(8, 36);
+            this.lblNovcanica.Name = "lblNovcanica";
+            this.lblNovcanica.Size = new System.Drawing.Size(78, 17);
+            this.lblNovcanica.TabIndex = 2;
+            this.lblNovcanica.Text = "Novčanica:";
+            // 
+            // txtKonobar
+            // 
+            this.txtKonobar.Location = new System.Drawing.Point(191, 217);
+            this.txtKonobar.Name = "txtKonobar";
+            this.txtKonobar.Size = new System.Drawing.Size(194, 22);
+            this.txtKonobar.TabIndex = 3;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(191, 172);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(194, 22);
+            this.textBox3.TabIndex = 3;
             // 
             // lblKonobar
             // 
@@ -226,12 +182,56 @@
             this.lblKonobar.TabIndex = 2;
             this.lblKonobar.Text = "Konobar:";
             // 
-            // txtKonobar
+            // lblGotovinaUBlagajni
             // 
-            this.txtKonobar.Location = new System.Drawing.Point(191, 217);
-            this.txtKonobar.Name = "txtKonobar";
-            this.txtKonobar.Size = new System.Drawing.Size(194, 22);
-            this.txtKonobar.TabIndex = 3;
+            this.lblGotovinaUBlagajni.AutoSize = true;
+            this.lblGotovinaUBlagajni.ForeColor = System.Drawing.Color.White;
+            this.lblGotovinaUBlagajni.Location = new System.Drawing.Point(59, 172);
+            this.lblGotovinaUBlagajni.Name = "lblGotovinaUBlagajni";
+            this.lblGotovinaUBlagajni.Size = new System.Drawing.Size(134, 17);
+            this.lblGotovinaUBlagajni.TabIndex = 2;
+            this.lblGotovinaUBlagajni.Text = "Gotovina u blagajni:";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(191, 127);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(194, 22);
+            this.textBox2.TabIndex = 3;
+            // 
+            // lblPolog
+            // 
+            this.lblPolog.AutoSize = true;
+            this.lblPolog.ForeColor = System.Drawing.Color.White;
+            this.lblPolog.Location = new System.Drawing.Point(59, 127);
+            this.lblPolog.Name = "lblPolog";
+            this.lblPolog.Size = new System.Drawing.Size(118, 17);
+            this.lblPolog.TabIndex = 2;
+            this.lblPolog.Text = "Polog u blagajnu:";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(191, 87);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(194, 22);
+            this.textBox1.TabIndex = 3;
+            // 
+            // lblPrometBlagajne
+            // 
+            this.lblPrometBlagajne.AutoSize = true;
+            this.lblPrometBlagajne.ForeColor = System.Drawing.Color.White;
+            this.lblPrometBlagajne.Location = new System.Drawing.Point(59, 87);
+            this.lblPrometBlagajne.Name = "lblPrometBlagajne";
+            this.lblPrometBlagajne.Size = new System.Drawing.Size(115, 17);
+            this.lblPrometBlagajne.TabIndex = 2;
+            this.lblPrometBlagajne.Text = "Promet blagajne:";
+            // 
+            // txtDatum
+            // 
+            this.txtDatum.Location = new System.Drawing.Point(191, 43);
+            this.txtDatum.Name = "txtDatum";
+            this.txtDatum.Size = new System.Drawing.Size(194, 22);
+            this.txtDatum.TabIndex = 3;
             // 
             // FrmObracunBlagajne
             // 
@@ -243,6 +243,7 @@
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmObracunBlagajne";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmObracunBlagajne";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbDnevniIzvještaj.ResumeLayout(false);
