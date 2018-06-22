@@ -57,5 +57,11 @@ namespace Impresso_Expresso
             FrmSkladiste formaSkladište = new FrmSkladiste();
             formaSkladište.ShowDialog();
         }
+
+        private void btnKasa_Click(object sender, EventArgs e)
+        {
+            FrmObracunBlagajne frmObracunBlagajne = new FrmObracunBlagajne();
+            frmObracunBlagajne.ShowDialog();
+        }
     }
 }

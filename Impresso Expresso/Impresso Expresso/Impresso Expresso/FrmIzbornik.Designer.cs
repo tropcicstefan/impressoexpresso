@@ -48,9 +48,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Impresso_Expresso.Properties.Resources.logo_banner;
-            this.pictureBox1.Location = new System.Drawing.Point(155, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(207, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(460, 100);
+            this.pictureBox1.Size = new System.Drawing.Size(613, 123);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -62,17 +63,20 @@
             this.gbIzbornik.Controls.Add(this.btnKasa);
             this.gbIzbornik.Controls.Add(this.pbOpcije);
             this.gbIzbornik.Controls.Add(this.pbProfil);
-            this.gbIzbornik.Location = new System.Drawing.Point(640, 158);
+            this.gbIzbornik.Location = new System.Drawing.Point(853, 194);
+            this.gbIzbornik.Margin = new System.Windows.Forms.Padding(4);
             this.gbIzbornik.Name = "gbIzbornik";
-            this.gbIzbornik.Size = new System.Drawing.Size(132, 391);
+            this.gbIzbornik.Padding = new System.Windows.Forms.Padding(4);
+            this.gbIzbornik.Size = new System.Drawing.Size(176, 481);
             this.gbIzbornik.TabIndex = 1;
             this.gbIzbornik.TabStop = false;
             // 
             // btnRegistracija
             // 
-            this.btnRegistracija.Location = new System.Drawing.Point(6, 218);
+            this.btnRegistracija.Location = new System.Drawing.Point(8, 268);
+            this.btnRegistracija.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistracija.Name = "btnRegistracija";
-            this.btnRegistracija.Size = new System.Drawing.Size(120, 47);
+            this.btnRegistracija.Size = new System.Drawing.Size(160, 58);
             this.btnRegistracija.TabIndex = 1;
             this.btnRegistracija.Text = "Registracija";
             this.btnRegistracija.UseVisualStyleBackColor = true;
@@ -80,9 +84,10 @@
             // 
             // btnSkladiste
             // 
-            this.btnSkladiste.Location = new System.Drawing.Point(6, 165);
+            this.btnSkladiste.Location = new System.Drawing.Point(8, 203);
+            this.btnSkladiste.Margin = new System.Windows.Forms.Padding(4);
             this.btnSkladiste.Name = "btnSkladiste";
-            this.btnSkladiste.Size = new System.Drawing.Size(120, 47);
+            this.btnSkladiste.Size = new System.Drawing.Size(160, 58);
             this.btnSkladiste.TabIndex = 1;
             this.btnSkladiste.Text = "Skladište";
             this.btnSkladiste.UseVisualStyleBackColor = true;
@@ -90,19 +95,22 @@
             // 
             // btnKasa
             // 
-            this.btnKasa.Location = new System.Drawing.Point(6, 112);
+            this.btnKasa.Location = new System.Drawing.Point(8, 138);
+            this.btnKasa.Margin = new System.Windows.Forms.Padding(4);
             this.btnKasa.Name = "btnKasa";
-            this.btnKasa.Size = new System.Drawing.Size(120, 47);
+            this.btnKasa.Size = new System.Drawing.Size(160, 58);
             this.btnKasa.TabIndex = 1;
             this.btnKasa.Text = "Kasa";
             this.btnKasa.UseVisualStyleBackColor = true;
+            this.btnKasa.Click += new System.EventHandler(this.btnKasa_Click);
             // 
             // pbOpcije
             // 
             this.pbOpcije.Image = global::Impresso_Expresso.Properties.Resources.if_Settings_2202240;
-            this.pbOpcije.Location = new System.Drawing.Point(76, 19);
+            this.pbOpcije.Location = new System.Drawing.Point(101, 23);
+            this.pbOpcije.Margin = new System.Windows.Forms.Padding(4);
             this.pbOpcije.Name = "pbOpcije";
-            this.pbOpcije.Size = new System.Drawing.Size(50, 50);
+            this.pbOpcije.Size = new System.Drawing.Size(67, 62);
             this.pbOpcije.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbOpcije.TabIndex = 0;
             this.pbOpcije.TabStop = false;
@@ -110,9 +118,10 @@
             // pbProfil
             // 
             this.pbProfil.Image = global::Impresso_Expresso.Properties.Resources.Profil;
-            this.pbProfil.Location = new System.Drawing.Point(6, 19);
+            this.pbProfil.Location = new System.Drawing.Point(8, 23);
+            this.pbProfil.Margin = new System.Windows.Forms.Padding(4);
             this.pbProfil.Name = "pbProfil";
-            this.pbProfil.Size = new System.Drawing.Size(50, 50);
+            this.pbProfil.Size = new System.Drawing.Size(67, 62);
             this.pbProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbProfil.TabIndex = 0;
             this.pbProfil.TabStop = false;
@@ -120,9 +129,10 @@
             // pbStol1
             // 
             this.pbStol1.Image = global::Impresso_Expresso.Properties.Resources.green_circle;
-            this.pbStol1.Location = new System.Drawing.Point(197, 234);
+            this.pbStol1.Location = new System.Drawing.Point(263, 288);
+            this.pbStol1.Margin = new System.Windows.Forms.Padding(4);
             this.pbStol1.Name = "pbStol1";
-            this.pbStol1.Size = new System.Drawing.Size(54, 50);
+            this.pbStol1.Size = new System.Drawing.Size(72, 62);
             this.pbStol1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbStol1.TabIndex = 2;
             this.pbStol1.TabStop = false;
@@ -131,9 +141,10 @@
             // pbStol2
             // 
             this.pbStol2.Image = global::Impresso_Expresso.Properties.Resources.green_circle;
-            this.pbStol2.Location = new System.Drawing.Point(354, 225);
+            this.pbStol2.Location = new System.Drawing.Point(472, 277);
+            this.pbStol2.Margin = new System.Windows.Forms.Padding(4);
             this.pbStol2.Name = "pbStol2";
-            this.pbStol2.Size = new System.Drawing.Size(54, 50);
+            this.pbStol2.Size = new System.Drawing.Size(72, 62);
             this.pbStol2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbStol2.TabIndex = 2;
             this.pbStol2.TabStop = false;
@@ -141,16 +152,18 @@
             // 
             // FrmIzbornik
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::Impresso_Expresso.Properties.Resources.FrmIzbornik_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(1045, 690);
             this.Controls.Add(this.pbStol2);
             this.Controls.Add(this.pbStol1);
             this.Controls.Add(this.gbIzbornik);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmIzbornik";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmIzbornik";
             this.Load += new System.EventHandler(this.FrmIzbornik_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
