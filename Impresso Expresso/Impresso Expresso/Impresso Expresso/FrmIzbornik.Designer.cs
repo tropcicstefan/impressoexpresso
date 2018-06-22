@@ -120,7 +120,7 @@
             // pbStol1
             // 
             this.pbStol1.Image = global::Impresso_Expresso.Properties.Resources.green_circle;
-            this.pbStol1.Location = new System.Drawing.Point(195, 235);
+            this.pbStol1.Location = new System.Drawing.Point(197, 234);
             this.pbStol1.Name = "pbStol1";
             this.pbStol1.Size = new System.Drawing.Size(54, 50);
             this.pbStol1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -131,7 +131,7 @@
             // pbStol2
             // 
             this.pbStol2.Image = global::Impresso_Expresso.Properties.Resources.green_circle;
-            this.pbStol2.Location = new System.Drawing.Point(351, 226);
+            this.pbStol2.Location = new System.Drawing.Point(354, 225);
             this.pbStol2.Name = "pbStol2";
             this.pbStol2.Size = new System.Drawing.Size(54, 50);
             this.pbStol2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
