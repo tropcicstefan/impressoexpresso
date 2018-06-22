@@ -97,5 +97,15 @@ namespace Impresso_Expresso
         {
             PrikaziArtikle();
         }
+        /// <summary>
+        /// u slucaju promjene tipa sortiranja prikazi drugacije podatke
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnUnosArtikla_Click(object sender, EventArgs e)
+        {
+            FrmUpravljanjeArtiklom formaUpravljanjeArtiklom = new FrmUpravljanjeArtiklom();
+            formaUpravljanjeArtiklom.ShowDialog();
+        }
     }
 }

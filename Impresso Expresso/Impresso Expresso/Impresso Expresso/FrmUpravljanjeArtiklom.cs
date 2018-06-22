@@ -16,5 +16,11 @@ namespace Impresso_Expresso
         {
             InitializeComponent();
         }
+
+        private void btnDodajArtikl_Click(object sender, EventArgs e)
+        {
+            FrmUnosArtikla formaUnosArtikla = new FrmUnosArtikla();
+            formaUnosArtikla.ShowDialog();
+        }
     }
 }

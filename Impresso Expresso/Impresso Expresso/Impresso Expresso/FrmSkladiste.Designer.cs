@@ -66,9 +66,10 @@
             this.stavkeNarudzbesDataGridViewTextBoxColumn,
             this.stavkePrimkesDataGridViewTextBoxColumn});
             this.dgvStanjeSkladista.DataSource = this.artikliBindingSource;
-            this.dgvStanjeSkladista.Location = new System.Drawing.Point(31, 3);
+            this.dgvStanjeSkladista.Location = new System.Drawing.Point(41, 4);
+            this.dgvStanjeSkladista.Margin = new System.Windows.Forms.Padding(4);
             this.dgvStanjeSkladista.Name = "dgvStanjeSkladista";
-            this.dgvStanjeSkladista.Size = new System.Drawing.Size(541, 254);
+            this.dgvStanjeSkladista.Size = new System.Drawing.Size(721, 313);
             this.dgvStanjeSkladista.TabIndex = 1;
             // 
             // iDDataGridViewTextBoxColumn
@@ -129,19 +130,22 @@
             // btnUnosArtikla
             // 
             this.btnUnosArtikla.ForeColor = System.Drawing.Color.Black;
-            this.btnUnosArtikla.Location = new System.Drawing.Point(32, 52);
+            this.btnUnosArtikla.Location = new System.Drawing.Point(43, 64);
+            this.btnUnosArtikla.Margin = new System.Windows.Forms.Padding(4);
             this.btnUnosArtikla.Name = "btnUnosArtikla";
-            this.btnUnosArtikla.Size = new System.Drawing.Size(75, 23);
+            this.btnUnosArtikla.Size = new System.Drawing.Size(100, 28);
             this.btnUnosArtikla.TabIndex = 2;
             this.btnUnosArtikla.Text = "Unos artikla";
             this.btnUnosArtikla.UseVisualStyleBackColor = true;
+            this.btnUnosArtikla.Click += new System.EventHandler(this.btnUnosArtikla_Click);
             // 
             // btnPrimka
             // 
             this.btnPrimka.ForeColor = System.Drawing.Color.Black;
-            this.btnPrimka.Location = new System.Drawing.Point(167, 52);
+            this.btnPrimka.Location = new System.Drawing.Point(223, 64);
+            this.btnPrimka.Margin = new System.Windows.Forms.Padding(4);
             this.btnPrimka.Name = "btnPrimka";
-            this.btnPrimka.Size = new System.Drawing.Size(75, 23);
+            this.btnPrimka.Size = new System.Drawing.Size(100, 28);
             this.btnPrimka.TabIndex = 3;
             this.btnPrimka.Text = "Primke";
             this.btnPrimka.UseVisualStyleBackColor = true;
@@ -150,9 +154,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Impresso_Expresso.Properties.Resources.logo_banner;
-            this.pictureBox1.Location = new System.Drawing.Point(152, 12);
+            this.pictureBox1.Location = new System.Drawing.Point(203, 15);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(349, 74);
+            this.pictureBox1.Size = new System.Drawing.Size(465, 91);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
@@ -164,9 +169,11 @@
             this.gbstanjeNaSkladistu.Controls.Add(this.btnPrimka);
             this.gbstanjeNaSkladistu.Controls.Add(this.btnUnosArtikla);
             this.gbstanjeNaSkladistu.ForeColor = System.Drawing.Color.White;
-            this.gbstanjeNaSkladistu.Location = new System.Drawing.Point(33, 151);
+            this.gbstanjeNaSkladistu.Location = new System.Drawing.Point(44, 186);
+            this.gbstanjeNaSkladistu.Margin = new System.Windows.Forms.Padding(4);
             this.gbstanjeNaSkladistu.Name = "gbstanjeNaSkladistu";
-            this.gbstanjeNaSkladistu.Size = new System.Drawing.Size(639, 376);
+            this.gbstanjeNaSkladistu.Padding = new System.Windows.Forms.Padding(4);
+            this.gbstanjeNaSkladistu.Size = new System.Drawing.Size(852, 463);
             this.gbstanjeNaSkladistu.TabIndex = 6;
             this.gbstanjeNaSkladistu.TabStop = false;
             this.gbstanjeNaSkladistu.Text = "Stanje na skladištu";
@@ -174,9 +181,10 @@
             // cbOpcijeSort
             // 
             this.cbOpcijeSort.FormattingEnabled = true;
-            this.cbOpcijeSort.Location = new System.Drawing.Point(495, 54);
+            this.cbOpcijeSort.Location = new System.Drawing.Point(660, 66);
+            this.cbOpcijeSort.Margin = new System.Windows.Forms.Padding(4);
             this.cbOpcijeSort.Name = "cbOpcijeSort";
-            this.cbOpcijeSort.Size = new System.Drawing.Size(121, 21);
+            this.cbOpcijeSort.Size = new System.Drawing.Size(160, 24);
             this.cbOpcijeSort.TabIndex = 6;
             this.cbOpcijeSort.SelectedIndexChanged += new System.EventHandler(this.cbOpcijeSort_SelectedIndexChanged);
             // 
@@ -184,20 +192,23 @@
             // 
             this.pDgvArtikli.Controls.Add(this.dgvStanjeSkladista);
             this.pDgvArtikli.ForeColor = System.Drawing.Color.Black;
-            this.pDgvArtikli.Location = new System.Drawing.Point(11, 97);
+            this.pDgvArtikli.Location = new System.Drawing.Point(15, 119);
+            this.pDgvArtikli.Margin = new System.Windows.Forms.Padding(4);
             this.pDgvArtikli.Name = "pDgvArtikli";
-            this.pDgvArtikli.Size = new System.Drawing.Size(617, 273);
+            this.pDgvArtikli.Size = new System.Drawing.Size(823, 336);
             this.pDgvArtikli.TabIndex = 5;
             // 
             // FrmSkladiste
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(696, 550);
+            this.ClientSize = new System.Drawing.Size(928, 677);
             this.Controls.Add(this.gbstanjeNaSkladistu);
             this.Controls.Add(this.pictureBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmSkladiste";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmSkladiste";
             this.Load += new System.EventHandler(this.FrmSkladiste_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStanjeSkladista)).EndInit();

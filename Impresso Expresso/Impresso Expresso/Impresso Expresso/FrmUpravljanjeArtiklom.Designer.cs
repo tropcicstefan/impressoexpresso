@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.gbUpravljanjeArtiklima = new System.Windows.Forms.GroupBox();
+            this.dgvPopisArtikala = new System.Windows.Forms.DataGridView();
             this.lblPopisArtikala = new System.Windows.Forms.Label();
             this.lblPopisKategorija = new System.Windows.Forms.Label();
+            this.lbPopisKategorija = new System.Windows.Forms.ListBox();
             this.btnObrišiArtikl = new System.Windows.Forms.Button();
             this.btnUrediArtikl = new System.Windows.Forms.Button();
             this.btnDodajArtikl = new System.Windows.Forms.Button();
-            this.dgvPopisArtikala = new System.Windows.Forms.DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.lbPopisKategorija = new System.Windows.Forms.ListBox();
             this.gbUpravljanjeArtiklima.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPopisArtikala)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -59,6 +59,15 @@
             this.gbUpravljanjeArtiklima.TabStop = false;
             this.gbUpravljanjeArtiklima.Text = "Upravljanje artiklima";
             // 
+            // dgvPopisArtikala
+            // 
+            this.dgvPopisArtikala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPopisArtikala.Location = new System.Drawing.Point(301, 133);
+            this.dgvPopisArtikala.Name = "dgvPopisArtikala";
+            this.dgvPopisArtikala.RowTemplate.Height = 24;
+            this.dgvPopisArtikala.Size = new System.Drawing.Size(432, 291);
+            this.dgvPopisArtikala.TabIndex = 3;
+            // 
             // lblPopisArtikala
             // 
             this.lblPopisArtikala.AutoSize = true;
@@ -76,6 +85,15 @@
             this.lblPopisKategorija.Size = new System.Drawing.Size(113, 17);
             this.lblPopisKategorija.TabIndex = 2;
             this.lblPopisKategorija.Text = "Popis kategorija:";
+            // 
+            // lbPopisKategorija
+            // 
+            this.lbPopisKategorija.FormattingEnabled = true;
+            this.lbPopisKategorija.ItemHeight = 16;
+            this.lbPopisKategorija.Location = new System.Drawing.Point(51, 133);
+            this.lbPopisKategorija.Name = "lbPopisKategorija";
+            this.lbPopisKategorija.Size = new System.Drawing.Size(183, 292);
+            this.lbPopisKategorija.TabIndex = 1;
             // 
             // btnObrišiArtikl
             // 
@@ -106,15 +124,7 @@
             this.btnDodajArtikl.TabIndex = 0;
             this.btnDodajArtikl.Text = "Dodaj artikl";
             this.btnDodajArtikl.UseVisualStyleBackColor = true;
-            // 
-            // dgvPopisArtikala
-            // 
-            this.dgvPopisArtikala.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPopisArtikala.Location = new System.Drawing.Point(301, 133);
-            this.dgvPopisArtikala.Name = "dgvPopisArtikala";
-            this.dgvPopisArtikala.RowTemplate.Height = 24;
-            this.dgvPopisArtikala.Size = new System.Drawing.Size(432, 291);
-            this.dgvPopisArtikala.TabIndex = 3;
+            this.btnDodajArtikl.Click += new System.EventHandler(this.btnDodajArtikl_Click);
             // 
             // pictureBox1
             // 
@@ -126,15 +136,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
-            // lbPopisKategorija
-            // 
-            this.lbPopisKategorija.FormattingEnabled = true;
-            this.lbPopisKategorija.ItemHeight = 16;
-            this.lbPopisKategorija.Location = new System.Drawing.Point(51, 133);
-            this.lbPopisKategorija.Name = "lbPopisKategorija";
-            this.lbPopisKategorija.Size = new System.Drawing.Size(183, 292);
-            this.lbPopisKategorija.TabIndex = 1;
-            // 
             // FrmUpravljanjeArtiklom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -144,6 +145,7 @@
             this.Controls.Add(this.gbUpravljanjeArtiklima);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmUpravljanjeArtiklom";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmUpravljanjeArtiklom";
             this.gbUpravljanjeArtiklima.ResumeLayout(false);
             this.gbUpravljanjeArtiklima.PerformLayout();
