@@ -4,6 +4,9 @@ using System.Windows.Forms;
 
 namespace Impresso_Expresso
 {
+    /// <summary>
+    /// <author>Stefan Tropčić</author>
+    /// </summary>
     public partial class FrmPopisPrimki : Form
     {
         public FrmPopisPrimki()

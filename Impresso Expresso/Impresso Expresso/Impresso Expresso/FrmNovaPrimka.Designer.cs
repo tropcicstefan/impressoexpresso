@@ -43,24 +43,24 @@
             this.lblArtikl = new System.Windows.Forms.Label();
             this.cbArtikl = new System.Windows.Forms.ComboBox();
             this.dgvStavkePrimki = new System.Windows.Forms.DataGridView();
+            this.gbStavke = new System.Windows.Forms.GroupBox();
+            this.pDgv = new System.Windows.Forms.Panel();
             this.primkaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artiklIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artikliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.primkeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkePrimkeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.gbStavke = new System.Windows.Forms.GroupBox();
             this.korisniciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dobavljaciBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.pDgv = new System.Windows.Forms.Panel();
             this.gbNovaPrimka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkePrimki)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stavkePrimkeBindingSource)).BeginInit();
             this.gbStavke.SuspendLayout();
+            this.pDgv.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.stavkePrimkeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.korisniciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dobavljaciBindingSource)).BeginInit();
-            this.pDgv.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbNovaPrimka
@@ -115,6 +115,7 @@
             // 
             // cbKorisnik
             // 
+            this.cbKorisnik.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKorisnik.FormattingEnabled = true;
             this.cbKorisnik.Location = new System.Drawing.Point(273, 47);
             this.cbKorisnik.Name = "cbKorisnik";
@@ -123,6 +124,7 @@
             // 
             // cbDobavljac
             // 
+            this.cbDobavljac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDobavljac.FormattingEnabled = true;
             this.cbDobavljac.Location = new System.Drawing.Point(57, 47);
             this.cbDobavljac.Name = "cbDobavljac";
@@ -179,6 +181,7 @@
             // 
             // cbArtikl
             // 
+            this.cbArtikl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbArtikl.FormattingEnabled = true;
             this.cbArtikl.Location = new System.Drawing.Point(139, 23);
             this.cbArtikl.Name = "cbArtikl";
@@ -202,6 +205,30 @@
             this.dgvStavkePrimki.Size = new System.Drawing.Size(345, 158);
             this.dgvStavkePrimki.TabIndex = 9;
             this.dgvStavkePrimki.SelectionChanged += new System.EventHandler(this.dgvStavkePrimki_SelectionChanged);
+            // 
+            // gbStavke
+            // 
+            this.gbStavke.Controls.Add(this.lblKolicina);
+            this.gbStavke.Controls.Add(this.cbArtikl);
+            this.gbStavke.Controls.Add(this.lblArtikl);
+            this.gbStavke.Controls.Add(this.btnPohrani);
+            this.gbStavke.Controls.Add(this.txtKolicina);
+            this.gbStavke.ForeColor = System.Drawing.Color.White;
+            this.gbStavke.Location = new System.Drawing.Point(43, 288);
+            this.gbStavke.Name = "gbStavke";
+            this.gbStavke.Size = new System.Drawing.Size(277, 159);
+            this.gbStavke.TabIndex = 10;
+            this.gbStavke.TabStop = false;
+            this.gbStavke.Text = "Nove stavke";
+            // 
+            // pDgv
+            // 
+            this.pDgv.Controls.Add(this.dgvStavkePrimki);
+            this.pDgv.ForeColor = System.Drawing.Color.Black;
+            this.pDgv.Location = new System.Drawing.Point(403, 289);
+            this.pDgv.Name = "pDgv";
+            this.pDgv.Size = new System.Drawing.Size(345, 158);
+            this.pDgv.TabIndex = 11;
             // 
             // primkaIDDataGridViewTextBoxColumn
             // 
@@ -239,21 +266,6 @@
             // 
             this.stavkePrimkeBindingSource.DataSource = typeof(Impresso_Expresso.StavkePrimke);
             // 
-            // gbStavke
-            // 
-            this.gbStavke.Controls.Add(this.lblKolicina);
-            this.gbStavke.Controls.Add(this.cbArtikl);
-            this.gbStavke.Controls.Add(this.lblArtikl);
-            this.gbStavke.Controls.Add(this.btnPohrani);
-            this.gbStavke.Controls.Add(this.txtKolicina);
-            this.gbStavke.ForeColor = System.Drawing.Color.White;
-            this.gbStavke.Location = new System.Drawing.Point(43, 288);
-            this.gbStavke.Name = "gbStavke";
-            this.gbStavke.Size = new System.Drawing.Size(277, 159);
-            this.gbStavke.TabIndex = 10;
-            this.gbStavke.TabStop = false;
-            this.gbStavke.Text = "Nove stavke";
-            // 
             // korisniciBindingSource
             // 
             this.korisniciBindingSource.DataSource = typeof(Impresso_Expresso.Korisnici);
@@ -261,15 +273,6 @@
             // dobavljaciBindingSource
             // 
             this.dobavljaciBindingSource.DataSource = typeof(Impresso_Expresso.Dobavljaci);
-            // 
-            // pDgv
-            // 
-            this.pDgv.Controls.Add(this.dgvStavkePrimki);
-            this.pDgv.ForeColor = System.Drawing.Color.Black;
-            this.pDgv.Location = new System.Drawing.Point(403, 289);
-            this.pDgv.Name = "pDgv";
-            this.pDgv.Size = new System.Drawing.Size(345, 158);
-            this.pDgv.TabIndex = 11;
             // 
             // FrmNovaPrimka
             // 
@@ -289,12 +292,12 @@
             this.gbNovaPrimka.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkePrimki)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.stavkePrimkeBindingSource)).EndInit();
             this.gbStavke.ResumeLayout(false);
             this.gbStavke.PerformLayout();
+            this.pDgv.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.stavkePrimkeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.korisniciBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dobavljaciBindingSource)).EndInit();
-            this.pDgv.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

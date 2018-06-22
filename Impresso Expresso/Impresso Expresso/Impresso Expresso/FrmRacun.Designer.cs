@@ -91,6 +91,7 @@
             // 
             this.cbNacinPlacanja.DataSource = this.placanjaBindingSource;
             this.cbNacinPlacanja.DisplayMember = "Naziv";
+            this.cbNacinPlacanja.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbNacinPlacanja.FormattingEnabled = true;
             this.cbNacinPlacanja.Location = new System.Drawing.Point(153, 245);
             this.cbNacinPlacanja.Name = "cbNacinPlacanja";
@@ -182,7 +183,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(28, 480);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(542, 310);
+            this.reportViewer1.Size = new System.Drawing.Size(520, 310);
             this.reportViewer1.TabIndex = 9;
             // 
             // spStavkeRacunaResultBindingSource
@@ -194,7 +195,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(602, 817);
+            this.ClientSize = new System.Drawing.Size(579, 817);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.gbRacun);
             this.Controls.Add(this.pictureBox1);

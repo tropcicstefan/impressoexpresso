@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Impresso_Expresso
 {
+    /// <summary>
+    /// <author>Stefan Tropčić</author>
+    /// </summary>
     public partial class FrmNovaPrimka : Form
     {
         private bool nova = true;
@@ -19,10 +22,14 @@ namespace Impresso_Expresso
         {
             InitializeComponent();
         }
-        public FrmNovaPrimka(Primke poslanaPrimka)
+        /// <summary>
+        /// konstruktor prima primku cije detalje ce pruziti i omoguciti izmjenu ova forma
+        /// </summary>
+        /// <param name="primljenaPrimka"></param>
+        public FrmNovaPrimka(Primke primljenaPrimka)
         {
             InitializeComponent();
-            primka = poslanaPrimka;
+            primka = primljenaPrimka;
             nova = false;
             PrikaziStavkePrimki();
         }
@@ -149,7 +156,7 @@ namespace Impresso_Expresso
 
         #region Pohrani
         /// <summary>
-        /// ef za spremanje primke na kojoj se radi
+        /// ef za spremanje NOVE primke
         /// </summary>
         private void PohraniPrimku()
         {
@@ -166,7 +173,7 @@ namespace Impresso_Expresso
             }
         }
         /// <summary>
-        /// hendla mijenjanje osnovnih podataka primke
+        /// hendla mijenjanje osnovnih podataka STARE primke
         /// </summary>
         private void PohraniPromjenuPrimke()
         {
@@ -190,12 +197,14 @@ namespace Impresso_Expresso
                 StavkePrimke privremenaStavkaPrimke = stavkePrimkeBindingSource.Current as StavkePrimke;
                 if (privremenaStavkaPrimke != null)
                 {
+                    //u slucaju da je odabrana stavka
                     if(privremenaStavkaPrimke.ArtiklID == int.Parse(cbArtikl.SelectedValue.ToString()))
                     {
                         db.Primkes.Attach(primka);
                         privremenaStavkaPrimke.Kolicina = int.Parse(txtKolicina.Text);
                         db.SaveChanges();
                     }
+                    //u slucaju da je odabran rub dgv-a
                     else
                     {
                         db.Primkes.Attach(primka);
@@ -211,6 +220,7 @@ namespace Impresso_Expresso
                     }
                     
                 }
+                //u slucaju nove stavkeprimke
                 else
                 {
                     db.Primkes.Attach(primka);
@@ -240,6 +250,11 @@ namespace Impresso_Expresso
             dtpPrimke.Enabled = false;
         }
 
+        /// <summary>
+        /// spremanje podataka sa forme i hendlanje exception kolicina
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPohrani_Click(object sender, EventArgs e)
         {
             if (nova)
@@ -265,6 +280,11 @@ namespace Impresso_Expresso
             BlokirajPromjene();
         }
 
+        /// <summary>
+        /// u slucaju promjene odabira stavke mijenja podatke u korespondirajucem fieldu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void dgvStavkePrimki_SelectionChanged(object sender, EventArgs e)
         {
             PrikaziArtikle();

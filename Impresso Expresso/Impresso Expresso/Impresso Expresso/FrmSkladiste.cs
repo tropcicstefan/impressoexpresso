@@ -5,6 +5,9 @@ using System.Windows.Forms;
 
 namespace Impresso_Expresso
 {
+    /// <summary>
+    /// <author>Stefan Tropčić</author>
+    /// </summary>
     public partial class FrmSkladiste : Form
     {
         private enum opcijeSort { ID, AZ, ZA, Najskuplji, Najjeftiniji, Najviše, Najmanje };
@@ -13,9 +16,13 @@ namespace Impresso_Expresso
         {
             InitializeComponent();
         }
+        /// <summary>
+        /// prikazi sve graficke elemente
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmSkladiste_Load(object sender, EventArgs e)
-        {
-           
+        {           
             cbOpcijeSort.DataSource = Enum.GetValues(typeof(opcijeSort));
             PrikaziArtikle();
         }
@@ -43,7 +50,11 @@ namespace Impresso_Expresso
 
             artikliBindingSource.DataSource = Sortiraj(listaArtikala);
         }
-
+        /// <summary>
+        /// ovisno o odabiru sorta mijenja listu podataka
+        /// </summary>
+        /// <param name="listaArtikala"></param>
+        /// <returns></returns>
         private BindingList<Artikli> Sortiraj(BindingList<Artikli> listaArtikala)
         {
             BindingList<Artikli> sortiranaLista = null;
@@ -77,7 +88,11 @@ namespace Impresso_Expresso
             }
             return sortiranaLista;
         }
-
+        /// <summary>
+        /// u slucaju promjene tipa sortiranja prikazi drugacije podatke
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void cbOpcijeSort_SelectedIndexChanged(object sender, EventArgs e)
         {
             PrikaziArtikle();

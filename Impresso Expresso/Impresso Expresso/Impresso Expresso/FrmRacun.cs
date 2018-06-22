@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace Impresso_Expresso
 {
+    /// <summary>
+    /// <author>Stefan Tropčić</author>
+    /// </summary>
     public partial class FrmRacun : Form
     {
         private Racuni noviRacun = null;
@@ -27,7 +30,7 @@ namespace Impresso_Expresso
         }
 
         /// <summary>
-        /// prikazuje dgv i elemente iznosa
+        /// prikazuje sve graficke elemente
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -95,6 +98,9 @@ namespace Impresso_Expresso
 
 
         #region Prikazi
+        /// <summary>
+        /// hendla dohvacanje svih podataka na report racuna
+        /// </summary>
         private void PrikaziReport()
         {
             int nacinPlacanja = cbNacinPlacanja.SelectedIndex;
@@ -119,9 +125,7 @@ namespace Impresso_Expresso
             this.reportViewer1.LocalReport.SetParameters(listaParametara);
             this.reportViewer1.RefreshReport();
         }
-
-
-
+                
         /// <summary>
         /// hendla izracun sume racuna i pdva
         /// </summary>
@@ -152,7 +156,11 @@ namespace Impresso_Expresso
             
         }
         #endregion
-
+        /// <summary>
+        /// na lik ispisa prikazuje report i mijenja podatke o racunu unutar baze
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnIspis_Click(object sender, EventArgs e)
         {
             PromijeniRacun();
