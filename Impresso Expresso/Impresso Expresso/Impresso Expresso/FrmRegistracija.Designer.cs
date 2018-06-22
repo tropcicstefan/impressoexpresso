@@ -28,10 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.pbBaner = new System.Windows.Forms.PictureBox();
             this.gbRegistracija = new System.Windows.Forms.GroupBox();
             this.btnSpremi = new System.Windows.Forms.Button();
             this.cbUloga = new System.Windows.Forms.ComboBox();
+            this.ulogeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.txtTelefon = new System.Windows.Forms.TextBox();
             this.txtAdresa = new System.Windows.Forms.TextBox();
             this.txtPosta = new System.Windows.Forms.TextBox();
@@ -47,8 +49,11 @@
             this.lblLozinka = new System.Windows.Forms.Label();
             this.lblPrezime = new System.Windows.Forms.Label();
             this.lbIme = new System.Windows.Forms.Label();
+            this.korisniciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbBaner)).BeginInit();
             this.gbRegistracija.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ulogeBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.korisniciBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pbBaner
@@ -101,11 +106,18 @@
             // 
             // cbUloga
             // 
+            this.cbUloga.DataSource = this.ulogeBindingSource;
+            this.cbUloga.DisplayMember = "Naziv";
             this.cbUloga.FormattingEnabled = true;
             this.cbUloga.Location = new System.Drawing.Point(179, 322);
             this.cbUloga.Name = "cbUloga";
             this.cbUloga.Size = new System.Drawing.Size(191, 24);
             this.cbUloga.TabIndex = 2;
+            this.cbUloga.ValueMember = "ID";
+            // 
+            // ulogeBindingSource
+            // 
+            this.ulogeBindingSource.DataSource = typeof(Impresso_Expresso.Uloge);
             // 
             // txtTelefon
             // 
@@ -228,6 +240,10 @@
             this.lbIme.TabIndex = 0;
             this.lbIme.Text = "Ime:";
             // 
+            // korisniciBindingSource
+            // 
+            this.korisniciBindingSource.DataSource = typeof(Impresso_Expresso.Korisnici);
+            // 
             // FrmRegistracija
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -237,10 +253,13 @@
             this.Controls.Add(this.gbRegistracija);
             this.Controls.Add(this.pbBaner);
             this.Name = "FrmRegistracija";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRegistracija";
             ((System.ComponentModel.ISupportInitialize)(this.pbBaner)).EndInit();
             this.gbRegistracija.ResumeLayout(false);
             this.gbRegistracija.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ulogeBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.korisniciBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -266,5 +285,7 @@
         private System.Windows.Forms.Label lblLozinka;
         private System.Windows.Forms.Label lblPrezime;
         private System.Windows.Forms.Label lbIme;
+        private System.Windows.Forms.BindingSource ulogeBindingSource;
+        private System.Windows.Forms.BindingSource korisniciBindingSource;
     }
 }
