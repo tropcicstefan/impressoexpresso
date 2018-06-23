@@ -19,10 +19,11 @@ namespace Impresso_Expresso
         public FrmUpravljanjeArtiklom()
         {
             InitializeComponent();
+            this.dgvPopisArtikala.DefaultCellStyle.ForeColor = Color.Black;
             kategorijeBindingSource.DataSource = db.Kategorijes.ToList();
             OsvjeziArtikle();
-            dgvPopisArtikala.Rows[0].DefaultCellStyle.ForeColor = Color.Gray;
         }
+        #region Unos
         /// <summary>
         /// Unos novog artikla
         /// </summary>
@@ -32,33 +33,81 @@ namespace Impresso_Expresso
         {
             FrmUnosArtikla formaUnosArtikla = new FrmUnosArtikla();
             formaUnosArtikla.ShowDialog();
+            OsvjeziArtikle();
         }
+        #endregion
+
+        #region Ažuriranje
         /// <summary>
-        /// Ažuriranje artikla
+        /// Funkcionalnost ažuriranje artikla
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnUrediArtikl_Click(object sender, EventArgs e)
         {
             int odabraniArtikl = int.Parse(this.dgvPopisArtikala.SelectedRows[0].Cells[0].Value.ToString());
-            FrmUnosArtikla formaUnosArtikla = new FrmUnosArtikla(odabraniArtikl);
-            formaUnosArtikla.ShowDialog();
-            OsvjeziArtikle();
+            if (odabraniArtikl != 0)
+            {
+                FrmUnosArtikla formaUnosArtikla = new FrmUnosArtikla(odabraniArtikl);
+                formaUnosArtikla.ShowDialog();
+                OsvjeziArtikle();
+            }
         }
+        #endregion
+
+        #region Brisanje
+        /// <summary>
+        /// Brisanje artikla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnObrišiArtikl_Click(object sender, EventArgs e)
+        {
+            int odabraniArtikl = int.Parse(this.dgvPopisArtikala.SelectedRows[0].Cells[0].Value.ToString());
+            if (odabraniArtikl != 0)
+            {
+                if (MessageBox.Show("Jeste li sigurni da želite obrisati artikl?", "Upozorenje!", MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    List<StavkeNarudzbe> stavkeNarudzbe = db.StavkeNarudzbes.Where(s => s.ArtiklID == odabraniArtikl).ToList();
+                    List<StavkePrimke> stavkePrimke = db.StavkePrimkes.Where(s => s.ArtiklID == odabraniArtikl).ToList();
+                    Artikli artikl = db.Artiklis.FirstOrDefault(s => s.ID == odabraniArtikl);
+
+                    if (stavkePrimke.Count == 0 && stavkeNarudzbe.Count == 0)
+                    {
+                        db.Artiklis.Remove(artikl);
+                        db.SaveChanges();
+                        OsvjeziArtikle();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Nije moguće brisati artikle koji su sadržani u stavkama primke i narudžbe!", "Upozorenje!", MessageBoxButtons.OK);
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Niste odabrali artikl!", "Pogreška!", MessageBoxButtons.OK);
+            }
+        }
+        #endregion
 
         #region OsvjezavanjePrikaza
         /// <summary>
-        /// Provjera unesenih podataka za prijavu
+        /// Osvježavanje prikaza artikala u Data grid view-u
         /// </summary>
-        private  void OsvjeziArtikle()
+        private void OsvjeziArtikle()
         {
             Kategorije odabranaKategorija = lbPopisKategorija.SelectedItem as Kategorije;
             if (odabranaKategorija != null)
             {
-                List<Artikli> artikliKategorije = db.Artiklis.Where(s => s.KategorijaID == odabranaKategorija.ID).ToList();
                 dgvPopisArtikala.DataSource = null;
+                List<Artikli> artikliKategorije = db.Artiklis.Where(s => s.KategorijaID == odabranaKategorija.ID).ToList();
                 dgvPopisArtikala.DataSource = artikliKategorije;
-                this.dgvPopisArtikala.DefaultCellStyle.ForeColor = Color.Black;
+               
+            }
+            else
+            {
+                MessageBox.Show("Niste odabrali kategoriju!", "Pogreška!", MessageBoxButtons.OK);
             }
         }
         
@@ -68,5 +117,7 @@ namespace Impresso_Expresso
             this.OsvjeziArtikle();
         }
         #endregion
+
+        
     }
 }
