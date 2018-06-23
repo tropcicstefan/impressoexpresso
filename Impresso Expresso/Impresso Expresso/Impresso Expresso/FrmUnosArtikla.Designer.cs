@@ -33,12 +33,12 @@
             this.gbUnosArtikla = new System.Windows.Forms.GroupBox();
             this.btnSpremiArtikl = new System.Windows.Forms.Button();
             this.cbKategorijaArtikla = new System.Windows.Forms.ComboBox();
+            this.kategorijeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.txtCijenaArtikla = new System.Windows.Forms.TextBox();
             this.lblCijenaArtikla = new System.Windows.Forms.Label();
             this.txtNazivArtikla = new System.Windows.Forms.TextBox();
             this.lblNazivArtikla = new System.Windows.Forms.Label();
-            this.kategorijeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbUnosArtikla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.kategorijeBindingSource)).BeginInit();
@@ -77,7 +77,7 @@
             this.btnSpremiArtikl.Location = new System.Drawing.Point(184, 184);
             this.btnSpremiArtikl.Name = "btnSpremiArtikl";
             this.btnSpremiArtikl.Size = new System.Drawing.Size(160, 31);
-            this.btnSpremiArtikl.TabIndex = 3;
+            this.btnSpremiArtikl.TabIndex = 4;
             this.btnSpremiArtikl.Text = "Spremi";
             this.btnSpremiArtikl.UseVisualStyleBackColor = true;
             this.btnSpremiArtikl.Click += new System.EventHandler(this.btnSpremiArtikl_Click);
@@ -90,8 +90,12 @@
             this.cbKategorijaArtikla.Location = new System.Drawing.Point(183, 136);
             this.cbKategorijaArtikla.Name = "cbKategorijaArtikla";
             this.cbKategorijaArtikla.Size = new System.Drawing.Size(162, 24);
-            this.cbKategorijaArtikla.TabIndex = 2;
+            this.cbKategorijaArtikla.TabIndex = 3;
             this.cbKategorijaArtikla.ValueMember = "ID";
+            // 
+            // kategorijeBindingSource
+            // 
+            this.kategorijeBindingSource.DataSource = typeof(Impresso_Expresso.Kategorije);
             // 
             // label3
             // 
@@ -107,7 +111,8 @@
             this.txtCijenaArtikla.Location = new System.Drawing.Point(183, 89);
             this.txtCijenaArtikla.Name = "txtCijenaArtikla";
             this.txtCijenaArtikla.Size = new System.Drawing.Size(162, 22);
-            this.txtCijenaArtikla.TabIndex = 1;
+            this.txtCijenaArtikla.TabIndex = 2;
+            this.txtCijenaArtikla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCijenaArtikla_KeyPress);
             // 
             // lblCijenaArtikla
             // 
@@ -133,10 +138,6 @@
             this.lblNazivArtikla.Size = new System.Drawing.Size(47, 17);
             this.lblNazivArtikla.TabIndex = 0;
             this.lblNazivArtikla.Text = "Naziv:";
-            // 
-            // kategorijeBindingSource
-            // 
-            this.kategorijeBindingSource.DataSource = typeof(Impresso_Expresso.Kategorije);
             // 
             // FrmUnosArtikla
             // 
