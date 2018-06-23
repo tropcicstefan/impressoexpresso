@@ -45,6 +45,8 @@
             this.dgvStavkePrimki = new System.Windows.Forms.DataGridView();
             this.gbStavke = new System.Windows.Forms.GroupBox();
             this.pDgv = new System.Windows.Forms.Panel();
+            this.btnObrisiStavkuPrimke = new System.Windows.Forms.Button();
+            this.btnDodajDobavljaca = new System.Windows.Forms.Button();
             this.primkaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artiklIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +67,7 @@
             // 
             // gbNovaPrimka
             // 
+            this.gbNovaPrimka.Controls.Add(this.btnDodajDobavljaca);
             this.gbNovaPrimka.Controls.Add(this.lblDatum);
             this.gbNovaPrimka.Controls.Add(this.dtpPrimke);
             this.gbNovaPrimka.Controls.Add(this.lblKorisnik);
@@ -72,9 +75,9 @@
             this.gbNovaPrimka.Controls.Add(this.cbKorisnik);
             this.gbNovaPrimka.Controls.Add(this.cbDobavljac);
             this.gbNovaPrimka.ForeColor = System.Drawing.Color.White;
-            this.gbNovaPrimka.Location = new System.Drawing.Point(43, 165);
+            this.gbNovaPrimka.Location = new System.Drawing.Point(43, 149);
             this.gbNovaPrimka.Name = "gbNovaPrimka";
-            this.gbNovaPrimka.Size = new System.Drawing.Size(705, 97);
+            this.gbNovaPrimka.Size = new System.Drawing.Size(705, 126);
             this.gbNovaPrimka.TabIndex = 1;
             this.gbNovaPrimka.TabStop = false;
             this.gbNovaPrimka.Text = "Nova primka";
@@ -144,9 +147,9 @@
             // btnPohrani
             // 
             this.btnPohrani.ForeColor = System.Drawing.Color.Black;
-            this.btnPohrani.Location = new System.Drawing.Point(139, 121);
+            this.btnPohrani.Location = new System.Drawing.Point(165, 121);
             this.btnPohrani.Name = "btnPohrani";
-            this.btnPohrani.Size = new System.Drawing.Size(120, 23);
+            this.btnPohrani.Size = new System.Drawing.Size(95, 23);
             this.btnPohrani.TabIndex = 4;
             this.btnPohrani.Text = "Pohrani";
             this.btnPohrani.UseVisualStyleBackColor = true;
@@ -208,6 +211,7 @@
             // 
             // gbStavke
             // 
+            this.gbStavke.Controls.Add(this.btnObrisiStavkuPrimke);
             this.gbStavke.Controls.Add(this.lblKolicina);
             this.gbStavke.Controls.Add(this.cbArtikl);
             this.gbStavke.Controls.Add(this.lblArtikl);
@@ -229,6 +233,28 @@
             this.pDgv.Name = "pDgv";
             this.pDgv.Size = new System.Drawing.Size(345, 158);
             this.pDgv.TabIndex = 11;
+            // 
+            // btnObrisiStavkuPrimke
+            // 
+            this.btnObrisiStavkuPrimke.ForeColor = System.Drawing.Color.Black;
+            this.btnObrisiStavkuPrimke.Location = new System.Drawing.Point(28, 121);
+            this.btnObrisiStavkuPrimke.Name = "btnObrisiStavkuPrimke";
+            this.btnObrisiStavkuPrimke.Size = new System.Drawing.Size(81, 23);
+            this.btnObrisiStavkuPrimke.TabIndex = 5;
+            this.btnObrisiStavkuPrimke.Text = "Obriši stavku";
+            this.btnObrisiStavkuPrimke.UseVisualStyleBackColor = true;
+            this.btnObrisiStavkuPrimke.Click += new System.EventHandler(this.btnObrisiStavkuPrimke_Click);
+            // 
+            // btnDodajDobavljaca
+            // 
+            this.btnDodajDobavljaca.ForeColor = System.Drawing.Color.Black;
+            this.btnDodajDobavljaca.Location = new System.Drawing.Point(57, 84);
+            this.btnDodajDobavljaca.Name = "btnDodajDobavljaca";
+            this.btnDodajDobavljaca.Size = new System.Drawing.Size(121, 23);
+            this.btnDodajDobavljaca.TabIndex = 6;
+            this.btnDodajDobavljaca.Text = "Dodaj dobavljača";
+            this.btnDodajDobavljaca.UseVisualStyleBackColor = true;
+            this.btnDodajDobavljaca.Click += new System.EventHandler(this.btnDodajDobavljaca_Click);
             // 
             // primkaIDDataGridViewTextBoxColumn
             // 
@@ -286,7 +312,8 @@
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.White;
             this.Name = "FrmNovaPrimka";
-            this.Text = "FrmNovaPrimka";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Uredi primku";
             this.Load += new System.EventHandler(this.FrmNovaPrimka_Load);
             this.gbNovaPrimka.ResumeLayout(false);
             this.gbNovaPrimka.PerformLayout();
@@ -328,5 +355,7 @@
         private System.Windows.Forms.GroupBox gbStavke;
         private System.Windows.Forms.Panel pDgv;
         private System.Windows.Forms.Label lblDatum;
+        private System.Windows.Forms.Button btnObrisiStavkuPrimke;
+        private System.Windows.Forms.Button btnDodajDobavljaca;
     }
 }

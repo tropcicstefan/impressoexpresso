@@ -195,12 +195,13 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(579, 817);
+            this.ClientSize = new System.Drawing.Size(579, 749);
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.gbRacun);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmRacun";
-            this.Text = "FrmRacun";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Racun";
             this.Load += new System.EventHandler(this.FrmRacun_Load);
             ((System.ComponentModel.ISupportInitialize)(this.spStavkeRacuna_ResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.placanjaBindingSource)).EndInit();

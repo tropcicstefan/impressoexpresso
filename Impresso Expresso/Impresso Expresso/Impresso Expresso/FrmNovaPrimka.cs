@@ -15,6 +15,9 @@ namespace Impresso_Expresso
     /// </summary>
     public partial class FrmNovaPrimka : Form
     {
+        /// <summary>
+        /// bool provjera jel se primka ureduje ili nova
+        /// </summary>
         private bool nova = true;
         private Primke primka;
 
@@ -107,7 +110,7 @@ namespace Impresso_Expresso
                     cbArtikl.SelectedValue = privremenaStavkaPrimke.ArtiklID;
                 }
                 
-            }
+            }            
         }
         /// <summary>
         /// Dohvaća listu stavki primke proslijeđene primke i prikazuje u dgv
@@ -151,8 +154,7 @@ namespace Impresso_Expresso
             }            
         }
         #endregion
-
-      
+              
 
         #region Pohrani
         /// <summary>
@@ -240,15 +242,8 @@ namespace Impresso_Expresso
         
         #endregion
 
-        /// <summary>
-        /// sprjecava promjene na osnovnim podacima forme
-        /// </summary>
-        private void BlokirajPromjene()
-        {
-            cbDobavljac.Enabled = false;
-            cbKorisnik.Enabled = false;
-            dtpPrimke.Enabled = false;
-        }
+        
+        #region Button event
 
         /// <summary>
         /// spremanje podataka sa forme i hendlanje exception kolicina
@@ -281,6 +276,42 @@ namespace Impresso_Expresso
         }
 
         /// <summary>
+        /// obrisi selektiranu stavku primke
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnObrisiStavkuPrimke_Click(object sender, EventArgs e)
+        {
+            StavkePrimke selektiranaStavkaPrimke = stavkePrimkeBindingSource.Current as StavkePrimke;
+
+            if (selektiranaStavkaPrimke != null)
+            {
+                if (MessageBox.Show("Da li ste sigurni?", "Upozorenje!",
+                    MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
+                {
+                    using (var db = new Entities())
+                    {
+                        db.StavkePrimkes.Attach(selektiranaStavkaPrimke);
+                        db.StavkePrimkes.Remove(selektiranaStavkaPrimke);
+                        db.SaveChanges();
+                    }
+                }
+            }
+            PrikaziStavkePrimki();
+            PrikaziArtikle();
+            PrikaziKolicinu();
+
+        }
+
+        private void btnDodajDobavljaca_Click(object sender, EventArgs e)
+        {
+            FrmNoviDobavljac noviDobavljac = new FrmNoviDobavljac();
+            noviDobavljac.ShowDialog();
+            PrikaziDobavljace();
+        }
+        #endregion
+
+        /// <summary>
         /// u slucaju promjene odabira stavke mijenja podatke u korespondirajucem fieldu
         /// </summary>
         /// <param name="sender"></param>
@@ -290,5 +321,17 @@ namespace Impresso_Expresso
             PrikaziArtikle();
             PrikaziKolicinu();
         }
+
+        /// <summary>
+        /// sprjecava promjene na osnovnim podacima forme
+        /// </summary>
+        private void BlokirajPromjene()
+        {
+            cbDobavljac.Enabled = false;
+            cbKorisnik.Enabled = false;
+            dtpPrimke.Enabled = false;
+        }
+
+        
     }
 }

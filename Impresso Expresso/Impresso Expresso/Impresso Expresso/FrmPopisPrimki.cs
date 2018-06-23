@@ -54,20 +54,6 @@ namespace Impresso_Expresso
         }
         #endregion
         
-        /// <summary>
-        /// Pri događaju promjene selekcije mijenja stavke
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void dgvPrimke_SelectionChanged(object sender, System.EventArgs e)
-        {
-            Primke selektiranaPrimka = primkeBindingSource.Current as Primke;
-            if(selektiranaPrimka != null)
-            {
-                PrikaziStavkePrimki(selektiranaPrimka);
-            }
-        }
-
         #region ButtonEvent
 
         /// <summary>
@@ -81,7 +67,11 @@ namespace Impresso_Expresso
             novaPrimka.ShowDialog();
             PrikaziPrimke();
         }
-
+        /// <summary>
+        /// provjerava jel primka prazna i brise primku
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnObrisiPrimku_Click(object sender, System.EventArgs e)
         {
             Primke selektiranaPrimka = primkeBindingSource.Current as Primke;
@@ -108,27 +98,11 @@ namespace Impresso_Expresso
             PrikaziPrimke();
         }
 
-        
-        private void btnObrisiStavkuPrimke_Click(object sender, System.EventArgs e)
-        {
-            StavkePrimke selektiranaStavkaPrimke = stavkePrimkeBindingSource.Current as StavkePrimke;
-            
-            if (selektiranaStavkaPrimke != null)
-            {
-                if (MessageBox.Show("Da li ste sigurni?", "Upozorenje!",
-                    MessageBoxButtons.YesNo) == System.Windows.Forms.DialogResult.Yes)
-                {
-                    using (var db = new Entities())
-                    {
-                        db.StavkePrimkes.Attach(selektiranaStavkaPrimke);                        
-                        db.StavkePrimkes.Remove(selektiranaStavkaPrimke);
-                        db.SaveChanges();                        
-                    }
-                }
-            }
-            PrikaziStavkePrimki(primkeBindingSource.Current as Primke);
-        }
-
+        /// <summary>
+        /// prosljeduje selektiranu primku frmnovaprimka za uredivanje
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnUrediPrimku_Click(object sender, System.EventArgs e)
         {
             FrmNovaPrimka novaPrimka = new FrmNovaPrimka(primkeBindingSource.Current as Primke);
@@ -137,6 +111,20 @@ namespace Impresso_Expresso
         }
         #endregion
 
-       
+        /// <summary>
+        /// Pri događaju promjene selekcije mijenja stavke
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void dgvPrimke_SelectionChanged(object sender, System.EventArgs e)
+        {
+            Primke selektiranaPrimka = primkeBindingSource.Current as Primke;
+            if (selektiranaPrimka != null)
+            {
+                PrikaziStavkePrimki(selektiranaPrimka);
+            }
+        }
+
+
     }
 }
