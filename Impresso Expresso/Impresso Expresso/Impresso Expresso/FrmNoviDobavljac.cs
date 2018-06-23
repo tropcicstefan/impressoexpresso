@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace Impresso_Expresso
 {
+    /// <summary>
+    /// <author>Stefan Tropčić</author>
+    /// </summary>
     public partial class FrmNoviDobavljac : Form
     {
         private List<string> pozivniBroj = new List<string> { "01", "020", "021", "022",
@@ -18,6 +21,7 @@ namespace Impresso_Expresso
                             "098","099"};
 
         private Dobavljaci dobavljac = new Dobavljaci();
+        private bool greska = false;
         public FrmNoviDobavljac()
         {
             InitializeComponent();
@@ -27,20 +31,96 @@ namespace Impresso_Expresso
         {
             cbPozivniBroj.DataSource = pozivniBroj;
         }
-
+        /// <summary>
+        /// pohranjuje podatke u bazu i zatvara formu ako produ provjere
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void Pohrani_Click(object sender, EventArgs e)
+        {
+            greska = false;
+            ProvjeriTelefonskiBroj(txtTelefonskiBroj.Text);
+            ProvjeriPostanskiBroj(txtPostanskiBroj.Text);
+            
+            if (!greska)
+            {
+                PohraniDobavljaca();
+            }
+            
+        }
+        /// <summary>
+        /// pohranjuje podatke u bazu i zatvara formu
+        /// </summary>
+        private void PohraniDobavljaca()
         {
             dobavljac.Naziv = txtNaziv.Text;
             dobavljac.Adresa = txtAdresa.Text;
             dobavljac.Posta = txtPostanskiBroj.Text + txtGrad.Text;
-            dobavljac.Telefon = cbPozivniBroj.SelectedText + txtTelefonskiBroj.Text;
-            using(Entities db = new Entities())
+            dobavljac.Telefon = cbPozivniBroj.SelectedValue+"/" + txtTelefonskiBroj.Text;
+
+            using (Entities db = new Entities())
             {
-                db.Dobavljacis.Add(dobavljac);                
+                db.Dobavljacis.Add(dobavljac);
                 db.SaveChanges();
             }
             Close();
-
+        }
+        /// <summary>
+        /// provjerava jel telefonski broj zadovoljava hrv standarde
+        /// </summary>
+        /// <param name="tekst"></param>
+        private void ProvjeriTelefonskiBroj(string tekst)
+        {
+            ProvjeriBroj(tekst, "telefonski");
+            if (!greska)
+            {
+                int broj = tekst.Length;
+                if (broj > 7)
+                {
+                    greska = true;
+                    MessageBox.Show("Predugačak telefonski broj");
+                }
+                else if (broj < 6)
+                {
+                    greska = true;
+                    MessageBox.Show("Prekatak telefonski broj");
+                }
+            }
+        }
+        /// <summary>
+        /// provjerava jel postanski broj zadovoljava hrv standarde
+        /// </summary>
+        /// <param name="tekst"></param>
+        private void ProvjeriPostanskiBroj(string tekst)
+        {
+            ProvjeriBroj(tekst, "poštanski");
+            if (!greska)
+            {
+                int broj = int.Parse(tekst);
+                if (broj > 53297 || broj < 10000)
+                {
+                    greska = true;
+                    MessageBox.Show("Ne postoji taj poštanski broj u RH");
+                }
+            }
+        }
+        /// <summary>
+        /// provjerava jel uneseni tekst broj
+        /// </summary>
+        /// <param name="provjera"></param>
+        /// <param name="vrsta"></param>
+        private void ProvjeriBroj(string provjera, string vrsta)
+        {
+            try
+            {
+                int broj = int.Parse(provjera);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Upišite broj u polje " + vrsta + " broj");
+                greska = true;
+            }
+            
         }
     }
 }
