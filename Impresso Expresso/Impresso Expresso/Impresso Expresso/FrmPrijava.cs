@@ -16,7 +16,7 @@ namespace Impresso_Expresso
     public partial class FrmPrijava : Form
     {
         public Entities db = new Entities();
-        
+        public static Korisnici korisnik;
         public FrmPrijava()
         {
             InitializeComponent();
@@ -46,7 +46,7 @@ namespace Impresso_Expresso
 
             if (txtLozinka.Text != "" && txtKorIme.Text != "")
             {
-                Korisnici korisnik = db.Korisnicis.FirstOrDefault(s => s.KorisnickoIme == txtKorIme.Text);
+                korisnik = db.Korisnicis.FirstOrDefault(s => s.KorisnickoIme == txtKorIme.Text);
                 if (korisnik != null)
                 {
                     if (korisnik.Lozinka == txtLozinka.Text)
