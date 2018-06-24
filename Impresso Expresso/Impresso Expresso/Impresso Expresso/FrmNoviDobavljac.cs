@@ -41,7 +41,7 @@ namespace Impresso_Expresso
             greska = false;
             ProvjeriTelefonskiBroj(txtTelefonskiBroj.Text);
             ProvjeriPostanskiBroj(txtPostanskiBroj.Text);
-            
+            ProvjeriPolja();
             if (!greska)
             {
                 PohraniDobavljaca();
@@ -65,6 +65,7 @@ namespace Impresso_Expresso
             }
             Close();
         }
+        #region Provjeri
         /// <summary>
         /// provjerava jel telefonski broj zadovoljava hrv standarde
         /// </summary>
@@ -122,5 +123,15 @@ namespace Impresso_Expresso
             }
             
         }
+        private void ProvjeriPolja()
+        {
+            if (txtNaziv.Text == "" || txtAdresa.Text == "" || txtPostanskiBroj.Text == "" || 
+                txtGrad.Text == "" || txtTelefonskiBroj.Text == "")
+            {
+                MessageBox.Show("Unesite sve podatke!", "Pogreška!", MessageBoxButtons.OK);
+                greska = true;
+            }
+        }
+        #endregion
     }
 }
