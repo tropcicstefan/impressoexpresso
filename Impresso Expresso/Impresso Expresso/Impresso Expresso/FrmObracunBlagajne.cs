@@ -46,7 +46,9 @@ namespace Impresso_Expresso
             PrikaziIzvjestaj();
             PrikazZaPrint();
         }
-
+        /// <summary>
+        /// Funkcija za pounjavanje svih elemenata dnevnog izvještaja
+        /// </summary>
         private void PrikaziIzvjestaj()
         {
             
@@ -63,6 +65,9 @@ namespace Impresso_Expresso
                 txtIzradioKonobar.Text = korisnik.KorisnickoIme;
             }
         }
+        /// <summary>
+        /// Funkcija za prikaz izvještaja dnevnog prometa spremnog za print
+        /// </summary>
         private void PrikazZaPrint()
         {
             Izvjestaji izvjestaj = db.Izvjestajis.ToList().OrderByDescending(s => s.Datum).FirstOrDefault();
