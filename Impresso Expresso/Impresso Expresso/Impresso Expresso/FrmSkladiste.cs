@@ -106,6 +106,7 @@ namespace Impresso_Expresso
         {
             FrmUpravljanjeArtiklom formaUpravljanjeArtiklom = new FrmUpravljanjeArtiklom();
             formaUpravljanjeArtiklom.ShowDialog();
+            PrikaziArtikle();
         }
     }
 }

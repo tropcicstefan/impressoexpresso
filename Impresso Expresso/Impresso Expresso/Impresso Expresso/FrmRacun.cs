@@ -57,7 +57,6 @@ namespace Impresso_Expresso
             {
                 db.Narudzbes.Attach(narudzba);
                 narudzba.RacunID = noviRacun.ID;
-                narudzba.StolID = 1004;
                 db.SaveChanges();
             }
         }
