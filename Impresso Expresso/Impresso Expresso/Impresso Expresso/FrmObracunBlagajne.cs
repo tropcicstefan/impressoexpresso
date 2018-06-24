@@ -44,6 +44,7 @@ namespace Impresso_Expresso
             izracunObracuna.IzracunPologa();
             izracunObracuna.UnosIzvjestajaUBazu();
             PrikaziIzvjestaj();
+            PrikazZaPrint();
         }
 
         private void PrikaziIzvjestaj()
@@ -62,13 +63,13 @@ namespace Impresso_Expresso
                 txtIzradioKonobar.Text = korisnik.KorisnickoIme;
             }
         }
-
-        private void FrmObracunBlagajne_Load(object sender, EventArgs e)
+        private void PrikazZaPrint()
         {
             Izvjestaji izvjestaj = db.Izvjestajis.ToList().OrderByDescending(s => s.Datum).FirstOrDefault();
             Korisnici korisnik = db.Korisnicis.FirstOrDefault(s => s.ID == izvjestaj.KonobarID);
             this.reportViewer1.RefreshReport();
             IzvjestajiBindingSource.DataSource = izvjestaj;
+            korisniciBindingSource.DataSource = korisnik;
         }
     }
 }

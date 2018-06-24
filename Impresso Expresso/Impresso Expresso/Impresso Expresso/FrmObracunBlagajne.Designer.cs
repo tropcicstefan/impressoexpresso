@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lblDatum = new System.Windows.Forms.Label();
@@ -51,10 +52,12 @@
             this.btnObracunBlagajne = new System.Windows.Forms.Button();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.IzvjestajiBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.korisniciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbDnevniIzvještaj.SuspendLayout();
             this.gbNacinPlacanja.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IzvjestajiBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.korisniciBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -243,7 +246,10 @@
             // 
             reportDataSource1.Name = "DataSetIzvjestaja";
             reportDataSource1.Value = this.IzvjestajiBindingSource;
+            reportDataSource2.Name = "DataSetKorisnici";
+            reportDataSource2.Value = this.korisniciBindingSource;
             this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "Impresso_Expresso.DnevniIzvjestaj.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(39, 526);
             this.reportViewer1.Name = "reportViewer1";
@@ -254,6 +260,10 @@
             // IzvjestajiBindingSource
             // 
             this.IzvjestajiBindingSource.DataSource = typeof(Impresso_Expresso.Izvjestaji);
+            // 
+            // korisniciBindingSource
+            // 
+            this.korisniciBindingSource.DataSource = typeof(Impresso_Expresso.Korisnici);
             // 
             // FrmObracunBlagajne
             // 
@@ -270,13 +280,13 @@
             this.Name = "FrmObracunBlagajne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmObracunBlagajne";
-            this.Load += new System.EventHandler(this.FrmObracunBlagajne_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbDnevniIzvještaj.ResumeLayout(false);
             this.gbDnevniIzvještaj.PerformLayout();
             this.gbNacinPlacanja.ResumeLayout(false);
             this.gbNacinPlacanja.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.IzvjestajiBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.korisniciBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -304,5 +314,6 @@
         private System.Windows.Forms.Label label1;
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.BindingSource IzvjestajiBindingSource;
+        private System.Windows.Forms.BindingSource korisniciBindingSource;
     }
 }
