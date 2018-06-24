@@ -63,9 +63,10 @@ namespace Impresso_Expresso
             {
                 if (txtCijenaArtikla.Text != "" && txtNazivArtikla.Text != "" && cbKategorijaArtikla.SelectedItem != null)
                 {
-                    decimal cijena = decimal.Parse(txtCijenaArtikla.Text);
+                    
                     Artikli artikli = new Artikli();
                     artikli.Naziv = txtNazivArtikla.Text;
+                    decimal cijena = decimal.Parse(txtCijenaArtikla.Text);
                     artikli.Cijena = decimal.Parse(cijena.ToString("#.##"));
                     artikli.KategorijaID = int.Parse(cbKategorijaArtikla.SelectedValue.ToString());
                     artikli.StanjeNaSkladistu = 0;
@@ -83,9 +84,8 @@ namespace Impresso_Expresso
                 if (txtCijenaArtikla.Text != "" && txtNazivArtikla.Text != "" && cbKategorijaArtikla.SelectedItem != null)
                 {
                     var artikl = db.Artiklis.FirstOrDefault(s => s.ID == idOdabranogArtikla);
-                    decimal cijena = decimal.Parse(txtCijenaArtikla.Text);
-
                     artikl.Naziv = txtNazivArtikla.Text;
+                    decimal cijena = decimal.Parse(txtCijenaArtikla.Text);
                     artikl.Cijena = decimal.Parse(cijena.ToString("#.##"));
                     artikl.KategorijaID = int.Parse(cbKategorijaArtikla.SelectedValue.ToString());
                     db.SaveChanges();
