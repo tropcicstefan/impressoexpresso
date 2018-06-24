@@ -157,5 +157,20 @@ namespace Impresso_Expresso
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spStavkeRacuna_Result>("spStavkeRacuna", racunIDParameter);
         }
+    
+        public virtual ObjectResult<Nullable<decimal>> IznosPologaZaDanas()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<decimal>>("IznosPologaZaDanas");
+        }
+    
+        public virtual ObjectResult<Nullable<double>> IznosRacunaPlacenihGotovinom()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<double>>("IznosRacunaPlacenihGotovinom");
+        }
+    
+        public virtual ObjectResult<Nullable<double>> IznosRacunaPlacenihKarticom()
+        {
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<double>>("IznosRacunaPlacenihKarticom");
+        }
     }
 }

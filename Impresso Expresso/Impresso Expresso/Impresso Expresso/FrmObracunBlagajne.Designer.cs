@@ -38,14 +38,15 @@
             this.lblKartica = new System.Windows.Forms.Label();
             this.txtNovcanica = new System.Windows.Forms.TextBox();
             this.lblNovcanica = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lblGotovinaUBlagajni = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPologUBlagajni = new System.Windows.Forms.TextBox();
             this.lblPolog = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.lblPrometBlagajne = new System.Windows.Forms.Label();
             this.txtDatum = new System.Windows.Forms.TextBox();
             this.btnTransakcije = new System.Windows.Forms.Button();
+            this.btnObracunBlagajne = new System.Windows.Forms.Button();
+            this.lblGotovinaUBlagajni = new System.Windows.Forms.Label();
+            this.txtGotovinaUBlagajni = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtIzradioKonobar = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbDnevniIzvještaj.SuspendLayout();
             this.gbNacinPlacanja.SuspendLayout();
@@ -81,12 +82,12 @@
             // gbDnevniIzvještaj
             // 
             this.gbDnevniIzvještaj.Controls.Add(this.gbNacinPlacanja);
-            this.gbDnevniIzvještaj.Controls.Add(this.textBox3);
+            this.gbDnevniIzvještaj.Controls.Add(this.txtGotovinaUBlagajni);
             this.gbDnevniIzvještaj.Controls.Add(this.lblGotovinaUBlagajni);
-            this.gbDnevniIzvještaj.Controls.Add(this.textBox2);
+            this.gbDnevniIzvještaj.Controls.Add(this.txtIzradioKonobar);
+            this.gbDnevniIzvještaj.Controls.Add(this.label1);
+            this.gbDnevniIzvještaj.Controls.Add(this.txtPologUBlagajni);
             this.gbDnevniIzvještaj.Controls.Add(this.lblPolog);
-            this.gbDnevniIzvještaj.Controls.Add(this.textBox1);
-            this.gbDnevniIzvještaj.Controls.Add(this.lblPrometBlagajne);
             this.gbDnevniIzvještaj.Controls.Add(this.txtDatum);
             this.gbDnevniIzvještaj.Controls.Add(this.lblDatum);
             this.gbDnevniIzvještaj.ForeColor = System.Drawing.Color.White;
@@ -155,29 +156,12 @@
             this.lblNovcanica.TabIndex = 2;
             this.lblNovcanica.Text = "Novčanica:";
             // 
-            // textBox3
+            // txtPologUBlagajni
             // 
-            this.textBox3.Location = new System.Drawing.Point(191, 172);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(194, 22);
-            this.textBox3.TabIndex = 3;
-            // 
-            // lblGotovinaUBlagajni
-            // 
-            this.lblGotovinaUBlagajni.AutoSize = true;
-            this.lblGotovinaUBlagajni.ForeColor = System.Drawing.Color.White;
-            this.lblGotovinaUBlagajni.Location = new System.Drawing.Point(59, 172);
-            this.lblGotovinaUBlagajni.Name = "lblGotovinaUBlagajni";
-            this.lblGotovinaUBlagajni.Size = new System.Drawing.Size(134, 17);
-            this.lblGotovinaUBlagajni.TabIndex = 2;
-            this.lblGotovinaUBlagajni.Text = "Gotovina u blagajni:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(191, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(194, 22);
-            this.textBox2.TabIndex = 3;
+            this.txtPologUBlagajni.Location = new System.Drawing.Point(191, 127);
+            this.txtPologUBlagajni.Name = "txtPologUBlagajni";
+            this.txtPologUBlagajni.Size = new System.Drawing.Size(194, 22);
+            this.txtPologUBlagajni.TabIndex = 3;
             // 
             // lblPolog
             // 
@@ -189,23 +173,6 @@
             this.lblPolog.TabIndex = 2;
             this.lblPolog.Text = "Polog u blagajnu:";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(191, 87);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(194, 22);
-            this.textBox1.TabIndex = 3;
-            // 
-            // lblPrometBlagajne
-            // 
-            this.lblPrometBlagajne.AutoSize = true;
-            this.lblPrometBlagajne.ForeColor = System.Drawing.Color.White;
-            this.lblPrometBlagajne.Location = new System.Drawing.Point(59, 87);
-            this.lblPrometBlagajne.Name = "lblPrometBlagajne";
-            this.lblPrometBlagajne.Size = new System.Drawing.Size(115, 17);
-            this.lblPrometBlagajne.TabIndex = 2;
-            this.lblPrometBlagajne.Text = "Promet blagajne:";
-            // 
             // txtDatum
             // 
             this.txtDatum.Location = new System.Drawing.Point(191, 43);
@@ -215,7 +182,7 @@
             // 
             // btnTransakcije
             // 
-            this.btnTransakcije.Location = new System.Drawing.Point(647, 193);
+            this.btnTransakcije.Location = new System.Drawing.Point(652, 394);
             this.btnTransakcije.Name = "btnTransakcije";
             this.btnTransakcije.Size = new System.Drawing.Size(95, 42);
             this.btnTransakcije.TabIndex = 4;
@@ -223,12 +190,57 @@
             this.btnTransakcije.UseVisualStyleBackColor = true;
             this.btnTransakcije.Click += new System.EventHandler(this.btnTransakcije_Click);
             // 
+            // btnObracunBlagajne
+            // 
+            this.btnObracunBlagajne.Location = new System.Drawing.Point(652, 454);
+            this.btnObracunBlagajne.Name = "btnObracunBlagajne";
+            this.btnObracunBlagajne.Size = new System.Drawing.Size(95, 42);
+            this.btnObracunBlagajne.TabIndex = 4;
+            this.btnObracunBlagajne.Text = "Obračun";
+            this.btnObracunBlagajne.UseVisualStyleBackColor = true;
+            this.btnObracunBlagajne.Click += new System.EventHandler(this.btnObracunBlagajne_Click);
+            // 
+            // lblGotovinaUBlagajni
+            // 
+            this.lblGotovinaUBlagajni.AutoSize = true;
+            this.lblGotovinaUBlagajni.ForeColor = System.Drawing.Color.White;
+            this.lblGotovinaUBlagajni.Location = new System.Drawing.Point(59, 87);
+            this.lblGotovinaUBlagajni.Name = "lblGotovinaUBlagajni";
+            this.lblGotovinaUBlagajni.Size = new System.Drawing.Size(134, 17);
+            this.lblGotovinaUBlagajni.TabIndex = 2;
+            this.lblGotovinaUBlagajni.Text = "Gotovina u blagajni:";
+            // 
+            // txtGotovinaUBlagajni
+            // 
+            this.txtGotovinaUBlagajni.Location = new System.Drawing.Point(191, 87);
+            this.txtGotovinaUBlagajni.Name = "txtGotovinaUBlagajni";
+            this.txtGotovinaUBlagajni.Size = new System.Drawing.Size(194, 22);
+            this.txtGotovinaUBlagajni.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(59, 168);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Izradio Konobar";
+            // 
+            // txtIzradioKonobar
+            // 
+            this.txtIzradioKonobar.Location = new System.Drawing.Point(191, 168);
+            this.txtIzradioKonobar.Name = "txtIzradioKonobar";
+            this.txtIzradioKonobar.Size = new System.Drawing.Size(194, 22);
+            this.txtIzradioKonobar.TabIndex = 3;
+            // 
             // FrmObracunBlagajne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(782, 553);
+            this.Controls.Add(this.btnObracunBlagajne);
             this.Controls.Add(this.btnTransakcije);
             this.Controls.Add(this.gbDnevniIzvještaj);
             this.Controls.Add(this.dateTimePicker1);
@@ -257,13 +269,14 @@
         private System.Windows.Forms.Label lblKartica;
         private System.Windows.Forms.TextBox txtNovcanica;
         private System.Windows.Forms.Label lblNovcanica;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label lblGotovinaUBlagajni;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPologUBlagajni;
         private System.Windows.Forms.Label lblPolog;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label lblPrometBlagajne;
         private System.Windows.Forms.TextBox txtDatum;
         private System.Windows.Forms.Button btnTransakcije;
+        private System.Windows.Forms.Button btnObracunBlagajne;
+        private System.Windows.Forms.TextBox txtGotovinaUBlagajni;
+        private System.Windows.Forms.Label lblGotovinaUBlagajni;
+        private System.Windows.Forms.TextBox txtIzradioKonobar;
+        private System.Windows.Forms.Label label1;
     }
 }
