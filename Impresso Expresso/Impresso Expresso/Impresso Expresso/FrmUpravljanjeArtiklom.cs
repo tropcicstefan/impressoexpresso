@@ -100,10 +100,14 @@ namespace Impresso_Expresso
             Kategorije odabranaKategorija = lbPopisKategorija.SelectedItem as Kategorije;
             if (odabranaKategorija != null)
             {
+                List<Artikli> artikliKategorije;
                 dgvPopisArtikala.DataSource = null;
-                List<Artikli> artikliKategorije = db.Artiklis.Where(s => s.KategorijaID == odabranaKategorija.ID).ToList();
+                using (Entities dd = new Entities())
+                {
+                     artikliKategorije = dd.Artiklis.Where(s => s.KategorijaID == odabranaKategorija.ID).ToList();
+                }
                 dgvPopisArtikala.DataSource = artikliKategorije;
-               
+                
             }
             else
             {
