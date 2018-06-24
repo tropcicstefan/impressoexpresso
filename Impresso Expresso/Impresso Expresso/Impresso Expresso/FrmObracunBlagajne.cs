@@ -62,5 +62,13 @@ namespace Impresso_Expresso
                 txtIzradioKonobar.Text = korisnik.KorisnickoIme;
             }
         }
+
+        private void FrmObracunBlagajne_Load(object sender, EventArgs e)
+        {
+            Izvjestaji izvjestaj = db.Izvjestajis.ToList().OrderByDescending(s => s.Datum).FirstOrDefault();
+            Korisnici korisnik = db.Korisnicis.FirstOrDefault(s => s.ID == izvjestaj.KonobarID);
+            this.reportViewer1.RefreshReport();
+            IzvjestajiBindingSource.DataSource = izvjestaj;
+        }
     }
 }

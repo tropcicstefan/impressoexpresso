@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.lblDatum = new System.Windows.Forms.Label();
@@ -38,18 +40,21 @@
             this.lblKartica = new System.Windows.Forms.Label();
             this.txtNovcanica = new System.Windows.Forms.TextBox();
             this.lblNovcanica = new System.Windows.Forms.Label();
+            this.txtGotovinaUBlagajni = new System.Windows.Forms.TextBox();
+            this.lblGotovinaUBlagajni = new System.Windows.Forms.Label();
+            this.txtIzradioKonobar = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtPologUBlagajni = new System.Windows.Forms.TextBox();
             this.lblPolog = new System.Windows.Forms.Label();
             this.txtDatum = new System.Windows.Forms.TextBox();
             this.btnTransakcije = new System.Windows.Forms.Button();
             this.btnObracunBlagajne = new System.Windows.Forms.Button();
-            this.lblGotovinaUBlagajni = new System.Windows.Forms.Label();
-            this.txtGotovinaUBlagajni = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtIzradioKonobar = new System.Windows.Forms.TextBox();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.IzvjestajiBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbDnevniIzvještaj.SuspendLayout();
             this.gbNacinPlacanja.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IzvjestajiBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -156,6 +161,40 @@
             this.lblNovcanica.TabIndex = 2;
             this.lblNovcanica.Text = "Novčanica:";
             // 
+            // txtGotovinaUBlagajni
+            // 
+            this.txtGotovinaUBlagajni.Location = new System.Drawing.Point(191, 87);
+            this.txtGotovinaUBlagajni.Name = "txtGotovinaUBlagajni";
+            this.txtGotovinaUBlagajni.Size = new System.Drawing.Size(194, 22);
+            this.txtGotovinaUBlagajni.TabIndex = 3;
+            // 
+            // lblGotovinaUBlagajni
+            // 
+            this.lblGotovinaUBlagajni.AutoSize = true;
+            this.lblGotovinaUBlagajni.ForeColor = System.Drawing.Color.White;
+            this.lblGotovinaUBlagajni.Location = new System.Drawing.Point(59, 87);
+            this.lblGotovinaUBlagajni.Name = "lblGotovinaUBlagajni";
+            this.lblGotovinaUBlagajni.Size = new System.Drawing.Size(134, 17);
+            this.lblGotovinaUBlagajni.TabIndex = 2;
+            this.lblGotovinaUBlagajni.Text = "Gotovina u blagajni:";
+            // 
+            // txtIzradioKonobar
+            // 
+            this.txtIzradioKonobar.Location = new System.Drawing.Point(191, 168);
+            this.txtIzradioKonobar.Name = "txtIzradioKonobar";
+            this.txtIzradioKonobar.Size = new System.Drawing.Size(194, 22);
+            this.txtIzradioKonobar.TabIndex = 3;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(59, 168);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(108, 17);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Izradio Konobar";
+            // 
             // txtPologUBlagajni
             // 
             this.txtPologUBlagajni.Location = new System.Drawing.Point(191, 127);
@@ -200,46 +239,29 @@
             this.btnObracunBlagajne.UseVisualStyleBackColor = true;
             this.btnObracunBlagajne.Click += new System.EventHandler(this.btnObracunBlagajne_Click);
             // 
-            // lblGotovinaUBlagajni
+            // reportViewer1
             // 
-            this.lblGotovinaUBlagajni.AutoSize = true;
-            this.lblGotovinaUBlagajni.ForeColor = System.Drawing.Color.White;
-            this.lblGotovinaUBlagajni.Location = new System.Drawing.Point(59, 87);
-            this.lblGotovinaUBlagajni.Name = "lblGotovinaUBlagajni";
-            this.lblGotovinaUBlagajni.Size = new System.Drawing.Size(134, 17);
-            this.lblGotovinaUBlagajni.TabIndex = 2;
-            this.lblGotovinaUBlagajni.Text = "Gotovina u blagajni:";
+            reportDataSource1.Name = "DataSetIzvjestaja";
+            reportDataSource1.Value = this.IzvjestajiBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "Impresso_Expresso.DnevniIzvjestaj.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(39, 526);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(708, 390);
+            this.reportViewer1.TabIndex = 5;
             // 
-            // txtGotovinaUBlagajni
+            // IzvjestajiBindingSource
             // 
-            this.txtGotovinaUBlagajni.Location = new System.Drawing.Point(191, 87);
-            this.txtGotovinaUBlagajni.Name = "txtGotovinaUBlagajni";
-            this.txtGotovinaUBlagajni.Size = new System.Drawing.Size(194, 22);
-            this.txtGotovinaUBlagajni.TabIndex = 3;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(59, 168);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Izradio Konobar";
-            // 
-            // txtIzradioKonobar
-            // 
-            this.txtIzradioKonobar.Location = new System.Drawing.Point(191, 168);
-            this.txtIzradioKonobar.Name = "txtIzradioKonobar";
-            this.txtIzradioKonobar.Size = new System.Drawing.Size(194, 22);
-            this.txtIzradioKonobar.TabIndex = 3;
+            this.IzvjestajiBindingSource.DataSource = typeof(Impresso_Expresso.Izvjestaji);
             // 
             // FrmObracunBlagajne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(782, 553);
+            this.ClientSize = new System.Drawing.Size(782, 937);
+            this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.btnObracunBlagajne);
             this.Controls.Add(this.btnTransakcije);
             this.Controls.Add(this.gbDnevniIzvještaj);
@@ -248,11 +270,13 @@
             this.Name = "FrmObracunBlagajne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmObracunBlagajne";
+            this.Load += new System.EventHandler(this.FrmObracunBlagajne_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbDnevniIzvještaj.ResumeLayout(false);
             this.gbDnevniIzvještaj.PerformLayout();
             this.gbNacinPlacanja.ResumeLayout(false);
             this.gbNacinPlacanja.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.IzvjestajiBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -278,5 +302,7 @@
         private System.Windows.Forms.Label lblGotovinaUBlagajni;
         private System.Windows.Forms.TextBox txtIzradioKonobar;
         private System.Windows.Forms.Label label1;
+        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
+        private System.Windows.Forms.BindingSource IzvjestajiBindingSource;
     }
 }

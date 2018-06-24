@@ -234,6 +234,7 @@
     <Compile Include="Uloge.cs">
       <DependentUpon>KaficModel.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DnevniIzvjestaj.rdlc" />
     <EmbeddedResource Include="FrmNovaPrimka.resx">
       <DependentUpon>FrmNovaPrimka.cs</DependentUpon>
     </EmbeddedResource>
@@ -297,6 +298,7 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Artikli.datasource" />
     <None Include="Properties\DataSources\Dobavljaci.datasource" />
+    <None Include="Properties\DataSources\Izvjestaji.datasource" />
     <None Include="Properties\DataSources\Kase.datasource" />
     <None Include="Properties\DataSources\Kategorije.datasource" />
     <None Include="Properties\DataSources\Korisnici.datasource" />
