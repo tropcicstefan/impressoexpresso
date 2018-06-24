@@ -353,6 +353,9 @@
           </ReferentialConstraint>
         </Association>
         <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="IznosPologaZaDanas" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="IznosRacunaPlacenihGotovinom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="IznosRacunaPlacenihKarticom" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
         <Function Name="ProvjeraKorisnickogImenaRegistracija" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="KorisnickoIme" Type="nvarchar" Mode="In" />
         </Function>
@@ -974,6 +977,9 @@
           <FunctionImport Name="spStavkeRacuna" ReturnType="Collection(DBModel.spStavkeRacuna_Result)">
           <Parameter Name="racunID" Mode="In" Type="Int32" />
           </FunctionImport>
+          <FunctionImport Name="IznosPologaZaDanas" ReturnType="Collection(Decimal)" />
+          <FunctionImport Name="IznosRacunaPlacenihGotovinom" ReturnType="Collection(Double)" />
+          <FunctionImport Name="IznosRacunaPlacenihKarticom" ReturnType="Collection(Double)" />
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -1202,6 +1208,9 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="IznosPologaZaDanas" FunctionName="DBModel.Store.IznosPologaZaDanas" />
+          <FunctionImportMapping FunctionImportName="IznosRacunaPlacenihGotovinom" FunctionName="DBModel.Store.IznosRacunaPlacenihGotovinom" />
+          <FunctionImportMapping FunctionImportName="IznosRacunaPlacenihKarticom" FunctionName="DBModel.Store.IznosRacunaPlacenihKarticom" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

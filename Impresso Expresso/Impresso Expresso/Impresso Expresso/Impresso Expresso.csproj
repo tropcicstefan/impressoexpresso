@@ -161,6 +161,7 @@
     <Compile Include="FrmSkladiste.Designer.cs">
       <DependentUpon>FrmSkladiste.cs</DependentUpon>
     </Compile>
+    <Compile Include="IzracunObracuna.cs" />
     <Compile Include="Izvjestaji.cs">
       <DependentUpon>KaficModel.tt</DependentUpon>
     </Compile>
