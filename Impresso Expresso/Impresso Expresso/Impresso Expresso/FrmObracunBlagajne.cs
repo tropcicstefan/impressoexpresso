@@ -16,5 +16,16 @@ namespace Impresso_Expresso
         {
             InitializeComponent();
         }
+
+        private void FrmObracunBlagajne_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTransakcije_Click(object sender, EventArgs e)
+        {
+            FrmTransakcija formaTransakcije = new FrmTransakcija();
+            formaTransakcije.ShowDialog();
+        }
     }
 }

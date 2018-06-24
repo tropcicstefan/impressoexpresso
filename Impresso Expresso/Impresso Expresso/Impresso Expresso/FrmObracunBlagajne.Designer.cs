@@ -47,6 +47,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblPrometBlagajne = new System.Windows.Forms.Label();
             this.txtDatum = new System.Windows.Forms.TextBox();
+            this.btnTransakcije = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbDnevniIzvještaj.SuspendLayout();
             this.gbNacinPlacanja.SuspendLayout();
@@ -233,18 +234,30 @@
             this.txtDatum.Size = new System.Drawing.Size(194, 22);
             this.txtDatum.TabIndex = 3;
             // 
+            // btnTransakcije
+            // 
+            this.btnTransakcije.Location = new System.Drawing.Point(647, 193);
+            this.btnTransakcije.Name = "btnTransakcije";
+            this.btnTransakcije.Size = new System.Drawing.Size(95, 42);
+            this.btnTransakcije.TabIndex = 4;
+            this.btnTransakcije.Text = "Transakcije";
+            this.btnTransakcije.UseVisualStyleBackColor = true;
+            this.btnTransakcije.Click += new System.EventHandler(this.btnTransakcije_Click);
+            // 
             // FrmObracunBlagajne
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(782, 553);
+            this.Controls.Add(this.btnTransakcije);
             this.Controls.Add(this.gbDnevniIzvještaj);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmObracunBlagajne";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmObracunBlagajne";
+            this.Load += new System.EventHandler(this.FrmObracunBlagajne_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbDnevniIzvještaj.ResumeLayout(false);
             this.gbDnevniIzvještaj.PerformLayout();
@@ -275,5 +288,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblPrometBlagajne;
         private System.Windows.Forms.TextBox txtDatum;
+        private System.Windows.Forms.Button btnTransakcije;
     }
 }

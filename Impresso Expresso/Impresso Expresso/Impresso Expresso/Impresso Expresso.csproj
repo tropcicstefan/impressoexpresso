@@ -125,6 +125,12 @@
     <Compile Include="FrmStol.Designer.cs">
       <DependentUpon>FrmStol.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmTransakcija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTransakcija.Designer.cs">
+      <DependentUpon>FrmTransakcija.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmUnosArtikla.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmStol.resx">
       <DependentUpon>FrmStol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTransakcija.resx">
+      <DependentUpon>FrmTransakcija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmUnosArtikla.resx">
       <DependentUpon>FrmUnosArtikla.cs</DependentUpon>
