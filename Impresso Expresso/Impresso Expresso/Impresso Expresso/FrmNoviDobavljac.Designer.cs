@@ -175,7 +175,7 @@
             this.ForeColor = System.Drawing.SystemColors.Window;
             this.Name = "FrmNoviDobavljac";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Novi Dobavljač";
+            this.Text = "Novi dobavljač";
             this.Load += new System.EventHandler(this.FrmNoviDobavljac_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
