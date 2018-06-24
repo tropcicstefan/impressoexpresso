@@ -71,22 +71,29 @@ namespace Impresso_Expresso
             }
         }
         /// <summary>
-        /// dohvaća popis korisnika za combobox
+        /// dohvaća korisnika iz aktivnog usera
         /// </summary>
         private void PrikaziKorisnike()
         {
-            BindingList<Korisnici> listaKorisnika = null;
-            using (var db = new Entities())
+            if (nova)
             {
-                listaKorisnika = new BindingList<Korisnici>(db.Korisnicis.ToList());
+                txtKorisnik.Text = FrmPrijava.korisnik.KorisnickoIme;
+                txtKorisnik.Enabled = false;
             }
-            cbKorisnik.DataSource = listaKorisnika;
-            cbKorisnik.DisplayMember = "KorisnickoIme";
-            cbKorisnik.ValueMember = "ID";
-            if (!nova)
+            else
             {
-                cbKorisnik.SelectedValue = primka.KorisnikID;
+                
+                using (var db = new Entities())
+                {
+                    Korisnici korisnik = db.Korisnicis.SingleOrDefault(k => k.ID == primka.KorisnikID);
+                    if (korisnik != null)
+                    {
+                        txtKorisnik.Text = korisnik.KorisnickoIme;
+                        txtKorisnik.Enabled = false;
+                    }
+                }
             }
+            
         }
 
         /// <summary>
@@ -167,7 +174,7 @@ namespace Impresso_Expresso
                 primka = new Primke
                 {
                     DobavljacID = int.Parse(cbDobavljac.SelectedValue.ToString()),
-                    KorisnikID = int.Parse(cbKorisnik.SelectedValue.ToString()),
+                    KorisnikID = FrmPrijava.korisnik.ID,
                     DatumIVrijeme = dtpPrimke.Value
                 };
                 db.Primkes.Add(primka);
@@ -183,7 +190,7 @@ namespace Impresso_Expresso
             {
                 db.Primkes.Attach(primka);
                 primka.DobavljacID = int.Parse(cbDobavljac.SelectedValue.ToString());
-                primka.KorisnikID = int.Parse(cbKorisnik.SelectedValue.ToString());
+                primka.KorisnikID = FrmPrijava.korisnik.ID;
                 primka.DatumIVrijeme = dtpPrimke.Value;              
                 
                 db.SaveChanges();
@@ -327,8 +334,7 @@ namespace Impresso_Expresso
         /// </summary>
         private void BlokirajPromjene()
         {
-            cbDobavljac.Enabled = false;
-            cbKorisnik.Enabled = false;
+            cbDobavljac.Enabled = false;            
             dtpPrimke.Enabled = false;
         }
 
