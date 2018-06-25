@@ -10,11 +10,71 @@ using System.Windows.Forms;
 
 namespace Impresso_Expresso
 {
+    /// <summary>
+    /// <author>Rene Maruševec</author>
+    /// </summary>
     public partial class FrmObracunBlagajne : Form
     {
+        Entities db = new Entities();
         public FrmObracunBlagajne()
         {
             InitializeComponent();
+        }
+        /// <summary>
+        /// Otvaranje forme za unos nove transakcije
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnTransakcije_Click(object sender, EventArgs e)
+        {
+            FrmTransakcija formaTransakcije = new FrmTransakcija();
+            formaTransakcije.ShowDialog();
+        }
+        /// <summary>
+        /// Funkcionalnost obračuna blagajne za današnji dan
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnObracunBlagajne_Click(object sender, EventArgs e)
+        {
+            Korisnici ulogiranKorisnik = FrmPrijava.korisnik;
+            IzracunObracuna izracunObracuna = new IzracunObracuna(ulogiranKorisnik);
+            izracunObracuna.IzracunIznosaKarticaUBlagajni();
+            izracunObracuna.IzracunIznosaGotovineUBlagajni();
+            izracunObracuna.IzracunPologa();
+            izracunObracuna.UnosIzvjestajaUBazu();
+            PrikaziIzvjestaj();
+            PrikazZaPrint();
+        }
+        /// <summary>
+        /// Funkcija za pounjavanje svih elemenata dnevnog izvještaja
+        /// </summary>
+        private void PrikaziIzvjestaj()
+        {
+            
+            DateTime datum = DateTime.Now.Date;
+            Izvjestaji izvjestaj = db.Izvjestajis.ToList().OrderByDescending(s => s.Datum).FirstOrDefault();
+            Korisnici korisnik = db.Korisnicis.FirstOrDefault(s => s.ID == izvjestaj.KonobarID);
+            if (izvjestaj != null)
+            {
+                txtDatum.Text = izvjestaj.Datum.ToString();
+                txtGotovinaUBlagajni.Text = izvjestaj.PrometBlagajne.ToString();
+                txtPologUBlagajni.Text = izvjestaj.PologUBlagajni.ToString();
+                txtNovcanica.Text = izvjestaj.GotovinaUBlagajni.ToString();
+                txtKartica.Text = izvjestaj.IznosKartica.ToString();
+                txtIzradioKonobar.Text = korisnik.KorisnickoIme;
+            }
+        }
+        /// <summary>
+        /// Funkcija za prikaz izvještaja dnevnog prometa spremnog za print
+        /// </summary>
+        private void PrikazZaPrint()
+        {
+            Izvjestaji izvjestaj = db.Izvjestajis.ToList().OrderByDescending(s => s.Datum).FirstOrDefault();
+            Korisnici korisnik = db.Korisnicis.FirstOrDefault(s => s.ID == izvjestaj.KonobarID);
+            this.reportViewer1.RefreshReport();
+            IzvjestajiBindingSource.DataSource = izvjestaj;
+            korisniciBindingSource.DataSource = korisnik;
         }
     }
 }

@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\vicke\Desktop\FAKS\6 semestar\PI\Projekt\git\Impresso Expresso\Impresso Expresso\Impresso Expresso\KaficModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\KORISNIK\Documents\r18018\Impresso Expresso\Impresso Expresso\Impresso Expresso\KaficModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.
