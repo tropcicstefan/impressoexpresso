@@ -44,13 +44,12 @@ namespace Impresso_Expresso
         /// <param name="primke"></param>
         private void PrikaziStavkePrimki(Primke primke)
         {
-            BindingList<StavkePrimke> listaStavkiPrimke = null;
+            
             using (var db = new Entities())
             {
-                db.Primkes.Attach(primke);
-                listaStavkiPrimke = new BindingList<StavkePrimke>(primke.StavkePrimkes.ToList());
+                dgvStavkePrimke.DataSource = db.spStavkePrimke(primke.ID);               
             }
-            stavkePrimkeBindingSource.DataSource = listaStavkiPrimke;
+            
         }
         #endregion
         

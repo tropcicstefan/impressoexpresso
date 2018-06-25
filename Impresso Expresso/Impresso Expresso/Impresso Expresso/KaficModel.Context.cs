@@ -172,5 +172,14 @@ namespace Impresso_Expresso
         {
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<Nullable<double>>("IznosRacunaPlacenihKarticom");
         }
+    
+        public virtual ObjectResult<spStavkePrimke_Result> spStavkePrimke(Nullable<int> primkaID)
+        {
+            var primkaIDParameter = primkaID.HasValue ?
+                new ObjectParameter("primkaID", primkaID) :
+                new ObjectParameter("primkaID", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spStavkePrimke_Result>("spStavkePrimke", primkaIDParameter);
+        }
     }
 }

@@ -46,11 +46,6 @@
             this.btnNovaPrimka = new System.Windows.Forms.Button();
             this.pDgv = new System.Windows.Forms.Panel();
             this.dgvStavkePrimke = new System.Windows.Forms.DataGridView();
-            this.primkaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artiklIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artikliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.primkeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkePrimkeBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrimke)).BeginInit();
@@ -198,15 +193,7 @@
             // 
             // dgvStavkePrimke
             // 
-            this.dgvStavkePrimke.AutoGenerateColumns = false;
             this.dgvStavkePrimke.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStavkePrimke.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.primkaIDDataGridViewTextBoxColumn,
-            this.artiklIDDataGridViewTextBoxColumn,
-            this.kolicinaDataGridViewTextBoxColumn,
-            this.artikliDataGridViewTextBoxColumn,
-            this.primkeDataGridViewTextBoxColumn});
-            this.dgvStavkePrimke.DataSource = this.stavkePrimkeBindingSource;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -219,38 +206,6 @@
             this.dgvStavkePrimke.Name = "dgvStavkePrimke";
             this.dgvStavkePrimke.Size = new System.Drawing.Size(448, 150);
             this.dgvStavkePrimke.TabIndex = 12;
-            // 
-            // primkaIDDataGridViewTextBoxColumn
-            // 
-            this.primkaIDDataGridViewTextBoxColumn.DataPropertyName = "PrimkaID";
-            this.primkaIDDataGridViewTextBoxColumn.HeaderText = "PrimkaID";
-            this.primkaIDDataGridViewTextBoxColumn.Name = "primkaIDDataGridViewTextBoxColumn";
-            // 
-            // artiklIDDataGridViewTextBoxColumn
-            // 
-            this.artiklIDDataGridViewTextBoxColumn.DataPropertyName = "ArtiklID";
-            this.artiklIDDataGridViewTextBoxColumn.HeaderText = "ArtiklID";
-            this.artiklIDDataGridViewTextBoxColumn.Name = "artiklIDDataGridViewTextBoxColumn";
-            // 
-            // kolicinaDataGridViewTextBoxColumn
-            // 
-            this.kolicinaDataGridViewTextBoxColumn.DataPropertyName = "Kolicina";
-            this.kolicinaDataGridViewTextBoxColumn.HeaderText = "Kolicina";
-            this.kolicinaDataGridViewTextBoxColumn.Name = "kolicinaDataGridViewTextBoxColumn";
-            // 
-            // artikliDataGridViewTextBoxColumn
-            // 
-            this.artikliDataGridViewTextBoxColumn.DataPropertyName = "Artikli";
-            this.artikliDataGridViewTextBoxColumn.HeaderText = "Artikli";
-            this.artikliDataGridViewTextBoxColumn.Name = "artikliDataGridViewTextBoxColumn";
-            this.artikliDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // primkeDataGridViewTextBoxColumn
-            // 
-            this.primkeDataGridViewTextBoxColumn.DataPropertyName = "Primke";
-            this.primkeDataGridViewTextBoxColumn.HeaderText = "Primke";
-            this.primkeDataGridViewTextBoxColumn.Name = "primkeDataGridViewTextBoxColumn";
-            this.primkeDataGridViewTextBoxColumn.Visible = false;
             // 
             // stavkePrimkeBindingSource
             // 
@@ -309,10 +264,5 @@
         private System.Windows.Forms.Panel pDgv;
         private System.Windows.Forms.Button btnNovaPrimka;
         private System.Windows.Forms.Button btnUrediPrimku;
-        private System.Windows.Forms.DataGridViewTextBoxColumn primkaIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn artiklIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn kolicinaDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn artikliDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn primkeDataGridViewTextBoxColumn;
     }
 }

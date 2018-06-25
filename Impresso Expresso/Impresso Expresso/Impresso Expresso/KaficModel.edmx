@@ -393,6 +393,9 @@
           <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
         </Function>
         <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="spStavkePrimke" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="primkaID" Type="int" Mode="In" />
+        </Function>
         <Function Name="spStavkeRacuna" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="racunID" Type="int" Mode="In" />
         </Function>
@@ -980,6 +983,9 @@
           <FunctionImport Name="IznosPologaZaDanas" ReturnType="Collection(Decimal)" />
           <FunctionImport Name="IznosRacunaPlacenihGotovinom" ReturnType="Collection(Double)" />
           <FunctionImport Name="IznosRacunaPlacenihKarticom" ReturnType="Collection(Double)" />
+          <FunctionImport Name="spStavkePrimke" ReturnType="Collection(DBModel.spStavkePrimke_Result)">
+            <Parameter Name="primkaID" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
           <Property Type="Int32" Name="version" Nullable="true" />
@@ -997,6 +1003,10 @@
           <Property Type="Double" Name="Kolicina" Nullable="true" />
           <Property Type="Decimal" Name="Cijena" Nullable="false" Precision="18" Scale="2" />
           <Property Type="Double" Name="ukupno" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="spStavkePrimke_Result">
+          <Property Type="String" Name="Naziv" Nullable="false" MaxLength="50" />
+          <Property Type="Double" Name="Kolicina" Nullable="false" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1211,6 +1221,14 @@
           <FunctionImportMapping FunctionImportName="IznosPologaZaDanas" FunctionName="DBModel.Store.IznosPologaZaDanas" />
           <FunctionImportMapping FunctionImportName="IznosRacunaPlacenihGotovinom" FunctionName="DBModel.Store.IznosRacunaPlacenihGotovinom" />
           <FunctionImportMapping FunctionImportName="IznosRacunaPlacenihKarticom" FunctionName="DBModel.Store.IznosRacunaPlacenihKarticom" />
+          <FunctionImportMapping FunctionImportName="spStavkePrimke" FunctionName="DBModel.Store.spStavkePrimke">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="DBModel.spStavkePrimke_Result">
+                <ScalarProperty Name="Naziv" ColumnName="Naziv" />
+                <ScalarProperty Name="Kolicina" ColumnName="Kolicina" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

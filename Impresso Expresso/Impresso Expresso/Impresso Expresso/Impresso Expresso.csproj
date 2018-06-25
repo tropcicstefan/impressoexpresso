@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\Impresso Expresso.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -204,6 +205,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Racuni.cs">
+      <DependentUpon>KaficModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spStavkePrimke_Result.cs">
       <DependentUpon>KaficModel.tt</DependentUpon>
     </Compile>
     <Compile Include="spStavkeRacuna_Result.cs">
