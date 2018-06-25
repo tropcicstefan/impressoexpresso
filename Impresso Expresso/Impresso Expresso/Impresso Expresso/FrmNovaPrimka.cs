@@ -309,7 +309,11 @@ namespace Impresso_Expresso
             PrikaziKolicinu();
 
         }
-
+        /// <summary>
+        /// otvara formu za dodavanje dobavljaca
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnDodajDobavljaca_Click(object sender, EventArgs e)
         {
             FrmNoviDobavljac noviDobavljac = new FrmNoviDobavljac();
@@ -337,7 +341,11 @@ namespace Impresso_Expresso
             cbDobavljac.Enabled = false;            
             dtpPrimke.Enabled = false;
         }
-
+        /// <summary>
+        /// hendla otvaranje usermanuala
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmNovaPrimka_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.F1)

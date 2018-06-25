@@ -171,6 +171,7 @@ namespace Impresso_Expresso
             
         }
         #endregion
+
         /// <summary>
         /// na lik ispisa prikazuje report i mijenja podatke o racunu unutar baze
         /// </summary>
@@ -182,7 +183,11 @@ namespace Impresso_Expresso
             PrikaziReport();
             PohraniKasu();
         }
-
+        /// <summary>
+        /// hendlanje otvaranja user manuala
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmRacun_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.F1)

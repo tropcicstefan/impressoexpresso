@@ -124,7 +124,11 @@ namespace Impresso_Expresso
                 PrikaziStavkePrimki(selektiranaPrimka);
             }
         }
-
+        /// <summary>
+        /// hendla otvaranje usermanuala
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmPopisPrimki_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.F1)

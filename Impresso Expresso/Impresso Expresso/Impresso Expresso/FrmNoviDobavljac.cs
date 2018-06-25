@@ -15,6 +15,9 @@ namespace Impresso_Expresso
     /// </summary>
     public partial class FrmNoviDobavljac : Form
     {
+        /// <summary>
+        /// lista pozivnih brojeva
+        /// </summary>
         private List<string> pozivniBroj = new List<string> { "01", "020", "021", "022",
                             "023","031","032","033","034","035","040","042","043","044",
                             "047","048","049","051","052","053","091","092","095","097",
@@ -22,6 +25,7 @@ namespace Impresso_Expresso
 
         private Dobavljaci dobavljac = new Dobavljaci();
         private bool greska = false;
+
         public FrmNoviDobavljac()
         {
             InitializeComponent();
@@ -31,6 +35,8 @@ namespace Impresso_Expresso
         {
             cbPozivniBroj.DataSource = pozivniBroj;
         }
+
+        #region Pohrani
         /// <summary>
         /// pohranjuje podatke u bazu i zatvara formu ako produ provjere
         /// </summary>
@@ -48,6 +54,7 @@ namespace Impresso_Expresso
             }
             
         }
+
         /// <summary>
         /// pohranjuje podatke u bazu i zatvara formu
         /// </summary>
@@ -65,6 +72,8 @@ namespace Impresso_Expresso
             }
             Close();
         }
+        #endregion
+
         #region Provjeri
         /// <summary>
         /// provjerava jel telefonski broj zadovoljava hrv standarde
@@ -88,6 +97,7 @@ namespace Impresso_Expresso
                 }
             }
         }
+
         /// <summary>
         /// provjerava jel postanski broj zadovoljava hrv standarde
         /// </summary>
@@ -105,6 +115,7 @@ namespace Impresso_Expresso
                 }
             }
         }
+
         /// <summary>
         /// provjerava jel uneseni tekst broj
         /// </summary>
@@ -123,6 +134,10 @@ namespace Impresso_Expresso
             }
             
         }
+
+        /// <summary>
+        /// provjerava jel sva polja imaju ista uneseno
+        /// </summary>
         private void ProvjeriPolja()
         {
             if (txtNaziv.Text == "" || txtAdresa.Text == "" || txtPostanskiBroj.Text == "" || 
@@ -134,6 +149,11 @@ namespace Impresso_Expresso
         }
         #endregion
 
+        /// <summary>
+        /// hendla otvaranje usermanuala
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void FrmNoviDobavljac_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyData == Keys.F1)
