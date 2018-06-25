@@ -58,7 +58,7 @@
             // 
             this.pictureBox1.Image = global::Impresso_Expresso.Properties.Resources.logo_banner;
             this.pictureBox1.Location = new System.Drawing.Point(207, 0);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(613, 123);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -74,9 +74,9 @@
             this.gbIzbornik.Controls.Add(this.pbOpcije);
             this.gbIzbornik.Controls.Add(this.pbProfil);
             this.gbIzbornik.Location = new System.Drawing.Point(853, 194);
-            this.gbIzbornik.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbIzbornik.Margin = new System.Windows.Forms.Padding(4);
             this.gbIzbornik.Name = "gbIzbornik";
-            this.gbIzbornik.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbIzbornik.Padding = new System.Windows.Forms.Padding(4);
             this.gbIzbornik.Size = new System.Drawing.Size(176, 481);
             this.gbIzbornik.TabIndex = 1;
             this.gbIzbornik.TabStop = false;
@@ -84,7 +84,7 @@
             // btnOdjava
             // 
             this.btnOdjava.Location = new System.Drawing.Point(8, 334);
-            this.btnOdjava.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnOdjava.Margin = new System.Windows.Forms.Padding(4);
             this.btnOdjava.Name = "btnOdjava";
             this.btnOdjava.Size = new System.Drawing.Size(160, 58);
             this.btnOdjava.TabIndex = 2;
@@ -95,7 +95,7 @@
             // btnRegistracija
             // 
             this.btnRegistracija.Location = new System.Drawing.Point(8, 268);
-            this.btnRegistracija.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRegistracija.Margin = new System.Windows.Forms.Padding(4);
             this.btnRegistracija.Name = "btnRegistracija";
             this.btnRegistracija.Size = new System.Drawing.Size(160, 58);
             this.btnRegistracija.TabIndex = 1;
@@ -106,7 +106,7 @@
             // btnSkladiste
             // 
             this.btnSkladiste.Location = new System.Drawing.Point(8, 203);
-            this.btnSkladiste.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSkladiste.Margin = new System.Windows.Forms.Padding(4);
             this.btnSkladiste.Name = "btnSkladiste";
             this.btnSkladiste.Size = new System.Drawing.Size(160, 58);
             this.btnSkladiste.TabIndex = 1;
@@ -117,7 +117,7 @@
             // btnKasa
             // 
             this.btnKasa.Location = new System.Drawing.Point(8, 138);
-            this.btnKasa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnKasa.Margin = new System.Windows.Forms.Padding(4);
             this.btnKasa.Name = "btnKasa";
             this.btnKasa.Size = new System.Drawing.Size(160, 58);
             this.btnKasa.TabIndex = 1;
@@ -129,7 +129,7 @@
             // 
             this.pbOpcije.Image = global::Impresso_Expresso.Properties.Resources.if_Settings_2202240;
             this.pbOpcije.Location = new System.Drawing.Point(101, 23);
-            this.pbOpcije.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbOpcije.Margin = new System.Windows.Forms.Padding(4);
             this.pbOpcije.Name = "pbOpcije";
             this.pbOpcije.Size = new System.Drawing.Size(67, 62);
             this.pbOpcije.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -140,7 +140,7 @@
             // 
             this.pbProfil.Image = global::Impresso_Expresso.Properties.Resources.Profil;
             this.pbProfil.Location = new System.Drawing.Point(8, 23);
-            this.pbProfil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbProfil.Margin = new System.Windows.Forms.Padding(4);
             this.pbProfil.Name = "pbProfil";
             this.pbProfil.Size = new System.Drawing.Size(67, 62);
             this.pbProfil.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -153,7 +153,7 @@
             this.pbStol1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pbStol1.Image = global::Impresso_Expresso.Properties.Resources.gray;
             this.pbStol1.Location = new System.Drawing.Point(263, 288);
-            this.pbStol1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbStol1.Margin = new System.Windows.Forms.Padding(4);
             this.pbStol1.Name = "pbStol1";
             this.pbStol1.Size = new System.Drawing.Size(69, 62);
             this.pbStol1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -165,7 +165,7 @@
             // 
             this.pbStol2.Image = global::Impresso_Expresso.Properties.Resources.gray;
             this.pbStol2.Location = new System.Drawing.Point(475, 276);
-            this.pbStol2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbStol2.Margin = new System.Windows.Forms.Padding(4);
             this.pbStol2.Name = "pbStol2";
             this.pbStol2.Size = new System.Drawing.Size(69, 62);
             this.pbStol2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -177,7 +177,7 @@
             // 
             this.pbStol3.Image = global::Impresso_Expresso.Properties.Resources.gray;
             this.pbStol3.Location = new System.Drawing.Point(239, 544);
-            this.pbStol3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbStol3.Margin = new System.Windows.Forms.Padding(4);
             this.pbStol3.Name = "pbStol3";
             this.pbStol3.Size = new System.Drawing.Size(55, 47);
             this.pbStol3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -189,7 +189,7 @@
             // 
             this.pbStol4.Image = global::Impresso_Expresso.Properties.Resources.gray;
             this.pbStol4.Location = new System.Drawing.Point(380, 546);
-            this.pbStol4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbStol4.Margin = new System.Windows.Forms.Padding(4);
             this.pbStol4.Name = "pbStol4";
             this.pbStol4.Size = new System.Drawing.Size(55, 47);
             this.pbStol4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -201,7 +201,7 @@
             // 
             this.pbStol5.Image = global::Impresso_Expresso.Properties.Resources.gray;
             this.pbStol5.Location = new System.Drawing.Point(715, 250);
-            this.pbStol5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbStol5.Margin = new System.Windows.Forms.Padding(4);
             this.pbStol5.Name = "pbStol5";
             this.pbStol5.Size = new System.Drawing.Size(69, 62);
             this.pbStol5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -213,7 +213,7 @@
             // 
             this.pbStol6.Image = global::Impresso_Expresso.Properties.Resources.gray;
             this.pbStol6.Location = new System.Drawing.Point(713, 559);
-            this.pbStol6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pbStol6.Margin = new System.Windows.Forms.Padding(4);
             this.pbStol6.Name = "pbStol6";
             this.pbStol6.Size = new System.Drawing.Size(71, 62);
             this.pbStol6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -237,8 +237,9 @@
             this.Controls.Add(this.gbIzbornik);
             this.Controls.Add(this.pictureBox1);
             this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmIzbornik";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmIzbornik";
             this.Activated += new System.EventHandler(this.FrmIzbornik_Activated);
             this.Load += new System.EventHandler(this.FrmIzbornik_Load);

@@ -47,7 +47,7 @@ namespace Impresso_Expresso
         #region Stolovi
         private void pbStol1_Click(object sender, EventArgs e)
         {
-            FrmStol formaStol = new FrmStol(1, trenutniKorisnik;
+            FrmStol formaStol = new FrmStol(1, trenutniKorisnik);
             formaStol.ShowDialog();
         }
 

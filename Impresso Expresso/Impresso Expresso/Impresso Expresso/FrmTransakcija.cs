@@ -16,6 +16,9 @@ namespace Impresso_Expresso
     public partial class FrmTransakcija : Form
     {
         Entities db = new Entities();
+        /// <summary>
+        /// Popinjavanje combobox klasa i combobox tipova transakcije
+        /// </summary>
         public FrmTransakcija()
         {
             InitializeComponent();

@@ -16,6 +16,9 @@ namespace Impresso_Expresso
     public partial class FrmObracunBlagajne : Form
     {
         Entities db = new Entities();
+        /// <summary>
+        /// Inicijalizacija forme
+        /// </summary>
         public FrmObracunBlagajne()
         {
             InitializeComponent();
