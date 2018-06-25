@@ -25,7 +25,7 @@ namespace Impresso_Expresso
 
         private void FrmPrijava_Load(object sender, EventArgs e)
         {
-            this.ControlBox = false; //makne minimize, enlarge i close gumbe
+            this.ControlBox = false; 
         }
         /// <summary>
         /// Prijava u sustav
