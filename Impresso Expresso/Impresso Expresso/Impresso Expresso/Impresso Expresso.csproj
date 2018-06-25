@@ -221,6 +221,11 @@
     <Compile Include="Uloge.cs">
       <DependentUpon>KaficModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="_18018_DBDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_18018_DBDataSet1.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FrmNovaPrimka.resx">
       <DependentUpon>FrmNovaPrimka.cs</DependentUpon>
     </EmbeddedResource>
@@ -292,6 +297,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_18018_DBDataSet1.xsc">
+      <DependentUpon>_18018_DBDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_18018_DBDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_18018_DBDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_18018_DBDataSet1.xss">
+      <DependentUpon>_18018_DBDataSet1.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -309,9 +325,6 @@
     <None Include="Resources\if_Settings_2202240.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\green circle.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="KaficModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>KaficModel.Context.cs</LastGenOutput>
@@ -322,6 +335,14 @@
       <DependentUpon>KaficModel.edmx</DependentUpon>
       <LastGenOutput>KaficModel.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\green.bmp" />
+    <None Include="Resources\gray.gif" />
+    <None Include="Resources\green.gif" />
+    <None Include="Resources\red.gif" />
+    <None Include="Resources\if_Bin_2202256.png" />
+    <None Include="Resources\if_Bin_2202256-MouseOver.png" />
+    <None Include="Resources\dodaj.gif" />
+    <None Include="Resources\makni.gif" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

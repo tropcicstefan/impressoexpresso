@@ -37,12 +37,21 @@
             this.pbProfil = new System.Windows.Forms.PictureBox();
             this.pbStol1 = new System.Windows.Forms.PictureBox();
             this.pbStol2 = new System.Windows.Forms.PictureBox();
+            this.pbStol3 = new System.Windows.Forms.PictureBox();
+            this.pbStol4 = new System.Windows.Forms.PictureBox();
+            this.pbStol5 = new System.Windows.Forms.PictureBox();
+            this.pbStol6 = new System.Windows.Forms.PictureBox();
+            this.btnOdjava = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbIzbornik.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOpcije)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStol1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStol2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStol3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStol4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStol5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStol6)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -57,6 +66,7 @@
             // 
             // gbIzbornik
             // 
+            this.gbIzbornik.Controls.Add(this.btnOdjava);
             this.gbIzbornik.Controls.Add(this.btnRegistracija);
             this.gbIzbornik.Controls.Add(this.btnSkladiste);
             this.gbIzbornik.Controls.Add(this.btnKasa);
@@ -119,10 +129,12 @@
             // 
             // pbStol1
             // 
-            this.pbStol1.Image = global::Impresso_Expresso.Properties.Resources.green_circle;
+            this.pbStol1.BackColor = System.Drawing.SystemColors.Control;
+            this.pbStol1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pbStol1.Image = global::Impresso_Expresso.Properties.Resources.gray;
             this.pbStol1.Location = new System.Drawing.Point(197, 234);
             this.pbStol1.Name = "pbStol1";
-            this.pbStol1.Size = new System.Drawing.Size(54, 50);
+            this.pbStol1.Size = new System.Drawing.Size(52, 50);
             this.pbStol1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbStol1.TabIndex = 2;
             this.pbStol1.TabStop = false;
@@ -130,14 +142,68 @@
             // 
             // pbStol2
             // 
-            this.pbStol2.Image = global::Impresso_Expresso.Properties.Resources.green_circle;
-            this.pbStol2.Location = new System.Drawing.Point(354, 225);
+            this.pbStol2.Image = global::Impresso_Expresso.Properties.Resources.gray;
+            this.pbStol2.Location = new System.Drawing.Point(356, 224);
             this.pbStol2.Name = "pbStol2";
-            this.pbStol2.Size = new System.Drawing.Size(54, 50);
+            this.pbStol2.Size = new System.Drawing.Size(52, 50);
             this.pbStol2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbStol2.TabIndex = 2;
             this.pbStol2.TabStop = false;
             this.pbStol2.Click += new System.EventHandler(this.pbStol2_Click);
+            // 
+            // pbStol3
+            // 
+            this.pbStol3.Image = global::Impresso_Expresso.Properties.Resources.gray;
+            this.pbStol3.Location = new System.Drawing.Point(179, 442);
+            this.pbStol3.Name = "pbStol3";
+            this.pbStol3.Size = new System.Drawing.Size(41, 38);
+            this.pbStol3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbStol3.TabIndex = 3;
+            this.pbStol3.TabStop = false;
+            this.pbStol3.Click += new System.EventHandler(this.pbStol3_Click);
+            // 
+            // pbStol4
+            // 
+            this.pbStol4.Image = global::Impresso_Expresso.Properties.Resources.gray;
+            this.pbStol4.Location = new System.Drawing.Point(285, 444);
+            this.pbStol4.Name = "pbStol4";
+            this.pbStol4.Size = new System.Drawing.Size(41, 38);
+            this.pbStol4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbStol4.TabIndex = 4;
+            this.pbStol4.TabStop = false;
+            this.pbStol4.Click += new System.EventHandler(this.pbStol4_Click);
+            // 
+            // pbStol5
+            // 
+            this.pbStol5.Image = global::Impresso_Expresso.Properties.Resources.gray;
+            this.pbStol5.Location = new System.Drawing.Point(536, 203);
+            this.pbStol5.Name = "pbStol5";
+            this.pbStol5.Size = new System.Drawing.Size(52, 50);
+            this.pbStol5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbStol5.TabIndex = 5;
+            this.pbStol5.TabStop = false;
+            this.pbStol5.Click += new System.EventHandler(this.pbStol5_Click);
+            // 
+            // pbStol6
+            // 
+            this.pbStol6.Image = global::Impresso_Expresso.Properties.Resources.gray;
+            this.pbStol6.Location = new System.Drawing.Point(535, 454);
+            this.pbStol6.Name = "pbStol6";
+            this.pbStol6.Size = new System.Drawing.Size(53, 50);
+            this.pbStol6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbStol6.TabIndex = 6;
+            this.pbStol6.TabStop = false;
+            this.pbStol6.Click += new System.EventHandler(this.pbStol6_Click);
+            // 
+            // btnOdjava
+            // 
+            this.btnOdjava.Location = new System.Drawing.Point(6, 271);
+            this.btnOdjava.Name = "btnOdjava";
+            this.btnOdjava.Size = new System.Drawing.Size(120, 47);
+            this.btnOdjava.TabIndex = 2;
+            this.btnOdjava.Text = "Odjava";
+            this.btnOdjava.UseVisualStyleBackColor = true;
+            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
             // 
             // FrmIzbornik
             // 
@@ -146,12 +212,17 @@
             this.BackgroundImage = global::Impresso_Expresso.Properties.Resources.FrmIzbornik_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.pbStol6);
+            this.Controls.Add(this.pbStol5);
+            this.Controls.Add(this.pbStol4);
+            this.Controls.Add(this.pbStol3);
             this.Controls.Add(this.pbStol2);
             this.Controls.Add(this.pbStol1);
             this.Controls.Add(this.gbIzbornik);
             this.Controls.Add(this.pictureBox1);
             this.Name = "FrmIzbornik";
             this.Text = "FrmIzbornik";
+            this.Activated += new System.EventHandler(this.FrmIzbornik_Activated);
             this.Load += new System.EventHandler(this.FrmIzbornik_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbIzbornik.ResumeLayout(false);
@@ -159,6 +230,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbProfil)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStol1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbStol2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStol3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStol4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStol5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbStol6)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -174,5 +249,10 @@
         private System.Windows.Forms.PictureBox pbProfil;
         private System.Windows.Forms.PictureBox pbStol1;
         private System.Windows.Forms.PictureBox pbStol2;
+        private System.Windows.Forms.PictureBox pbStol3;
+        private System.Windows.Forms.PictureBox pbStol4;
+        private System.Windows.Forms.PictureBox pbStol5;
+        private System.Windows.Forms.PictureBox pbStol6;
+        private System.Windows.Forms.Button btnOdjava;
     }
 }

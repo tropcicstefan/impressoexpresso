@@ -12,77 +12,204 @@ namespace Impresso_Expresso
 {
     public partial class FrmStol : Form
     {
-        public FrmStol()
+
+        public int idStola { get; set; }
+
+        public FrmStol(int poslanaVrijednost)
         {
             InitializeComponent();
+            idStola = poslanaVrijednost;
         }
 
+        /// <summary>
+        /// Kreira novu narudžbu i otvara formu za unos stavki narudžbe
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnMeni_Click(object sender, EventArgs e)
         {
-            FrmDodajNarudžbu formaDodajNarudžbu = new FrmDodajNarudžbu();
-            formaDodajNarudžbu.ShowDialog();
+            //napraviti narudžbu tu, i proslijediti u formu
+            using (var db = new Entities())
+            {
+                Narudzbe narudzba = new Narudzbe
+                {
+                    RacunID = null,
+                    StolID = idStola,
+                    KorisnikID = 6, //inace bude id reg korisnika, kasnije promjeniti
+                    Datum = DateTime.Now
+                };
+                db.Narudzbes.Add(narudzba);
+                db.SaveChanges();
+
+                FrmDodajNarudžbu formaDodajNarudžbu = new FrmDodajNarudžbu(narudzba);
+                formaDodajNarudžbu.ShowDialog();
+            }
         }
 
-        private void btnRacun_Click(object sender, EventArgs e)
+
+        #region Upravljanje slikom
+
+        private void pbUkloni_MouseEnter(object sender, EventArgs e)
+        {
+            pbUkloni.Image = Impresso_Expresso.Properties.Resources.brisiNarudzbeMO;
+        }
+
+        private void pbUkloni_MouseLeave(object sender, EventArgs e)
+        {
+            pbUkloni.Image = Impresso_Expresso.Properties.Resources.brisiNarudzbe;
+        }
+
+        #endregion
+
+        #region Oslobađanje Stola
+
+        BindingList<Stolovi> listaStolovaZaBrisanje = null;
+        BindingList<Narudzbe> listaNarudzbaStolaZaBrisanje = null;
+
+        /// <summary>
+        /// Metoda koja čisti stol od narudžbi i oslobađa ga
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void pbUkloni_MouseClick(object sender, MouseEventArgs e)
+        {
+            //maknuti narudzbe sa stola na stol 1004, al samo one koje su naplacene
+            DohvatiStoloveBrisi();
+
+                Stolovi stolZaBrisanje = new Stolovi();
+                stolZaBrisanje = listaStolovaZaBrisanje[idStola-1];
+                DohvatiNarudzbeStolovaBrisi(stolZaBrisanje);
+            if (listaNarudzbaStolaZaBrisanje.Any())
+                {
+                    for (int j = 0; j < listaNarudzbaStolaZaBrisanje.Count; j++)
+                    {
+                        if (listaNarudzbaStolaZaBrisanje[j].RacunID != null)
+                        {
+                            //promjeni ID stola, spremi u bazu
+                            using (var db = new Entities())
+                            {
+                                db.Narudzbes.Attach(listaNarudzbaStolaZaBrisanje[j]);
+                                listaNarudzbaStolaZaBrisanje[j].StolID = 1004;
+                                db.SaveChanges();
+                            }
+                        }
+                    }
+                }
+
+        }
+
+        /// <summary>
+        /// Dohvaća listu stolova
+        /// </summary>
+        private void DohvatiStoloveBrisi()
+        {
+            using (var db = new Entities())
+            {
+                listaStolovaZaBrisanje = new BindingList<Stolovi>(db.Stolovis.ToList());
+            }
+        }
+
+        /// <summary>
+        /// Dohvaća sve narudžbe za određeni stol
+        /// </summary>
+        /// <param name="poslaniStol"></param>
+        private void DohvatiNarudzbeStolovaBrisi(Stolovi poslaniStol)
+        {
+
+            using (var db = new Entities())
+            {
+                db.Stolovis.Attach(poslaniStol);
+                listaNarudzbaStolaZaBrisanje = new BindingList<Narudzbe>(poslaniStol.Narudzbes.ToList());
+            }
+        }
+        #endregion
+
+        #region Prikaz podataka u combobox-u
+
+        BindingList<Stolovi> listaStolovaZaPrikaz = null;
+        BindingList<Narudzbe> listaNarudzbaStolaZaPrikaz = null;
+
+        private void FrmStol_Load(object sender, EventArgs e)
         {
             
-            Narudzbe novaNarudzba1 = null;
-            Narudzbe novaNarudzba2 = null;
-            
-            StavkeNarudzbe stavkaNarudzbe1 = null;
-            StavkeNarudzbe stavkaNarudzbe2 = null;
-            StavkeNarudzbe stavkaNarudzbe3 = null;
+        }
 
+        /// <summary>
+        /// Puni combobox sa narudžbama stola koje još nisu naplaćene
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmStol_Activated(object sender, EventArgs e)
+        {
+            listaStolovaZaPrikaz = null;
+            listaNarudzbaStolaZaPrikaz = null;
+            List<Narudzbe> listaZaCB = new List<Narudzbe>();
+            DohvatiStolovePuni();
+
+            Stolovi stolZaCB = new Stolovi();
+            stolZaCB = listaStolovaZaPrikaz[idStola - 1];
+            DohvatiNarudzbeStolovaPuni(stolZaCB);
+            
+            if (listaNarudzbaStolaZaPrikaz.Any())
+            {
+
+                foreach (var item in listaNarudzbaStolaZaPrikaz)
+                {
+                    if (item.RacunID == null)
+                    {
+                        listaZaCB.Add(item);
+                    }
+                }
+            }
+
+            cbOdaberiNarudžbu.DataSource = null;
+            cbOdaberiNarudžbu.DataSource = listaZaCB;
+            cbOdaberiNarudžbu.DisplayMember = "id";
+            cbOdaberiNarudžbu.ValueMember = "id";
+
+            lbNarudzbeZaRacun.DataSource = null;
+            lbNarudzbeZaRacun.DataSource = listaZaCB;
+            lbNarudzbeZaRacun.DisplayMember = "id";
+
+
+        }
+
+        /// <summary>
+        /// Dohvaća listu stolova
+        /// </summary>
+        private void DohvatiStolovePuni()
+        {
+            using (var db = new Entities())
+            {
+                listaStolovaZaPrikaz = new BindingList<Stolovi>(db.Stolovis.ToList());
+            }
+        }
+
+        /// <summary>
+        /// Dohvaća sve narudžbe za određeni stol
+        /// </summary>
+        /// <param name="poslaniStol"></param>
+        private void DohvatiNarudzbeStolovaPuni(Stolovi poslaniStolCB)
+        {
 
             using (var db = new Entities())
             {
-
-                novaNarudzba1 = new Narudzbe
-                {                    
-                    StolID = 1,
-                    KorisnikID = 7,
-                    Datum = DateTime.Today
-                };
-                novaNarudzba2 = new Narudzbe
-                {
-                    StolID = 4,
-                    KorisnikID = 6,
-                    Datum = DateTime.Today
-                };
-
-                db.Narudzbes.Add(novaNarudzba1);
-                db.Narudzbes.Add(novaNarudzba2);
-                db.SaveChanges();
+                db.Stolovis.Attach(poslaniStolCB);
+                listaNarudzbaStolaZaPrikaz = new BindingList<Narudzbe>(poslaniStolCB.Narudzbes.ToList());
             }
-            using (var db = new Entities())
+        }
+        #endregion
+
+        private void btnRacun_Click_1(object sender, EventArgs e)
+        {
+            List<Narudzbe> listaNarudzbaZaRacun = new List<Narudzbe>();
+
+            foreach (var item in lbNarudzbeZaRacun.SelectedItems)
             {
-                stavkaNarudzbe1 = new StavkeNarudzbe
-                {
-                    NarudzbaID = novaNarudzba1.ID,
-                    ArtiklID = 1002,
-                    Kolicina = 2
-                };
-                stavkaNarudzbe2 = new StavkeNarudzbe
-                {
-                    NarudzbaID = novaNarudzba1.ID,
-                    ArtiklID = 1005,
-                    Kolicina = 1
-                };
-                stavkaNarudzbe3 = new StavkeNarudzbe
-                {
-                    NarudzbaID = novaNarudzba2.ID,
-                    ArtiklID = 1002,
-                    Kolicina = 3
-                };
-
-                db.StavkeNarudzbes.Add(stavkaNarudzbe1);
-                db.StavkeNarudzbes.Add(stavkaNarudzbe2);
-                db.StavkeNarudzbes.Add(stavkaNarudzbe3);
-                db.SaveChanges();
+                listaNarudzbaZaRacun.Add(item as Narudzbe);
             }
-            List<Narudzbe> listaNarudzbi = new List<Narudzbe> { novaNarudzba1, novaNarudzba2 };
-            
-            FrmRacun Racun = new FrmRacun(listaNarudzbi);
+
+            FrmRacun Racun = new FrmRacun(listaNarudzbaZaRacun);
             Racun.ShowDialog();
         }
     }
