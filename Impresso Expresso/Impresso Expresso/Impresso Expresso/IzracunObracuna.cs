@@ -15,6 +15,7 @@ namespace Impresso_Expresso
         public decimal PologUBlagajni { get; set; }
         public decimal IznosGotovineUBlagajni { get; set; }
         public decimal IznosKarticaUBlagajni { get; set; }
+        public decimal PrometBlagajne { get; set; }
         public Korisnici IdKonobara { get; set; }
         public IzracunObracuna(Korisnici idKonobara)
         {
@@ -80,11 +81,11 @@ namespace Impresso_Expresso
         /// </summary>
         public void UnosIzvjestajaUBazu()
         {
-            decimal prometBlagajne = PologUBlagajni + IznosGotovineUBlagajni;
+            IzracunPrometaBlagajne();
             Izvjestaji izvjestaj = new Izvjestaji
             {
                 Datum = DateTime.Now,
-                PrometBlagajne = prometBlagajne,
+                PrometBlagajne = PrometBlagajne,
                 PologUBlagajni = PologUBlagajni,
                 GotovinaUBlagajni = IznosGotovineUBlagajni,
                 KonobarID = IdKonobara.ID,
@@ -93,6 +94,26 @@ namespace Impresso_Expresso
             };
             db.Izvjestajis.Add(izvjestaj);
             db.SaveChanges();
+        }
+        /// <summary>
+        /// Izracun prometa blagajne. Polog plus Iznos racuna u gotovini
+        /// </summary>
+        private void IzracunPrometaBlagajne()
+        {
+            PrometBlagajne = PologUBlagajni + IznosGotovineUBlagajni;
+        }
+        /// <summary>
+        /// Ažuriranje stanja kase. Dodavanje iznosa racuna u gotovini
+        /// </summary>
+        public void AzuriranjeStanjaKase()
+        {
+            IzracunPologa();
+            IzracunIznosaGotovineUBlagajni();
+            IzracunPrometaBlagajne();
+            Kase kasa = db.Kases.FirstOrDefault(s => s.ID == 1);
+            kasa.StanjeKase = PrometBlagajne;
+            db.SaveChanges();
+
         }
     }
 }

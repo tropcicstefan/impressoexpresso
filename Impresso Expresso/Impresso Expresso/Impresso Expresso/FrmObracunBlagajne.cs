@@ -15,6 +15,7 @@ namespace Impresso_Expresso
     /// </summary>
     public partial class FrmObracunBlagajne : Form
     {
+        Korisnici ulogiranKorisnik = FrmPrijava.korisnik;
         Entities db = new Entities();
         /// <summary>
         /// Inicijalizacija forme
@@ -30,6 +31,8 @@ namespace Impresso_Expresso
         /// <param name="e"></param>
         private void btnTransakcije_Click(object sender, EventArgs e)
         {
+            IzracunObracuna izracunObracuna = new IzracunObracuna(ulogiranKorisnik);
+            izracunObracuna.AzuriranjeStanjaKase();
             FrmTransakcija formaTransakcije = new FrmTransakcija();
             formaTransakcije.ShowDialog();
         }
@@ -40,7 +43,7 @@ namespace Impresso_Expresso
         /// <param name="e"></param>
         private void btnObracunBlagajne_Click(object sender, EventArgs e)
         {
-            Korisnici ulogiranKorisnik = FrmPrijava.korisnik;
+            
             IzracunObracuna izracunObracuna = new IzracunObracuna(ulogiranKorisnik);
             izracunObracuna.IzracunIznosaKarticaUBlagajni();
             izracunObracuna.IzracunIznosaGotovineUBlagajni();
