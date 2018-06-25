@@ -135,6 +135,7 @@
             this.btnUnosArtikla.TabIndex = 2;
             this.btnUnosArtikla.Text = "Unos artikla";
             this.btnUnosArtikla.UseVisualStyleBackColor = true;
+            this.btnUnosArtikla.Click += new System.EventHandler(this.btnUnosArtikla_Click);
             // 
             // btnPrimka
             // 
@@ -197,9 +198,12 @@
             this.ClientSize = new System.Drawing.Size(696, 550);
             this.Controls.Add(this.gbstanjeNaSkladistu);
             this.Controls.Add(this.pictureBox1);
+            this.KeyPreview = true;
             this.Name = "FrmSkladiste";
-            this.Text = "FrmSkladiste";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Skladiste";
             this.Load += new System.EventHandler(this.FrmSkladiste_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmSkladiste_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStanjeSkladista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

@@ -30,11 +30,12 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gbNovaPrimka = new System.Windows.Forms.GroupBox();
+            this.txtKorisnik = new System.Windows.Forms.TextBox();
+            this.btnDodajDobavljaca = new System.Windows.Forms.Button();
             this.lblDatum = new System.Windows.Forms.Label();
             this.dtpPrimke = new System.Windows.Forms.DateTimePicker();
             this.lblKorisnik = new System.Windows.Forms.Label();
             this.lblDobavljač = new System.Windows.Forms.Label();
-            this.cbKorisnik = new System.Windows.Forms.ComboBox();
             this.cbDobavljac = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnPohrani = new System.Windows.Forms.Button();
@@ -43,41 +44,61 @@
             this.lblArtikl = new System.Windows.Forms.Label();
             this.cbArtikl = new System.Windows.Forms.ComboBox();
             this.dgvStavkePrimki = new System.Windows.Forms.DataGridView();
-            this.gbStavke = new System.Windows.Forms.GroupBox();
-            this.pDgv = new System.Windows.Forms.Panel();
             this.primkaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artiklIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.kolicinaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.artikliDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.primkeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.stavkePrimkeBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gbStavke = new System.Windows.Forms.GroupBox();
+            this.btnObrisiStavkuPrimke = new System.Windows.Forms.Button();
+            this.pDgv = new System.Windows.Forms.Panel();
             this.korisniciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dobavljaciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbNovaPrimka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkePrimki)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stavkePrimkeBindingSource)).BeginInit();
             this.gbStavke.SuspendLayout();
             this.pDgv.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.stavkePrimkeBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.korisniciBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dobavljaciBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gbNovaPrimka
             // 
+            this.gbNovaPrimka.Controls.Add(this.txtKorisnik);
+            this.gbNovaPrimka.Controls.Add(this.btnDodajDobavljaca);
             this.gbNovaPrimka.Controls.Add(this.lblDatum);
             this.gbNovaPrimka.Controls.Add(this.dtpPrimke);
             this.gbNovaPrimka.Controls.Add(this.lblKorisnik);
             this.gbNovaPrimka.Controls.Add(this.lblDobavljač);
-            this.gbNovaPrimka.Controls.Add(this.cbKorisnik);
             this.gbNovaPrimka.Controls.Add(this.cbDobavljac);
             this.gbNovaPrimka.ForeColor = System.Drawing.Color.White;
-            this.gbNovaPrimka.Location = new System.Drawing.Point(43, 165);
+            this.gbNovaPrimka.Location = new System.Drawing.Point(43, 149);
             this.gbNovaPrimka.Name = "gbNovaPrimka";
-            this.gbNovaPrimka.Size = new System.Drawing.Size(705, 97);
+            this.gbNovaPrimka.Size = new System.Drawing.Size(705, 126);
             this.gbNovaPrimka.TabIndex = 1;
             this.gbNovaPrimka.TabStop = false;
             this.gbNovaPrimka.Text = "Nova primka";
+            // 
+            // txtKorisnik
+            // 
+            this.txtKorisnik.Location = new System.Drawing.Point(273, 47);
+            this.txtKorisnik.Name = "txtKorisnik";
+            this.txtKorisnik.Size = new System.Drawing.Size(100, 20);
+            this.txtKorisnik.TabIndex = 7;
+            // 
+            // btnDodajDobavljaca
+            // 
+            this.btnDodajDobavljaca.ForeColor = System.Drawing.Color.Black;
+            this.btnDodajDobavljaca.Location = new System.Drawing.Point(57, 84);
+            this.btnDodajDobavljaca.Name = "btnDodajDobavljaca";
+            this.btnDodajDobavljaca.Size = new System.Drawing.Size(121, 23);
+            this.btnDodajDobavljaca.TabIndex = 6;
+            this.btnDodajDobavljaca.Text = "Dodaj dobavljača";
+            this.btnDodajDobavljaca.UseVisualStyleBackColor = true;
+            this.btnDodajDobavljaca.Click += new System.EventHandler(this.btnDodajDobavljaca_Click);
             // 
             // lblDatum
             // 
@@ -113,15 +134,6 @@
             this.lblDobavljač.TabIndex = 2;
             this.lblDobavljač.Text = "Dobavljac";
             // 
-            // cbKorisnik
-            // 
-            this.cbKorisnik.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKorisnik.FormattingEnabled = true;
-            this.cbKorisnik.Location = new System.Drawing.Point(273, 47);
-            this.cbKorisnik.Name = "cbKorisnik";
-            this.cbKorisnik.Size = new System.Drawing.Size(121, 21);
-            this.cbKorisnik.TabIndex = 1;
-            // 
             // cbDobavljac
             // 
             this.cbDobavljac.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -144,9 +156,9 @@
             // btnPohrani
             // 
             this.btnPohrani.ForeColor = System.Drawing.Color.Black;
-            this.btnPohrani.Location = new System.Drawing.Point(139, 121);
+            this.btnPohrani.Location = new System.Drawing.Point(165, 121);
             this.btnPohrani.Name = "btnPohrani";
-            this.btnPohrani.Size = new System.Drawing.Size(120, 23);
+            this.btnPohrani.Size = new System.Drawing.Size(95, 23);
             this.btnPohrani.TabIndex = 4;
             this.btnPohrani.Text = "Pohrani";
             this.btnPohrani.UseVisualStyleBackColor = true;
@@ -206,30 +218,6 @@
             this.dgvStavkePrimki.TabIndex = 9;
             this.dgvStavkePrimki.SelectionChanged += new System.EventHandler(this.dgvStavkePrimki_SelectionChanged);
             // 
-            // gbStavke
-            // 
-            this.gbStavke.Controls.Add(this.lblKolicina);
-            this.gbStavke.Controls.Add(this.cbArtikl);
-            this.gbStavke.Controls.Add(this.lblArtikl);
-            this.gbStavke.Controls.Add(this.btnPohrani);
-            this.gbStavke.Controls.Add(this.txtKolicina);
-            this.gbStavke.ForeColor = System.Drawing.Color.White;
-            this.gbStavke.Location = new System.Drawing.Point(43, 288);
-            this.gbStavke.Name = "gbStavke";
-            this.gbStavke.Size = new System.Drawing.Size(277, 159);
-            this.gbStavke.TabIndex = 10;
-            this.gbStavke.TabStop = false;
-            this.gbStavke.Text = "Nove stavke";
-            // 
-            // pDgv
-            // 
-            this.pDgv.Controls.Add(this.dgvStavkePrimki);
-            this.pDgv.ForeColor = System.Drawing.Color.Black;
-            this.pDgv.Location = new System.Drawing.Point(403, 289);
-            this.pDgv.Name = "pDgv";
-            this.pDgv.Size = new System.Drawing.Size(345, 158);
-            this.pDgv.TabIndex = 11;
-            // 
             // primkaIDDataGridViewTextBoxColumn
             // 
             this.primkaIDDataGridViewTextBoxColumn.DataPropertyName = "PrimkaID";
@@ -266,6 +254,42 @@
             // 
             this.stavkePrimkeBindingSource.DataSource = typeof(Impresso_Expresso.StavkePrimke);
             // 
+            // gbStavke
+            // 
+            this.gbStavke.Controls.Add(this.btnObrisiStavkuPrimke);
+            this.gbStavke.Controls.Add(this.lblKolicina);
+            this.gbStavke.Controls.Add(this.cbArtikl);
+            this.gbStavke.Controls.Add(this.lblArtikl);
+            this.gbStavke.Controls.Add(this.btnPohrani);
+            this.gbStavke.Controls.Add(this.txtKolicina);
+            this.gbStavke.ForeColor = System.Drawing.Color.White;
+            this.gbStavke.Location = new System.Drawing.Point(43, 288);
+            this.gbStavke.Name = "gbStavke";
+            this.gbStavke.Size = new System.Drawing.Size(277, 159);
+            this.gbStavke.TabIndex = 10;
+            this.gbStavke.TabStop = false;
+            this.gbStavke.Text = "Nove stavke";
+            // 
+            // btnObrisiStavkuPrimke
+            // 
+            this.btnObrisiStavkuPrimke.ForeColor = System.Drawing.Color.Black;
+            this.btnObrisiStavkuPrimke.Location = new System.Drawing.Point(28, 121);
+            this.btnObrisiStavkuPrimke.Name = "btnObrisiStavkuPrimke";
+            this.btnObrisiStavkuPrimke.Size = new System.Drawing.Size(81, 23);
+            this.btnObrisiStavkuPrimke.TabIndex = 5;
+            this.btnObrisiStavkuPrimke.Text = "Obriši stavku";
+            this.btnObrisiStavkuPrimke.UseVisualStyleBackColor = true;
+            this.btnObrisiStavkuPrimke.Click += new System.EventHandler(this.btnObrisiStavkuPrimke_Click);
+            // 
+            // pDgv
+            // 
+            this.pDgv.Controls.Add(this.dgvStavkePrimki);
+            this.pDgv.ForeColor = System.Drawing.Color.Black;
+            this.pDgv.Location = new System.Drawing.Point(403, 289);
+            this.pDgv.Name = "pDgv";
+            this.pDgv.Size = new System.Drawing.Size(345, 158);
+            this.pDgv.TabIndex = 11;
+            // 
             // korisniciBindingSource
             // 
             this.korisniciBindingSource.DataSource = typeof(Impresso_Expresso.Korisnici);
@@ -285,17 +309,20 @@
             this.Controls.Add(this.gbNovaPrimka);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.White;
+            this.KeyPreview = true;
             this.Name = "FrmNovaPrimka";
-            this.Text = "FrmNovaPrimka";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Uredi primku";
             this.Load += new System.EventHandler(this.FrmNovaPrimka_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmNovaPrimka_KeyDown);
             this.gbNovaPrimka.ResumeLayout(false);
             this.gbNovaPrimka.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkePrimki)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.stavkePrimkeBindingSource)).EndInit();
             this.gbStavke.ResumeLayout(false);
             this.gbStavke.PerformLayout();
             this.pDgv.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.stavkePrimkeBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.korisniciBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dobavljaciBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -309,7 +336,6 @@
         private System.Windows.Forms.DateTimePicker dtpPrimke;
         private System.Windows.Forms.Label lblKorisnik;
         private System.Windows.Forms.Label lblDobavljač;
-        private System.Windows.Forms.ComboBox cbKorisnik;
         private System.Windows.Forms.BindingSource korisniciBindingSource;
         private System.Windows.Forms.ComboBox cbDobavljac;
         private System.Windows.Forms.BindingSource dobavljaciBindingSource;
@@ -328,5 +354,8 @@
         private System.Windows.Forms.GroupBox gbStavke;
         private System.Windows.Forms.Panel pDgv;
         private System.Windows.Forms.Label lblDatum;
+        private System.Windows.Forms.Button btnObrisiStavkuPrimke;
+        private System.Windows.Forms.Button btnDodajDobavljaca;
+        private System.Windows.Forms.TextBox txtKorisnik;
     }
 }

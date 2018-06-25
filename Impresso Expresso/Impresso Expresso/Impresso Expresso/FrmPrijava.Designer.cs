@@ -104,6 +104,7 @@
             this.ClientSize = new System.Drawing.Size(782, 553);
             this.Controls.Add(this.gbPrijava);
             this.Name = "FrmPrijava";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrijava";
             this.Load += new System.EventHandler(this.FrmPrijava_Load);
             this.gbPrijava.ResumeLayout(false);

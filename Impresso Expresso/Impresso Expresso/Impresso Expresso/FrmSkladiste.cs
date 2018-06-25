@@ -16,6 +16,7 @@ namespace Impresso_Expresso
         {
             InitializeComponent();
         }
+
         /// <summary>
         /// prikazi sve graficke elemente
         /// </summary>
@@ -26,17 +27,7 @@ namespace Impresso_Expresso
             cbOpcijeSort.DataSource = Enum.GetValues(typeof(opcijeSort));
             PrikaziArtikle();
         }
-
-        /// <summary>
-        /// Metoda instancira i poziva formu FrmPrimka
-        /// </summary>        
-        private void btnPrimka_Click(object sender, EventArgs e)
-        {
-            FrmPopisPrimki formaPrimka = new FrmPopisPrimki();
-            formaPrimka.ShowDialog();
-            PrikaziArtikle();
-        }
-
+                
         /// <summary>
         /// Dohvaća listu svih artikala i prikazuje ih u dgv
         /// </summary>
@@ -47,9 +38,10 @@ namespace Impresso_Expresso
             {
                 listaArtikala = new BindingList<Artikli>(db.Artiklis.ToList());
             }
-
             artikliBindingSource.DataSource = Sortiraj(listaArtikala);
         }
+
+        #region Sort
         /// <summary>
         /// ovisno o odabiru sorta mijenja listu podataka
         /// </summary>
@@ -96,6 +88,44 @@ namespace Impresso_Expresso
         private void cbOpcijeSort_SelectedIndexChanged(object sender, EventArgs e)
         {
             PrikaziArtikle();
+        }
+        #endregion
+
+        #region ButtonEvent
+        /// <summary>
+        /// Metoda instancira i poziva formu FrmUpravljanjeArtikla
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnUnosArtikla_Click(object sender, EventArgs e)
+        {
+            FrmUpravljanjeArtiklom formaUpravljanjeArtiklom = new FrmUpravljanjeArtiklom();
+            formaUpravljanjeArtiklom.ShowDialog();
+            PrikaziArtikle();
+        }
+        /// <summary>
+        /// Metoda instancira i poziva formu FrmPrimka
+        /// </summary>        
+        private void btnPrimka_Click(object sender, EventArgs e)
+        {
+            FrmPopisPrimki formaPrimka = new FrmPopisPrimki();
+            formaPrimka.ShowDialog();
+            PrikaziArtikle();
+        }
+
+        #endregion
+
+        /// <summary>
+        /// hendla otvaranje user manuala
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmSkladiste_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                User_manual.Class1.OtvoriPodrsku(8);
+            }
         }
     }
 }

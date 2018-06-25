@@ -17,7 +17,7 @@ namespace Impresso_Expresso
     public partial class FrmRacun : Form
     {
         private Racuni noviRacun = null;
-
+        double iznos = 0.00;
         /// <summary>
         /// radi osnovni setup forme, poziva instancu racuna i izmjenu narudzbi
         /// </summary>
@@ -42,7 +42,7 @@ namespace Impresso_Expresso
                 dgvStavkeRacuna.DataSource = db.spStavkeRacuna(noviRacun.ID);
             }
             PrikaziIznos();
-            PrikaziNacinePlacanja();
+            PrikaziNacinePlacanja();            
         }
         
 
@@ -93,6 +93,21 @@ namespace Impresso_Expresso
                 db.SaveChanges();
             }
         }
+        /// <summary>
+        /// mijenja stanje kase pri izdavanju racuna
+        /// </summary>
+        private void PohraniKasu()
+        {
+            using (var db = new Entities())
+            {
+                var kasa = db.Kases.SingleOrDefault(k => k.ID == 1);
+                if (kasa != null)
+                {
+                    kasa.StanjeKase = (decimal)((Double)kasa.StanjeKase + iznos);
+                    db.SaveChanges();
+                }
+            }
+        }
         #endregion
 
 
@@ -131,7 +146,7 @@ namespace Impresso_Expresso
         /// </summary>
         private void PrikaziIznos()
         {
-            double iznos = 0.00, pdv = 0.00;
+            double pdv = 0.00;
             
             foreach (DataGridViewRow row in dgvStavkeRacuna.Rows)
             {
@@ -156,6 +171,7 @@ namespace Impresso_Expresso
             
         }
         #endregion
+
         /// <summary>
         /// na lik ispisa prikazuje report i mijenja podatke o racunu unutar baze
         /// </summary>
@@ -165,6 +181,19 @@ namespace Impresso_Expresso
         {
             PromijeniRacun();
             PrikaziReport();
+            PohraniKasu();
+        }
+        /// <summary>
+        /// hendlanje otvaranja user manuala
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmRacun_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                User_manual.Class1.OtvoriPodrsku(7);
+            }
         }
     }
 }

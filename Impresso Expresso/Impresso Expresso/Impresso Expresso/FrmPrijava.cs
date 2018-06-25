@@ -10,21 +10,68 @@ using System.Windows.Forms;
 
 namespace Impresso_Expresso
 {
+    /// <summary>
+    /// <author>Rene Maruševec</author>
+    /// </summary>
     public partial class FrmPrijava : Form
     {
+        public Entities db = new Entities();
+        public static Korisnici korisnik;
         public FrmPrijava()
         {
             InitializeComponent();
+            txtLozinka.PasswordChar = '*';
         }
 
         private void FrmPrijava_Load(object sender, EventArgs e)
         {
             this.ControlBox = false; //makne minimize, enlarge i close gumbe
         }
-
+        /// <summary>
+        /// Prijava u sustav
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnPrijava_Click(object sender, EventArgs e)
         {
-            this.Close(); //samo za sad dok se ne postave uvijeti i rješi prijava
+            ProvjeraPrijave();
+             
         }
+        #region Provjera
+        /// <summary>
+        /// Provjera unesenih podataka za prijavu
+        /// </summary>
+        private void ProvjeraPrijave()
+        {
+
+            if (txtLozinka.Text != "" && txtKorIme.Text != "")
+            {
+                korisnik = db.Korisnicis.FirstOrDefault(s => s.KorisnickoIme == txtKorIme.Text);
+                if (korisnik != null)
+                {
+                    if (korisnik.Lozinka == txtLozinka.Text)
+                    {
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Kriva lozinka!", "Pogreška", MessageBoxButtons.OK);
+                    }
+                }
+                else
+                {
+
+                    MessageBox.Show("Korisnik ne postoji!", "Pogreška", MessageBoxButtons.OK);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Unesite sve podatke!", "Pogreška", MessageBoxButtons.OK);
+
+            }
+        }
+        #endregion
+
+
     }
 }

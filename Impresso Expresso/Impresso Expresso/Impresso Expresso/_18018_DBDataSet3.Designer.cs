@@ -228,7 +228,7 @@ namespace Impresso_Expresso {
         private void InitClass() {
             this.DataSetName = "_18018_DBDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/_18018_DBDataSet1.xsd";
+            this.Namespace = "http://tempuri.org/_18018_DBDataSet3.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableNarudzbe = new NarudzbeDataTable();
