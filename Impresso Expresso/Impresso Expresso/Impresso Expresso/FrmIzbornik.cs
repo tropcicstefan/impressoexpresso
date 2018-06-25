@@ -57,11 +57,14 @@ namespace Impresso_Expresso
             FrmSkladiste formaSkladište = new FrmSkladiste();
             formaSkladište.ShowDialog();
         }
+<<<<<<< HEAD
 
         private void btnKasa_Click(object sender, EventArgs e)
         {
             FrmObracunBlagajne frmObracunBlagajne = new FrmObracunBlagajne();
             frmObracunBlagajne.ShowDialog();
         }
+=======
+>>>>>>> parent of a0ac3d1... Uređene su forme, dodane su funkcionalnosti i slijedi merge grane. Također su dodani neki resursi(slike) za potrebu realizacije funkcionalnosti.
     }
 }
