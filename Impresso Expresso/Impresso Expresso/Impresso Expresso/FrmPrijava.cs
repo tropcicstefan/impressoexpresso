@@ -43,7 +43,6 @@ namespace Impresso_Expresso
         /// </summary>
         private void ProvjeraPrijave()
         {
-
             if (txtLozinka.Text != "" && txtKorIme.Text != "")
             {
                 korisnik = db.Korisnicis.FirstOrDefault(s => s.KorisnickoIme == txtKorIme.Text);

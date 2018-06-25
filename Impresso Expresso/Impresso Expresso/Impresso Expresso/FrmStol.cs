@@ -14,11 +14,13 @@ namespace Impresso_Expresso
     {
 
         public int idStola { get; set; }
+        Korisnici poslaniKorisnikGlobal = null;
 
-        public FrmStol(int poslanaVrijednost)
+        public FrmStol(int poslanaVrijednost, Korisnici poslaniKorisnik)
         {
             InitializeComponent();
             idStola = poslanaVrijednost;
+            poslaniKorisnikGlobal = poslaniKorisnik;
         }
 
         /// <summary>
@@ -35,7 +37,7 @@ namespace Impresso_Expresso
                 {
                     RacunID = null,
                     StolID = idStola,
-                    KorisnikID = 6, //inace bude id reg korisnika, kasnije promjeniti
+                    KorisnikID = poslaniKorisnikGlobal.ID, //inace bude id reg korisnika, kasnije promjeniti
                     Datum = DateTime.Now
                 };
                 db.Narudzbes.Add(narudzba);

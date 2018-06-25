@@ -17,6 +17,8 @@ namespace Impresso_Expresso
             InitializeComponent();
         }
 
+        Korisnici trenutniKorisnik = null;
+
         private void FrmIzbornik_Load(object sender, EventArgs e)
         {
             FrmPrijava formaPrijava = new FrmPrijava();
@@ -45,37 +47,37 @@ namespace Impresso_Expresso
         #region Stolovi
         private void pbStol1_Click(object sender, EventArgs e)
         {
-            FrmStol formaStol = new FrmStol(1);
+            FrmStol formaStol = new FrmStol(1, trenutniKorisnik;
             formaStol.ShowDialog();
         }
 
         private void pbStol2_Click(object sender, EventArgs e)
         {
-            FrmStol formaStol = new FrmStol(2);
+            FrmStol formaStol = new FrmStol(2, trenutniKorisnik);
             formaStol.ShowDialog();
         }
 
         private void pbStol3_Click(object sender, EventArgs e)
         {
-            FrmStol formaStol = new FrmStol(3);
+            FrmStol formaStol = new FrmStol(3, trenutniKorisnik);
             formaStol.ShowDialog();
         }
 
         private void pbStol4_Click(object sender, EventArgs e)
         {
-            FrmStol formaStol = new FrmStol(4);
+            FrmStol formaStol = new FrmStol(4, trenutniKorisnik);
             formaStol.ShowDialog();
         }
 
         private void pbStol5_Click(object sender, EventArgs e)
         {
-            FrmStol formaStol = new FrmStol(5);
+            FrmStol formaStol = new FrmStol(5, trenutniKorisnik);
             formaStol.ShowDialog();
         }
 
         private void pbStol6_Click(object sender, EventArgs e)
         {
-            FrmStol formaStol = new FrmStol(6);
+            FrmStol formaStol = new FrmStol(6, trenutniKorisnik);
             formaStol.ShowDialog();
         }
         #endregion
@@ -103,6 +105,16 @@ namespace Impresso_Expresso
         /// <param name="e"></param>
         private void FrmIzbornik_Activated(object sender, EventArgs e)
         {
+
+            trenutniKorisnik = FrmPrijava.korisnik;
+            if (trenutniKorisnik.UlogaID == 1)
+            {
+                btnRegistracija.Enabled = true;
+            }
+            else
+            {
+                btnRegistracija.Enabled = false;
+            }
 
             DohvatiStolove();
 
