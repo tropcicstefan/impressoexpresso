@@ -294,5 +294,11 @@ namespace Impresso_Expresso
                 UserManual.Pdf.OtvoriPodrsku(4);
             }
         }
+
+        private void btnKasa_Click(object sender, EventArgs e)
+        {
+            FrmObracunBlagajne frmObracunBlagajne = new FrmObracunBlagajne();
+            frmObracunBlagajne.ShowDialog();
+        }
     }
 }
