@@ -70,8 +70,19 @@ namespace Impresso_Expresso
 
             }
         }
+
         #endregion
-
-
+        /// <summary>
+        /// hendla otvaranje user manuala
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmPrijava_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                UserManual.Pdf.OtvoriPodrsku(2);
+            }
+        }
     }
 }

@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gbArtikli = new System.Windows.Forms.GroupBox();
+            this.dgvArtikliZaNarudzbu = new System.Windows.Forms.DataGridView();
+            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.btnDodajArtikl = new System.Windows.Forms.Button();
             this.tbKolicinaArtikla = new System.Windows.Forms.TextBox();
             this.btnPotvrdi = new System.Windows.Forms.Button();
@@ -40,22 +42,12 @@
             this.lblKategorijaArtikla = new System.Windows.Forms.Label();
             this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.pbLogo = new System.Windows.Forms.PictureBox();
-            this.dgvArtikliZaNarudzbu = new System.Windows.Forms.DataGridView();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kategorijaIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nazivDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cijenaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stanjeNaSkladistuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.kategorijeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stavkeNarudzbesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stavkePrimkesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.artikliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbArtikli.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArtikliZaNarudzbu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOduzmi)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDodaj)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArtikliZaNarudzbu)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gbArtikli
@@ -74,6 +66,24 @@
             this.gbArtikli.Size = new System.Drawing.Size(480, 312);
             this.gbArtikli.TabIndex = 0;
             this.gbArtikli.TabStop = false;
+            // 
+            // dgvArtikliZaNarudzbu
+            // 
+            this.dgvArtikliZaNarudzbu.AllowUserToAddRows = false;
+            this.dgvArtikliZaNarudzbu.AllowUserToDeleteRows = false;
+            this.dgvArtikliZaNarudzbu.AllowUserToResizeColumns = false;
+            this.dgvArtikliZaNarudzbu.AllowUserToResizeRows = false;
+            this.dgvArtikliZaNarudzbu.AutoGenerateColumns = false;
+            this.dgvArtikliZaNarudzbu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArtikliZaNarudzbu.DataSource = this.artikliBindingSource;
+            this.dgvArtikliZaNarudzbu.Location = new System.Drawing.Point(6, 164);
+            this.dgvArtikliZaNarudzbu.MultiSelect = false;
+            this.dgvArtikliZaNarudzbu.Name = "dgvArtikliZaNarudzbu";
+            this.dgvArtikliZaNarudzbu.RowHeadersVisible = false;
+            this.dgvArtikliZaNarudzbu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvArtikliZaNarudzbu.Size = new System.Drawing.Size(468, 142);
+            this.dgvArtikliZaNarudzbu.TabIndex = 8;
+            this.dgvArtikliZaNarudzbu.SelectionChanged += new System.EventHandler(this.dgvArtikliZaNarudzbu_SelectionChanged);
             // 
             // btnDodajArtikl
             // 
@@ -166,88 +176,6 @@
             this.pbLogo.TabIndex = 0;
             this.pbLogo.TabStop = false;
             // 
-            // dgvArtikliZaNarudzbu
-            // 
-            this.dgvArtikliZaNarudzbu.AllowUserToAddRows = false;
-            this.dgvArtikliZaNarudzbu.AllowUserToDeleteRows = false;
-            this.dgvArtikliZaNarudzbu.AllowUserToResizeColumns = false;
-            this.dgvArtikliZaNarudzbu.AllowUserToResizeRows = false;
-            this.dgvArtikliZaNarudzbu.AutoGenerateColumns = false;
-            this.dgvArtikliZaNarudzbu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvArtikliZaNarudzbu.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.iDDataGridViewTextBoxColumn,
-            this.kategorijaIDDataGridViewTextBoxColumn,
-            this.nazivDataGridViewTextBoxColumn,
-            this.cijenaDataGridViewTextBoxColumn,
-            this.stanjeNaSkladistuDataGridViewTextBoxColumn,
-            this.kategorijeDataGridViewTextBoxColumn,
-            this.stavkeNarudzbesDataGridViewTextBoxColumn,
-            this.stavkePrimkesDataGridViewTextBoxColumn});
-            this.dgvArtikliZaNarudzbu.DataSource = this.artikliBindingSource;
-            this.dgvArtikliZaNarudzbu.Location = new System.Drawing.Point(6, 164);
-            this.dgvArtikliZaNarudzbu.MultiSelect = false;
-            this.dgvArtikliZaNarudzbu.Name = "dgvArtikliZaNarudzbu";
-            this.dgvArtikliZaNarudzbu.RowHeadersVisible = false;
-            this.dgvArtikliZaNarudzbu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvArtikliZaNarudzbu.Size = new System.Drawing.Size(468, 142);
-            this.dgvArtikliZaNarudzbu.TabIndex = 8;
-            this.dgvArtikliZaNarudzbu.SelectionChanged += new System.EventHandler(this.dgvArtikliZaNarudzbu_SelectionChanged);
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // kategorijaIDDataGridViewTextBoxColumn
-            // 
-            this.kategorijaIDDataGridViewTextBoxColumn.DataPropertyName = "KategorijaID";
-            this.kategorijaIDDataGridViewTextBoxColumn.HeaderText = "KategorijaID";
-            this.kategorijaIDDataGridViewTextBoxColumn.Name = "kategorijaIDDataGridViewTextBoxColumn";
-            // 
-            // nazivDataGridViewTextBoxColumn
-            // 
-            this.nazivDataGridViewTextBoxColumn.DataPropertyName = "Naziv";
-            this.nazivDataGridViewTextBoxColumn.HeaderText = "Naziv";
-            this.nazivDataGridViewTextBoxColumn.Name = "nazivDataGridViewTextBoxColumn";
-            // 
-            // cijenaDataGridViewTextBoxColumn
-            // 
-            this.cijenaDataGridViewTextBoxColumn.DataPropertyName = "Cijena";
-            this.cijenaDataGridViewTextBoxColumn.HeaderText = "Cijena";
-            this.cijenaDataGridViewTextBoxColumn.Name = "cijenaDataGridViewTextBoxColumn";
-            // 
-            // stanjeNaSkladistuDataGridViewTextBoxColumn
-            // 
-            this.stanjeNaSkladistuDataGridViewTextBoxColumn.DataPropertyName = "StanjeNaSkladistu";
-            this.stanjeNaSkladistuDataGridViewTextBoxColumn.HeaderText = "StanjeNaSkladistu";
-            this.stanjeNaSkladistuDataGridViewTextBoxColumn.Name = "stanjeNaSkladistuDataGridViewTextBoxColumn";
-            // 
-            // kategorijeDataGridViewTextBoxColumn
-            // 
-            this.kategorijeDataGridViewTextBoxColumn.DataPropertyName = "Kategorije";
-            this.kategorijeDataGridViewTextBoxColumn.HeaderText = "Kategorije";
-            this.kategorijeDataGridViewTextBoxColumn.Name = "kategorijeDataGridViewTextBoxColumn";
-            this.kategorijeDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // stavkeNarudzbesDataGridViewTextBoxColumn
-            // 
-            this.stavkeNarudzbesDataGridViewTextBoxColumn.DataPropertyName = "StavkeNarudzbes";
-            this.stavkeNarudzbesDataGridViewTextBoxColumn.HeaderText = "StavkeNarudzbes";
-            this.stavkeNarudzbesDataGridViewTextBoxColumn.Name = "stavkeNarudzbesDataGridViewTextBoxColumn";
-            this.stavkeNarudzbesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // stavkePrimkesDataGridViewTextBoxColumn
-            // 
-            this.stavkePrimkesDataGridViewTextBoxColumn.DataPropertyName = "StavkePrimkes";
-            this.stavkePrimkesDataGridViewTextBoxColumn.HeaderText = "StavkePrimkes";
-            this.stavkePrimkesDataGridViewTextBoxColumn.Name = "stavkePrimkesDataGridViewTextBoxColumn";
-            this.stavkePrimkesDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // artikliBindingSource
-            // 
-            this.artikliBindingSource.DataSource = typeof(Impresso_Expresso.Artikli);
-            // 
             // FrmDodajNarudžbu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -256,16 +184,18 @@
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.Controls.Add(this.pbLogo);
             this.Controls.Add(this.gbArtikli);
+            this.KeyPreview = true;
             this.Name = "FrmDodajNarudžbu";
             this.Text = "FrmDodajNarudžbu";
             this.Load += new System.EventHandler(this.FrmDodajNarudžbu_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmDodajNarudžbu_KeyDown);
             this.gbArtikli.ResumeLayout(false);
             this.gbArtikli.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvArtikliZaNarudzbu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbOduzmi)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDodaj)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbLogo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvArtikliZaNarudzbu)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

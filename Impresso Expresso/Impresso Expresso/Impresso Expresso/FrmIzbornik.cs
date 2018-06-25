@@ -282,5 +282,17 @@ namespace Impresso_Expresso
             formaPrijava.ShowDialog();
             
         }
+        /// <summary>
+        /// hendla otvaranje user manuala
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmIzbornik_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                UserManual.Pdf.OtvoriPodrsku(4);
+            }
+        }
     }
 }

@@ -86,5 +86,17 @@ namespace Impresso_Expresso
                 e.Handled = true;
             }
         }
+        /// <summary>
+        /// hendla otvaranje user manuala
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void FrmTransakcija_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                UserManual.Pdf.OtvoriPodrsku(16);
+            }
+        }
     }
 }

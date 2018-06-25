@@ -47,9 +47,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Impresso_Expresso.Properties.Resources.logo_banner;
-            this.pictureBox1.Location = new System.Drawing.Point(155, 0);
+            this.pictureBox1.Location = new System.Drawing.Point(116, 0);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(460, 80);
+            this.pictureBox1.Size = new System.Drawing.Size(345, 65);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
@@ -64,9 +65,11 @@
             this.gbUnosArtikla.Controls.Add(this.txtNazivArtikla);
             this.gbUnosArtikla.Controls.Add(this.lblNazivArtikla);
             this.gbUnosArtikla.ForeColor = System.Drawing.Color.White;
-            this.gbUnosArtikla.Location = new System.Drawing.Point(154, 124);
+            this.gbUnosArtikla.Location = new System.Drawing.Point(116, 101);
+            this.gbUnosArtikla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbUnosArtikla.Name = "gbUnosArtikla";
-            this.gbUnosArtikla.Size = new System.Drawing.Size(460, 248);
+            this.gbUnosArtikla.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbUnosArtikla.Size = new System.Drawing.Size(345, 202);
             this.gbUnosArtikla.TabIndex = 1;
             this.gbUnosArtikla.TabStop = false;
             this.gbUnosArtikla.Text = "Unos artikla:";
@@ -74,9 +77,10 @@
             // btnSpremiArtikl
             // 
             this.btnSpremiArtikl.ForeColor = System.Drawing.SystemColors.MenuText;
-            this.btnSpremiArtikl.Location = new System.Drawing.Point(184, 184);
+            this.btnSpremiArtikl.Location = new System.Drawing.Point(138, 150);
+            this.btnSpremiArtikl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSpremiArtikl.Name = "btnSpremiArtikl";
-            this.btnSpremiArtikl.Size = new System.Drawing.Size(160, 31);
+            this.btnSpremiArtikl.Size = new System.Drawing.Size(120, 25);
             this.btnSpremiArtikl.TabIndex = 4;
             this.btnSpremiArtikl.Text = "Spremi";
             this.btnSpremiArtikl.UseVisualStyleBackColor = true;
@@ -87,69 +91,74 @@
             this.cbKategorijaArtikla.DataSource = this.kategorijeBindingSource;
             this.cbKategorijaArtikla.DisplayMember = "Naziv";
             this.cbKategorijaArtikla.FormattingEnabled = true;
-            this.cbKategorijaArtikla.Location = new System.Drawing.Point(183, 136);
+            this.cbKategorijaArtikla.Location = new System.Drawing.Point(137, 110);
+            this.cbKategorijaArtikla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbKategorijaArtikla.Name = "cbKategorijaArtikla";
-            this.cbKategorijaArtikla.Size = new System.Drawing.Size(162, 24);
+            this.cbKategorijaArtikla.Size = new System.Drawing.Size(122, 21);
             this.cbKategorijaArtikla.TabIndex = 3;
             this.cbKategorijaArtikla.ValueMember = "ID";
-            // 
-            // kategorijeBindingSource
-            // 
-            this.kategorijeBindingSource.DataSource = typeof(Impresso_Expresso.Kategorije);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(85, 136);
+            this.label3.Location = new System.Drawing.Point(64, 110);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(76, 17);
+            this.label3.Size = new System.Drawing.Size(57, 13);
             this.label3.TabIndex = 0;
             this.label3.Text = "Kategorija:";
             // 
             // txtCijenaArtikla
             // 
-            this.txtCijenaArtikla.Location = new System.Drawing.Point(183, 89);
+            this.txtCijenaArtikla.Location = new System.Drawing.Point(137, 72);
+            this.txtCijenaArtikla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCijenaArtikla.Name = "txtCijenaArtikla";
-            this.txtCijenaArtikla.Size = new System.Drawing.Size(162, 22);
+            this.txtCijenaArtikla.Size = new System.Drawing.Size(122, 20);
             this.txtCijenaArtikla.TabIndex = 2;
             this.txtCijenaArtikla.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCijenaArtikla_KeyPress);
             // 
             // lblCijenaArtikla
             // 
             this.lblCijenaArtikla.AutoSize = true;
-            this.lblCijenaArtikla.Location = new System.Drawing.Point(85, 89);
+            this.lblCijenaArtikla.Location = new System.Drawing.Point(64, 72);
+            this.lblCijenaArtikla.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCijenaArtikla.Name = "lblCijenaArtikla";
-            this.lblCijenaArtikla.Size = new System.Drawing.Size(51, 17);
+            this.lblCijenaArtikla.Size = new System.Drawing.Size(39, 13);
             this.lblCijenaArtikla.TabIndex = 0;
             this.lblCijenaArtikla.Text = "Cijena:";
             // 
             // txtNazivArtikla
             // 
-            this.txtNazivArtikla.Location = new System.Drawing.Point(183, 39);
+            this.txtNazivArtikla.Location = new System.Drawing.Point(137, 32);
+            this.txtNazivArtikla.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNazivArtikla.Name = "txtNazivArtikla";
-            this.txtNazivArtikla.Size = new System.Drawing.Size(162, 22);
+            this.txtNazivArtikla.Size = new System.Drawing.Size(122, 20);
             this.txtNazivArtikla.TabIndex = 1;
             // 
             // lblNazivArtikla
             // 
             this.lblNazivArtikla.AutoSize = true;
-            this.lblNazivArtikla.Location = new System.Drawing.Point(85, 39);
+            this.lblNazivArtikla.Location = new System.Drawing.Point(64, 32);
+            this.lblNazivArtikla.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNazivArtikla.Name = "lblNazivArtikla";
-            this.lblNazivArtikla.Size = new System.Drawing.Size(47, 17);
+            this.lblNazivArtikla.Size = new System.Drawing.Size(37, 13);
             this.lblNazivArtikla.TabIndex = 0;
             this.lblNazivArtikla.Text = "Naziv:";
             // 
             // FrmUnosArtikla
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(782, 553);
+            this.ClientSize = new System.Drawing.Size(586, 449);
             this.Controls.Add(this.gbUnosArtikla);
             this.Controls.Add(this.pictureBox1);
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmUnosArtikla";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmUnosArtikla";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmUnosArtikla_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbUnosArtikla.ResumeLayout(false);
             this.gbUnosArtikla.PerformLayout();

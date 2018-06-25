@@ -164,10 +164,12 @@
             this.Controls.Add(this.btnRacun);
             this.Controls.Add(this.dgvPrikazNarudzba);
             this.Controls.Add(this.pictureBox1);
+            this.KeyPreview = true;
             this.Name = "FrmStol";
             this.Text = "FrmStol";
             this.Activated += new System.EventHandler(this.FrmStol_Activated);
             this.Load += new System.EventHandler(this.FrmStol_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmStol_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrikazNarudzba)).EndInit();
             this.gbIzbor.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbUkloni)).EndInit();

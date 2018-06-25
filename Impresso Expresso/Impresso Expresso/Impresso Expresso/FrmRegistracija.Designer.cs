@@ -59,9 +59,10 @@
             // pbBaner
             // 
             this.pbBaner.Image = global::Impresso_Expresso.Properties.Resources.logo_banner;
-            this.pbBaner.Location = new System.Drawing.Point(124, 1);
+            this.pbBaner.Location = new System.Drawing.Point(93, 1);
+            this.pbBaner.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pbBaner.Name = "pbBaner";
-            this.pbBaner.Size = new System.Drawing.Size(538, 112);
+            this.pbBaner.Size = new System.Drawing.Size(404, 91);
             this.pbBaner.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbBaner.TabIndex = 0;
             this.pbBaner.TabStop = false;
@@ -86,9 +87,11 @@
             this.gbRegistracija.Controls.Add(this.lblPrezime);
             this.gbRegistracija.Controls.Add(this.lbIme);
             this.gbRegistracija.ForeColor = System.Drawing.Color.White;
-            this.gbRegistracija.Location = new System.Drawing.Point(143, 119);
+            this.gbRegistracija.Location = new System.Drawing.Point(107, 97);
+            this.gbRegistracija.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbRegistracija.Name = "gbRegistracija";
-            this.gbRegistracija.Size = new System.Drawing.Size(489, 422);
+            this.gbRegistracija.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbRegistracija.Size = new System.Drawing.Size(367, 343);
             this.gbRegistracija.TabIndex = 1;
             this.gbRegistracija.TabStop = false;
             this.gbRegistracija.Text = "Registracija";
@@ -96,9 +99,10 @@
             // btnSpremi
             // 
             this.btnSpremi.ForeColor = System.Drawing.Color.Black;
-            this.btnSpremi.Location = new System.Drawing.Point(179, 365);
+            this.btnSpremi.Location = new System.Drawing.Point(134, 297);
+            this.btnSpremi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSpremi.Name = "btnSpremi";
-            this.btnSpremi.Size = new System.Drawing.Size(191, 31);
+            this.btnSpremi.Size = new System.Drawing.Size(143, 25);
             this.btnSpremi.TabIndex = 9;
             this.btnSpremi.Text = "Spremi";
             this.btnSpremi.UseVisualStyleBackColor = true;
@@ -109,152 +113,163 @@
             this.cbUloga.DataSource = this.ulogeBindingSource;
             this.cbUloga.DisplayMember = "Naziv";
             this.cbUloga.FormattingEnabled = true;
-            this.cbUloga.Location = new System.Drawing.Point(179, 322);
+            this.cbUloga.Location = new System.Drawing.Point(134, 262);
+            this.cbUloga.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbUloga.Name = "cbUloga";
-            this.cbUloga.Size = new System.Drawing.Size(191, 24);
+            this.cbUloga.Size = new System.Drawing.Size(144, 21);
             this.cbUloga.TabIndex = 8;
             this.cbUloga.ValueMember = "ID";
             // 
-            // ulogeBindingSource
-            // 
-            this.ulogeBindingSource.DataSource = typeof(Impresso_Expresso.Uloge);
-            // 
             // txtTelefon
             // 
-            this.txtTelefon.Location = new System.Drawing.Point(179, 282);
+            this.txtTelefon.Location = new System.Drawing.Point(134, 229);
+            this.txtTelefon.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtTelefon.Name = "txtTelefon";
-            this.txtTelefon.Size = new System.Drawing.Size(191, 22);
+            this.txtTelefon.Size = new System.Drawing.Size(144, 20);
             this.txtTelefon.TabIndex = 7;
             // 
             // txtAdresa
             // 
-            this.txtAdresa.Location = new System.Drawing.Point(179, 194);
+            this.txtAdresa.Location = new System.Drawing.Point(134, 158);
+            this.txtAdresa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtAdresa.Name = "txtAdresa";
-            this.txtAdresa.Size = new System.Drawing.Size(191, 22);
+            this.txtAdresa.Size = new System.Drawing.Size(144, 20);
             this.txtAdresa.TabIndex = 5;
             // 
             // txtPosta
             // 
-            this.txtPosta.Location = new System.Drawing.Point(179, 240);
+            this.txtPosta.Location = new System.Drawing.Point(134, 195);
+            this.txtPosta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPosta.Name = "txtPosta";
-            this.txtPosta.Size = new System.Drawing.Size(191, 22);
+            this.txtPosta.Size = new System.Drawing.Size(144, 20);
             this.txtPosta.TabIndex = 6;
             // 
             // txtKorime
             // 
-            this.txtKorime.Location = new System.Drawing.Point(179, 112);
+            this.txtKorime.Location = new System.Drawing.Point(134, 91);
+            this.txtKorime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtKorime.Name = "txtKorime";
-            this.txtKorime.Size = new System.Drawing.Size(191, 22);
+            this.txtKorime.Size = new System.Drawing.Size(144, 20);
             this.txtKorime.TabIndex = 3;
             // 
             // txtLozinka
             // 
-            this.txtLozinka.Location = new System.Drawing.Point(179, 152);
+            this.txtLozinka.Location = new System.Drawing.Point(134, 124);
+            this.txtLozinka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtLozinka.Name = "txtLozinka";
-            this.txtLozinka.Size = new System.Drawing.Size(191, 22);
+            this.txtLozinka.Size = new System.Drawing.Size(144, 20);
             this.txtLozinka.TabIndex = 4;
             // 
             // txtPrezime
             // 
-            this.txtPrezime.Location = new System.Drawing.Point(179, 70);
+            this.txtPrezime.Location = new System.Drawing.Point(134, 57);
+            this.txtPrezime.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(191, 22);
+            this.txtPrezime.Size = new System.Drawing.Size(144, 20);
             this.txtPrezime.TabIndex = 2;
             // 
             // lblUloga
             // 
             this.lblUloga.AutoSize = true;
-            this.lblUloga.Location = new System.Drawing.Point(100, 322);
+            this.lblUloga.Location = new System.Drawing.Point(75, 262);
+            this.lblUloga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUloga.Name = "lblUloga";
-            this.lblUloga.Size = new System.Drawing.Size(49, 17);
+            this.lblUloga.Size = new System.Drawing.Size(38, 13);
             this.lblUloga.TabIndex = 0;
             this.lblUloga.Text = "Uloga:";
             // 
             // lblTelefon
             // 
             this.lblTelefon.AutoSize = true;
-            this.lblTelefon.Location = new System.Drawing.Point(100, 282);
+            this.lblTelefon.Location = new System.Drawing.Point(75, 229);
+            this.lblTelefon.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTelefon.Name = "lblTelefon";
-            this.lblTelefon.Size = new System.Drawing.Size(60, 17);
+            this.lblTelefon.Size = new System.Drawing.Size(46, 13);
             this.lblTelefon.TabIndex = 0;
             this.lblTelefon.Text = "Telefon:";
             // 
             // lblAdresa
             // 
             this.lblAdresa.AutoSize = true;
-            this.lblAdresa.Location = new System.Drawing.Point(100, 194);
+            this.lblAdresa.Location = new System.Drawing.Point(75, 158);
+            this.lblAdresa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblAdresa.Name = "lblAdresa";
-            this.lblAdresa.Size = new System.Drawing.Size(57, 17);
+            this.lblAdresa.Size = new System.Drawing.Size(43, 13);
             this.lblAdresa.TabIndex = 0;
             this.lblAdresa.Text = "Adresa:";
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(179, 32);
+            this.txtIme.Location = new System.Drawing.Point(134, 26);
+            this.txtIme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(191, 22);
+            this.txtIme.Size = new System.Drawing.Size(144, 20);
             this.txtIme.TabIndex = 1;
             // 
             // lblPosta
             // 
             this.lblPosta.AutoSize = true;
-            this.lblPosta.Location = new System.Drawing.Point(100, 240);
+            this.lblPosta.Location = new System.Drawing.Point(75, 195);
+            this.lblPosta.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPosta.Name = "lblPosta";
-            this.lblPosta.Size = new System.Drawing.Size(48, 17);
+            this.lblPosta.Size = new System.Drawing.Size(37, 13);
             this.lblPosta.TabIndex = 0;
             this.lblPosta.Text = "Pošta:";
             // 
             // lblKorime
             // 
             this.lblKorime.AutoSize = true;
-            this.lblKorime.Location = new System.Drawing.Point(70, 112);
+            this.lblKorime.Location = new System.Drawing.Point(52, 91);
+            this.lblKorime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblKorime.Name = "lblKorime";
-            this.lblKorime.Size = new System.Drawing.Size(103, 17);
+            this.lblKorime.Size = new System.Drawing.Size(78, 13);
             this.lblKorime.TabIndex = 0;
             this.lblKorime.Text = "Korisničko ime:";
             // 
             // lblLozinka
             // 
             this.lblLozinka.AutoSize = true;
-            this.lblLozinka.Location = new System.Drawing.Point(100, 152);
+            this.lblLozinka.Location = new System.Drawing.Point(75, 124);
+            this.lblLozinka.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLozinka.Name = "lblLozinka";
-            this.lblLozinka.Size = new System.Drawing.Size(61, 17);
+            this.lblLozinka.Size = new System.Drawing.Size(47, 13);
             this.lblLozinka.TabIndex = 0;
             this.lblLozinka.Text = "Lozinka:";
             // 
             // lblPrezime
             // 
             this.lblPrezime.AutoSize = true;
-            this.lblPrezime.Location = new System.Drawing.Point(100, 70);
+            this.lblPrezime.Location = new System.Drawing.Point(75, 57);
+            this.lblPrezime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPrezime.Name = "lblPrezime";
-            this.lblPrezime.Size = new System.Drawing.Size(63, 17);
+            this.lblPrezime.Size = new System.Drawing.Size(47, 13);
             this.lblPrezime.TabIndex = 0;
             this.lblPrezime.Text = "Prezime:";
             // 
             // lbIme
             // 
             this.lbIme.AutoSize = true;
-            this.lbIme.Location = new System.Drawing.Point(100, 32);
+            this.lbIme.Location = new System.Drawing.Point(75, 26);
+            this.lbIme.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lbIme.Name = "lbIme";
-            this.lbIme.Size = new System.Drawing.Size(34, 17);
+            this.lbIme.Size = new System.Drawing.Size(27, 13);
             this.lbIme.TabIndex = 0;
             this.lbIme.Text = "Ime:";
             // 
-            // korisniciBindingSource
-            // 
-            this.korisniciBindingSource.DataSource = typeof(Impresso_Expresso.Korisnici);
-            // 
             // FrmRegistracija
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(782, 553);
+            this.ClientSize = new System.Drawing.Size(586, 449);
             this.Controls.Add(this.gbRegistracija);
             this.Controls.Add(this.pbBaner);
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmRegistracija";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmRegistracija";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmRegistracija_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pbBaner)).EndInit();
             this.gbRegistracija.ResumeLayout(false);
             this.gbRegistracija.PerformLayout();

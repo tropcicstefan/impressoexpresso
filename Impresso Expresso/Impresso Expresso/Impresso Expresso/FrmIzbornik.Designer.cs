@@ -30,6 +30,7 @@
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.gbIzbornik = new System.Windows.Forms.GroupBox();
+            this.btnOdjava = new System.Windows.Forms.Button();
             this.btnRegistracija = new System.Windows.Forms.Button();
             this.btnSkladiste = new System.Windows.Forms.Button();
             this.btnKasa = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.pbStol4 = new System.Windows.Forms.PictureBox();
             this.pbStol5 = new System.Windows.Forms.PictureBox();
             this.pbStol6 = new System.Windows.Forms.PictureBox();
-            this.btnOdjava = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.gbIzbornik.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbOpcije)).BeginInit();
@@ -77,6 +77,16 @@
             this.gbIzbornik.Size = new System.Drawing.Size(132, 391);
             this.gbIzbornik.TabIndex = 1;
             this.gbIzbornik.TabStop = false;
+            // 
+            // btnOdjava
+            // 
+            this.btnOdjava.Location = new System.Drawing.Point(6, 271);
+            this.btnOdjava.Name = "btnOdjava";
+            this.btnOdjava.Size = new System.Drawing.Size(120, 47);
+            this.btnOdjava.TabIndex = 2;
+            this.btnOdjava.Text = "Odjava";
+            this.btnOdjava.UseVisualStyleBackColor = true;
+            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
             // 
             // btnRegistracija
             // 
@@ -195,16 +205,6 @@
             this.pbStol6.TabStop = false;
             this.pbStol6.Click += new System.EventHandler(this.pbStol6_Click);
             // 
-            // btnOdjava
-            // 
-            this.btnOdjava.Location = new System.Drawing.Point(6, 271);
-            this.btnOdjava.Name = "btnOdjava";
-            this.btnOdjava.Size = new System.Drawing.Size(120, 47);
-            this.btnOdjava.TabIndex = 2;
-            this.btnOdjava.Text = "Odjava";
-            this.btnOdjava.UseVisualStyleBackColor = true;
-            this.btnOdjava.Click += new System.EventHandler(this.btnOdjava_Click);
-            // 
             // FrmIzbornik
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,10 +220,12 @@
             this.Controls.Add(this.pbStol1);
             this.Controls.Add(this.gbIzbornik);
             this.Controls.Add(this.pictureBox1);
+            this.KeyPreview = true;
             this.Name = "FrmIzbornik";
             this.Text = "FrmIzbornik";
             this.Activated += new System.EventHandler(this.FrmIzbornik_Activated);
             this.Load += new System.EventHandler(this.FrmIzbornik_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmIzbornik_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbIzbornik.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbOpcije)).EndInit();

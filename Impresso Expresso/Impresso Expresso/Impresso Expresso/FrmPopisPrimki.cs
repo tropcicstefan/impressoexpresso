@@ -133,7 +133,7 @@ namespace Impresso_Expresso
         {
             if (e.KeyData == Keys.F1)
             {
-                User_manual.Class1.OtvoriPodrsku(12);
+                UserManual.Pdf.OtvoriPodrsku(12);
             }
         }
     }

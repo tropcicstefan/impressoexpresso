@@ -40,33 +40,37 @@
             // 
             // txtKorIme
             // 
-            this.txtKorIme.Location = new System.Drawing.Point(198, 42);
+            this.txtKorIme.Location = new System.Drawing.Point(148, 34);
+            this.txtKorIme.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtKorIme.Name = "txtKorIme";
-            this.txtKorIme.Size = new System.Drawing.Size(160, 22);
+            this.txtKorIme.Size = new System.Drawing.Size(121, 20);
             this.txtKorIme.TabIndex = 0;
             // 
             // txtLozinka
             // 
-            this.txtLozinka.Location = new System.Drawing.Point(198, 94);
+            this.txtLozinka.Location = new System.Drawing.Point(148, 76);
+            this.txtLozinka.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtLozinka.Name = "txtLozinka";
-            this.txtLozinka.Size = new System.Drawing.Size(160, 22);
+            this.txtLozinka.Size = new System.Drawing.Size(121, 20);
             this.txtLozinka.TabIndex = 0;
             // 
             // lblLozinka
             // 
             this.lblLozinka.AutoSize = true;
-            this.lblLozinka.Location = new System.Drawing.Point(65, 94);
+            this.lblLozinka.Location = new System.Drawing.Point(49, 76);
+            this.lblLozinka.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLozinka.Name = "lblLozinka";
-            this.lblLozinka.Size = new System.Drawing.Size(61, 17);
+            this.lblLozinka.Size = new System.Drawing.Size(47, 13);
             this.lblLozinka.TabIndex = 1;
             this.lblLozinka.Text = "Lozinka:";
             // 
             // lblKorime
             // 
             this.lblKorime.AutoSize = true;
-            this.lblKorime.Location = new System.Drawing.Point(55, 42);
+            this.lblKorime.Location = new System.Drawing.Point(41, 34);
+            this.lblKorime.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblKorime.Name = "lblKorime";
-            this.lblKorime.Size = new System.Drawing.Size(103, 17);
+            this.lblKorime.Size = new System.Drawing.Size(78, 13);
             this.lblKorime.TabIndex = 2;
             this.lblKorime.Text = "Korisničko ime:";
             // 
@@ -78,9 +82,11 @@
             this.gbPrijava.Controls.Add(this.txtLozinka);
             this.gbPrijava.Controls.Add(this.lblLozinka);
             this.gbPrijava.ForeColor = System.Drawing.Color.White;
-            this.gbPrijava.Location = new System.Drawing.Point(196, 189);
+            this.gbPrijava.Location = new System.Drawing.Point(147, 154);
+            this.gbPrijava.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.gbPrijava.Name = "gbPrijava";
-            this.gbPrijava.Size = new System.Drawing.Size(405, 215);
+            this.gbPrijava.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.gbPrijava.Size = new System.Drawing.Size(304, 175);
             this.gbPrijava.TabIndex = 3;
             this.gbPrijava.TabStop = false;
             this.gbPrijava.Text = "Prijava";
@@ -88,9 +94,10 @@
             // btnPrijava
             // 
             this.btnPrijava.ForeColor = System.Drawing.Color.Black;
-            this.btnPrijava.Location = new System.Drawing.Point(58, 140);
+            this.btnPrijava.Location = new System.Drawing.Point(44, 114);
+            this.btnPrijava.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPrijava.Name = "btnPrijava";
-            this.btnPrijava.Size = new System.Drawing.Size(299, 33);
+            this.btnPrijava.Size = new System.Drawing.Size(224, 27);
             this.btnPrijava.TabIndex = 3;
             this.btnPrijava.Text = "Prijavi se";
             this.btnPrijava.UseVisualStyleBackColor = true;
@@ -98,15 +105,18 @@
             // 
             // FrmPrijava
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(34)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(782, 553);
+            this.ClientSize = new System.Drawing.Size(586, 449);
             this.Controls.Add(this.gbPrijava);
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "FrmPrijava";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmPrijava";
             this.Load += new System.EventHandler(this.FrmPrijava_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmPrijava_KeyDown);
             this.gbPrijava.ResumeLayout(false);
             this.gbPrijava.PerformLayout();
             this.ResumeLayout(false);
