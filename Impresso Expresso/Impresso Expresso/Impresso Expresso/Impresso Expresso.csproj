@@ -246,6 +246,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_18018_DBDataSet1.xsd</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="DnevniIzvjestaj.rdlc" />
     <EmbeddedResource Include="FrmNovaPrimka.resx">
       <DependentUpon>FrmNovaPrimka.cs</DependentUpon>
     </EmbeddedResource>
