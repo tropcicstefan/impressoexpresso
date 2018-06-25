@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gbNovaPrimka = new System.Windows.Forms.GroupBox();
+            this.txtKorisnik = new System.Windows.Forms.TextBox();
             this.btnDodajDobavljaca = new System.Windows.Forms.Button();
             this.lblDatum = new System.Windows.Forms.Label();
             this.dtpPrimke = new System.Windows.Forms.DateTimePicker();
@@ -54,7 +55,6 @@
             this.pDgv = new System.Windows.Forms.Panel();
             this.korisniciBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dobavljaciBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.txtKorisnik = new System.Windows.Forms.TextBox();
             this.gbNovaPrimka.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStavkePrimki)).BeginInit();
@@ -81,6 +81,13 @@
             this.gbNovaPrimka.TabIndex = 1;
             this.gbNovaPrimka.TabStop = false;
             this.gbNovaPrimka.Text = "Nova primka";
+            // 
+            // txtKorisnik
+            // 
+            this.txtKorisnik.Location = new System.Drawing.Point(273, 47);
+            this.txtKorisnik.Name = "txtKorisnik";
+            this.txtKorisnik.Size = new System.Drawing.Size(100, 20);
+            this.txtKorisnik.TabIndex = 7;
             // 
             // btnDodajDobavljaca
             // 
@@ -291,13 +298,6 @@
             // 
             this.dobavljaciBindingSource.DataSource = typeof(Impresso_Expresso.Dobavljaci);
             // 
-            // txtKorisnik
-            // 
-            this.txtKorisnik.Location = new System.Drawing.Point(273, 47);
-            this.txtKorisnik.Name = "txtKorisnik";
-            this.txtKorisnik.Size = new System.Drawing.Size(100, 20);
-            this.txtKorisnik.TabIndex = 7;
-            // 
             // FrmNovaPrimka
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -309,10 +309,12 @@
             this.Controls.Add(this.gbNovaPrimka);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.Color.White;
+            this.KeyPreview = true;
             this.Name = "FrmNovaPrimka";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Uredi primku";
             this.Load += new System.EventHandler(this.FrmNovaPrimka_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmNovaPrimka_KeyDown);
             this.gbNovaPrimka.ResumeLayout(false);
             this.gbNovaPrimka.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

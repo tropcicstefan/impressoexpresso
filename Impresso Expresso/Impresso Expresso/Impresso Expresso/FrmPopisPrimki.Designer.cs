@@ -274,10 +274,12 @@
             this.ClientSize = new System.Drawing.Size(724, 557);
             this.Controls.Add(this.gbPrimka);
             this.Controls.Add(this.pictureBox1);
+            this.KeyPreview = true;
             this.Name = "FrmPopisPrimki";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Primke";
             this.Load += new System.EventHandler(this.FrmPrimka_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmPopisPrimki_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrimke)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.primkeBindingSource)).EndInit();
             this.gbPrimka.ResumeLayout(false);

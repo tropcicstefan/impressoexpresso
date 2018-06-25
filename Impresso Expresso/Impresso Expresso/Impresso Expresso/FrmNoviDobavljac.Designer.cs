@@ -173,10 +173,12 @@
             this.Controls.Add(this.txtNaziv);
             this.Controls.Add(this.pictureBox1);
             this.ForeColor = System.Drawing.SystemColors.Window;
+            this.KeyPreview = true;
             this.Name = "FrmNoviDobavljac";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Novi dobavljač";
             this.Load += new System.EventHandler(this.FrmNoviDobavljac_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmNoviDobavljac_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

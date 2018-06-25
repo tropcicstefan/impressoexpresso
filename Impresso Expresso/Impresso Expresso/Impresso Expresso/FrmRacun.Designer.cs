@@ -199,10 +199,12 @@
             this.Controls.Add(this.reportViewer1);
             this.Controls.Add(this.gbRacun);
             this.Controls.Add(this.pictureBox1);
+            this.KeyPreview = true;
             this.Name = "FrmRacun";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Racun";
             this.Load += new System.EventHandler(this.FrmRacun_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmRacun_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.spStavkeRacuna_ResultBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.placanjaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

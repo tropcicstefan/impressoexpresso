@@ -125,6 +125,12 @@ namespace Impresso_Expresso
             }
         }
 
-
+        private void FrmPopisPrimki_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                User_manual.Class1.OtvoriPodrsku(12);
+            }
+        }
     }
 }

@@ -133,5 +133,13 @@ namespace Impresso_Expresso
             }
         }
         #endregion
+
+        private void FrmNoviDobavljac_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                User_manual.Class1.OtvoriPodrsku(14);
+            }
+        }
     }
 }

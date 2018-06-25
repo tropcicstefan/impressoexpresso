@@ -198,10 +198,12 @@
             this.ClientSize = new System.Drawing.Size(696, 550);
             this.Controls.Add(this.gbstanjeNaSkladistu);
             this.Controls.Add(this.pictureBox1);
+            this.KeyPreview = true;
             this.Name = "FrmSkladiste";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Skladiste";
             this.Load += new System.EventHandler(this.FrmSkladiste_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FrmSkladiste_KeyDown);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStanjeSkladista)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.artikliBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

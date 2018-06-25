@@ -338,6 +338,12 @@ namespace Impresso_Expresso
             dtpPrimke.Enabled = false;
         }
 
-        
+        private void FrmNovaPrimka_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                User_manual.Class1.OtvoriPodrsku(13);
+            }
+        }
     }
 }

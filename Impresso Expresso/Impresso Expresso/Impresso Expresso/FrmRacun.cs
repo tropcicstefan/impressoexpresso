@@ -182,5 +182,13 @@ namespace Impresso_Expresso
             PrikaziReport();
             PohraniKasu();
         }
+
+        private void FrmRacun_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.F1)
+            {
+                User_manual.Class1.OtvoriPodrsku(7);
+            }
+        }
     }
 }
