@@ -226,5 +226,26 @@ namespace Impresso_Expresso
                 UserManual.Pdf.OtvoriPodrsku(5);
             }
         }
+
+
+        BindingList<StavkeNarudzbe> listaStavkiZaDgv = new BindingList<StavkeNarudzbe>();
+
+        private void cbOdaberiNarudžbu_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbOdaberiNarudžbu.SelectedItem != null)
+            {
+                Narudzbe odabranaNarudzba = cbOdaberiNarudžbu.SelectedItem as Narudzbe;
+                using (var db = new Entities())
+                {
+                    db.Narudzbes.Attach(odabranaNarudzba);
+                    listaStavkiZaDgv = new BindingList<StavkeNarudzbe>(odabranaNarudzba.StavkeNarudzbes.ToList());
+                }
+
+                dgvPrikazNarudzba.DataSource = listaStavkiZaDgv;
+                this.dgvPrikazNarudzba.Columns["Artikli"].Visible = false;
+                this.dgvPrikazNarudzba.Columns["Narudzbe"].Visible = false;
+            }
+
+        }
     }
 }
